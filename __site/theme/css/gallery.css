@@ -30,18 +30,43 @@
   aspect-ratio: 1 / 1; /* can be overridden inline */
 }
 
+/* Match carousel play button */
 .tileItem.videoTile .play-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  background: url("/theme/icons/play-button2.svg") no-repeat center center;
-  background-size: contain;
-  pointer-events: none;
-  opacity: 0.8;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.35);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+  opacity: 0.4;
+  transition:
+    opacity 0.25s ease,
+    background 0.25s ease,
+    transform 0.3s ease;
+  pointer-events: none; /* keeps tile clickable */
 }
+
+.tileItem.videoTile:hover .play-icon {
+  background: rgba(0,0,0,0.7);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.tileItem.videoTile .play-icon svg {
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+
 
 .tileItem:hover {
   transform: scale(1.05);

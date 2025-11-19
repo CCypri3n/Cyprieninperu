@@ -23,9 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
           tile.dataset.videoUrl = item.video_url;
           tile.style.backgroundImage = `url(${item.thumbnail_url})`;
 
-          const icon = document.createElement("div");
-          icon.classList.add("play-icon");
-          tile.appendChild(icon);
+          const playBtn = document.createElement('div');
+            playBtn.classList.add('play-icon');
+
+            playBtn.innerHTML = `
+              <svg viewBox="0 0 24 24">
+                <polygon points="8,5 19,12 8,19" fill="white"></polygon>
+              </svg>
+            `;
+
+            tile.appendChild(playBtn);
+
 
         } else {
           const imgUrl = item.url.startsWith('http')
