@@ -7,6 +7,44 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevBtn = container.querySelector(".carousel-btn.prev-btn");
     const nextBtn = container.querySelector(".carousel-btn.next-btn");
 
+        /* ============================
+       SWIPE GESTURES FOR TOUCH DEVICES
+       ============================ */
+
+    let startX = 0;
+    let isSwiping = false;
+
+    carousel.addEventListener("touchstart", function (e) {
+      if (e.touches.length !== 1) return; // one finger only
+      startX = e.touches[0].clientX;
+      isSwiping = true;
+    });
+
+    carousel.addEventListener("touchmove", function (e) {
+      if (!isSwiping) return;
+
+      const diffX = e.touches[0].clientX - startX;
+
+      // threshold before triggering action
+      if (Math.abs(diffX) > 60) {
+        isSwiping = false;
+
+        const currentIndex = [...items].findIndex(i => i.classList.contains("active"));
+
+        if (diffX < 0) {
+          // swipe left → next
+          showItem((currentIndex + 1) % items.length);
+        } else {
+          // swipe right → previous
+          showItem((currentIndex - 1 + items.length) % items.length);
+        }
+      }
+    });
+
+    carousel.addEventListener("touchend", function () {
+      isSwiping = false;
+    });
+
 
     function showItem(index) {
       items.forEach((item, idx) => {

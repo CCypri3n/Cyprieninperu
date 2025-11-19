@@ -1,3 +1,7 @@
+/* ============================
+   CONTAINER + CAROUSEL
+   ============================ */
+
 .carousel-container {
   width: 80%;
   max-width: 80dvh;
@@ -27,7 +31,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  display: flex; /* keep flex to layout children */
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
@@ -43,10 +47,8 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  z-index: 5; /* appear on top */
-  display: flex;
+  z-index: 5;
 }
-
 
 .carousel-container .carousel .item .image-wrapper {
   flex-grow: 1;
@@ -68,7 +70,7 @@
   background-color: #fff;
   flex-shrink: 0;
   border-radius: 12px 12px 0 0;
-  cursor: pointer; /* Indicate clickable image */
+  cursor: pointer;
   display: block;
 }
 
@@ -89,53 +91,109 @@
   user-select: none;
 }
 
-.carousel-container .btn {
+
+/* ============================
+   NAVIGATION BUTTONS (WORKS WITH YOUR HTML)
+   ============================ */
+
+.carousel-container .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 1em 2em;
-  outline: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   border: none;
+  background: rgba(0,0,0,0.35);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 900;
-  color: #10100e;
-  background-color: #c7435078;
-  border-radius: 30px;
-  box-shadow: 0 2px 8px rgb(199 67 80 / 0.4);
-  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
-  z-index: 10;
+  z-index: 20;
+  backdrop-filter: blur(4px);
+  opacity: 0.15;
+  transition:
+    opacity 0.25s ease,
+    background 0.25s ease,
+    transform 0.3s ease;
 }
 
-.carousel-container .btn:active,
-.carousel-container .btn:focus {
-  transform: translateY(-50%) scale(0.9);
-  background-color: #b03b47cc;
-  box-shadow: 0 0 6px rgb(176 59 71 / 0.7);
+/* Buttons only appear when hovering the entire container */
+.carousel-container:hover .carousel-btn {
+  opacity: 0.55;
 }
 
-.carousel-container .btn:hover {
-  transform: translateY(-50%) scale(0.96);
-  background-color: #c74350cc;
-  box-shadow: 0 0 12px rgb(199 67 80 / 0.7);
+/* Hover effect */
+.carousel-container .carousel-btn:hover {
+  background: rgba(0,0,0,0.7);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
 }
 
-.carousel-container .prev {
-  left: -5%;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
+.carousel-container .carousel-btn svg {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
 }
 
-.carousel-container .next {
-  right: -5%;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+/* Inside edges – no overflow */
+.carousel-container .prev-btn {
+  left: 8px;
 }
 
-/* Single shared modal styles */
+.carousel-container .next-btn {
+  right: 8px;
+}
+
+
+/* ============================
+   PLAY BUTTON FOR VIDEO
+   ============================ */
+
+.carousel-container .carousel .item.video .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.35);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 25;
+  backdrop-filter: blur(4px);
+  opacity: 0.4;
+  transition:
+    opacity 0.25s ease,
+    background 0.25s ease,
+    transform 0.3s ease;
+}
+
+.carousel-container .carousel .item.video .play-btn:hover {
+  background: rgba(0,0,0,0.7);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.carousel-container .carousel .item.video .play-btn svg {
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+
+
+/* ============================
+   MODAL
+   ============================ */
+
 .modal {
-  display: none; /* hidden by default */
+  display: none;
   position: fixed;
   z-index: 1000;
   padding-top: 60px;
@@ -154,28 +212,25 @@
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-/* Make video inside the modal look exactly like the image */
 #modalVideo {
-  display: none;             /* initially hidden */
+  display: none;
   margin: auto;
   max-width: 90vw;
   max-height: 90vh;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  overflow: hidden;          /* prevents gray line / overflow */
-  background-color: #000;    /* avoids bottom-line flash on load */
+  overflow: hidden;
+  background-color: #000;
 }
 
-/* Style the actual <video> you append */
 #modalVideo video {
   width: 100%;
   height: 100%;
-  object-fit: contain;        /* same behavior as your images */
-  display: block;             /* removes mysterious bottom gray line */
+  object-fit: contain;
+  display: block;
   border-radius: 12px;
-  background-color: #000;     /* ensures no white gap on some browsers */
+  background-color: #000;
 }
-
 
 .modal-close {
   position: absolute;
@@ -187,20 +242,24 @@
   user-select: none;
 }
 
-.carousel .item.video .image-wrapper {
-  position: relative;
-  cursor: pointer;
+/* === FIX BUTTON OVERFLOW — ANCHOR TO IMAGE AREA === */
+
+.carousel-container .carousel {
+  position: relative; /* ensures arrows attach to image */
 }
 
-.carousel .item.video .play-icon {
+.carousel-container .carousel-btn {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  background: url("/theme/icons/play-button2.svg") no-repeat center center;
-  background-size: contain;
-  pointer-events: none;
-  opacity: 0.8;
+  transform: translateY(-50%);
+  z-index: 50; /* make sure they sit above image and caption */
+}
+
+/* buttons aligned perfectly with image edges */
+.carousel-container .prev-btn {
+  left: calc(15px + 8px); /* container padding + nice offset */
+}
+
+.carousel-container .next-btn {
+  right: calc(15px + 8px);
 }

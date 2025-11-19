@@ -15,6 +15,6 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;div class="modal-content" id="modalVideo"&gt;&lt;/div&gt;
+&lt;button class="carousel-btn prev-btn"&gt;&lt;svg viewBox="0 0 24 24"&gt;&lt;path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;&lt;button class="carousel-btn next-btn"&gt;&lt;svg viewBox="0 0 24 24"&gt;&lt;path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;div class="modal-content" id="modalVideo"&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/main&gt;</content><category term="Peru"/></entry></feed>

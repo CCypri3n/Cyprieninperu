@@ -4,7 +4,7 @@ since they look really&amp;nbsp;nice.&lt;/p&gt;
 &lt;main class="carousel-container"&gt;
 &lt;div class="carousel"&gt;
 &lt;div class="item active video"&gt;
-&lt;div class="image-wrapper" data-video-url="https://ik.imagekit.io/721zjc9b0/videos/video1_0yVR2H3-9.mp4?updatedAt=1763568137897"&gt;&lt;img alt="Photo 1" src="https://ik.imagekit.io/721zjc9b0/videos/thumbnail1_SlEbVByvQi.jpeg?updatedAt=1763568137670"&gt;&lt;div class="play-icon"&gt;&lt;/div&gt;
+&lt;div class="image-wrapper" data-video-url="https://ik.imagekit.io/721zjc9b0/videos/video1_0yVR2H3-9.mp4?updatedAt=1763568137897"&gt;&lt;img alt="Photo 1" src="https://ik.imagekit.io/721zjc9b0/videos/thumbnail1_SlEbVByvQi.jpeg?updatedAt=1763568137670"&gt;&lt;div class="play-btn"&gt;&lt;svg viewBox="0 0 24 24"&gt;&lt;polygon fill="white" points="8,5 19,12 8,19"&gt;&lt;/polygon&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;p class="caption"&gt;Maccu&amp;nbsp;Piccu&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -17,7 +17,7 @@ since they look really&amp;nbsp;nice.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;div class="modal-content" id="modalVideo"&gt;&lt;/div&gt;
+&lt;button class="carousel-btn prev-btn"&gt;&lt;svg viewBox="0 0 24 24"&gt;&lt;path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;&lt;button class="carousel-btn next-btn"&gt;&lt;svg viewBox="0 0 24 24"&gt;&lt;path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;div class="modal-content" id="modalVideo"&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;p&gt;Hey look, it&amp;#8217;s the end of the carousel. Nice, huh? No?
@@ -34,6 +34,6 @@ Let&amp;#8217;s add another one&amp;nbsp;then:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;div class="modal-content" id="modalVideo"&gt;&lt;/div&gt;
+&lt;button class="carousel-btn prev-btn"&gt;&lt;svg viewBox="0 0 24 24"&gt;&lt;path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;&lt;button class="carousel-btn next-btn"&gt;&lt;svg viewBox="0 0 24 24"&gt;&lt;path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;div class="modal-content" id="modalVideo"&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/main&gt;</content><category term="peru"/></entry></feed>
