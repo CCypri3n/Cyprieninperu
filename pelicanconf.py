@@ -1,0 +1,120 @@
+AUTHOR = 'Cyprien Chevallier'
+SITENAME = 'Cyprien in Peru'
+SITEURL = ""
+
+PATH = "content"
+
+TIMEZONE = 'America/Lima'
+
+PLUGIN_PATHS = ['plugins']
+
+PLUGINS = ['i18n_subsites', 'statistics', 'image_gallery']
+
+
+MARKDOWN = {
+    'extensions': [
+        'markdown.extensions.extra',
+        'markdown.extensions.meta',
+        'plugins.static_url_rewrite.static_url_rewrite',
+        'plugins.carousel_extension.carousel_extension',  # Assuming carousel_extension.py in plugins folder
+    ],
+    'output_format': 'html5',
+}
+
+JINJA_ENVIRONMENT = {
+    'extensions': ['jinja2.ext.i18n'],
+}
+
+DEFAULT_LANG = 'en'  # Main site language
+
+THEME = 'theme/smashing-magazine'
+
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
+# Blogroll
+LINKS = (
+    ("PrivaTube", "https://privatube.netlify.app/"),
+)
+
+# Social widget
+SOCIAL = (
+    ("Instagram", "https://www.instagram.com/ccypri3n/"),
+    ("Github", "https://github.com/CCypri3n"),
+)
+
+#MENUITEMS = ()
+
+DEFAULT_PAGINATION = 10
+
+# Uncomment following line if you want document-relative URLs when developing
+RELATIVE_URLS = False
+
+TYPOGRIFY = True
+
+IGNORE_FILES = ["templates", ".obsidian"]
+
+I18N_SUBSITES = {
+    'fr': {
+        'SITENAME': 'Cyprien au Pérou',
+        'OUTPUT_PATH': 'output/fr/',
+        'LOCALE': 'fr_FR',
+        'LINKS_WIDGET_NAME': 'Liens',
+        'SOCIAL_WIDGET_NAME': 'Social',
+    },
+    'de': {
+        'SITENAME': 'Cyprien in Peru',
+        'OUTPUT_PATH': 'output/de/',
+        'LOCALE': 'de_DE',
+        'LINKS_WIDGET_NAME': 'Links',
+        'SOCIAL_WIDGET_NAME': 'Sozial',
+    }
+}
+
+ARTICLE_PATHS = ['articles']
+PAGE_PATHS = ['pages']
+STATIC_PATHS = ['extra']
+EXTRA_PATH_METADATA = {
+    'extra/gallery.json': {'path': 'gallery.json'},
+}
+
+ARTICLE_URL = '{slug}/'
+ARTICLE_SAVE_AS = '{slug}/index.html'
+
+PAGE_URL = '{slug}/'
+PAGE_SAVE_AS = '{slug}/index.html'
+
+ARTICLE_LANG_URL = '{lang}/{slug}/'
+ARTICLE_LANG_SAVE_AS = '{lang}/{slug}/index.html'
+
+PAGE_LANG_URL = '{lang}/{slug}/'
+PAGE_LANG_SAVE_AS = '{lang}/{slug}/index.html'
+
+AUTHOR_URL = 'author/'
+AUTHOR_SAVE_AS = 'author/index.html'
+
+CATEGORY_URL = '{slug}/'
+CATEGORY_SAVE_AS = '{slug}/index.html'
+
+I18N_GETTEXT_LOCALEDIR = 'theme/locale'
+I18N_GETTEXT_DOMAIN = 'messages'
+
+
+CATEGORY_TRANSLATIONS = {
+    'en': {
+        'peru': 'Peru',
+        'articles':'Articles',
+    },
+    'fr': {
+        'peru': 'Pérou',
+        'articles':'Articles',
+    },
+    'de': {
+        'peru': 'Peru',
+        'articles':'Artikel',
+    }
+}

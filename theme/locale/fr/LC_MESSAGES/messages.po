@@ -1,0 +1,144 @@
+# French translations for CNN - Cyprien Content Network.
+# Copyright (C) 2025 CNN - Cyprien Content Network
+# This file is distributed under the same license as the CNN - Cyprien
+# Content Network project.
+# Cyprien Chevallier cyprien.chevallier@proton.me, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  1.0.0\n"
+"Report-Msgid-Bugs-To: cyprien.chevallier@pm.me\n"
+"POT-Creation-Date: 2025-11-17 19:36-0500\n"
+"PO-Revision-Date: 2025-11-17 12:27-0500\n"
+"Last-Translator: Cyprien Chevallier cyprien.chevallier@pm.me\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: theme/smashing-magazine/templates/archives.html:4
+#: theme/smashing-magazine/templates/period_archives.html:4
+#, fuzzy
+msgid "Archives for"
+msgstr "Archives pour"
+
+#: theme/smashing-magazine/templates/article.html:25
+msgid "Permalink to"
+msgstr "Lien permanent vers"
+
+#: theme/smashing-magazine/templates/article.html:35
+msgid "Comments"
+msgstr "Commentaires"
+
+#: theme/smashing-magazine/templates/article.html:47
+msgid "Please enable JavaScript to view the comments."
+msgstr "Veuillez activer JavaScript pour afficher les commentaires."
+
+#: theme/smashing-magazine/templates/article_infos.html:3
+msgid "Published:"
+msgstr "Publié :"
+
+#: theme/smashing-magazine/templates/article_infos.html:8
+msgid "Updated:"
+msgstr "Mis à jour :"
+
+#: theme/smashing-magazine/templates/article_infos.html:14
+msgid "By"
+msgstr "Par"
+
+#: theme/smashing-magazine/templates/article_infos.html:24
+msgid "In"
+msgstr "Dans"
+
+#: theme/smashing-magazine/templates/article_infos.html:26
+msgid "words"
+msgstr "mots"
+
+#: theme/smashing-magazine/templates/article_infos.html:26
+msgid "Estimated reading time:"
+msgstr "Temps de lecture estimé:"
+
+#: theme/smashing-magazine/templates/article_infos.html:26
+msgid "minutes"
+msgstr "minutes"
+
+#: theme/smashing-magazine/templates/article_infos.html:26
+msgid "minute"
+msgstr "minute"
+
+#: theme/smashing-magazine/templates/authors.html:3
+msgid "Authors"
+msgstr "Auteurs"
+
+#: theme/smashing-magazine/templates/authors.html:8
+msgid "Authors on"
+msgstr "Auteurs sur"
+
+#: theme/smashing-magazine/templates/base.html:106
+msgid "atom feed"
+msgstr "flux Atom"
+
+#: theme/smashing-magazine/templates/base.html:109
+msgid "rss feed"
+msgstr "flux RSS"
+
+#: theme/smashing-magazine/templates/base.html:122
+msgid "Proudly powered by"
+msgstr "Fonctionne grâce à"
+
+#: theme/smashing-magazine/templates/base.html:122
+msgid "Theme by"
+msgstr "Thème conçu par"
+
+#: theme/smashing-magazine/templates/base.html:124
+msgid ""
+"This website, CNN – Cyprien News Network, is a personal blog and is not "
+"affiliated with, endorsed by, or connected to Cable News Network (CNN), "
+"Warner Bros. Discovery, or any of their subsidiaries.\n"
+"All opinions and content published here are solely those of the author."
+msgstr "Ce site, CNN – Cyprien News Network, est un blog personnel et n’est ni affilié, approuvé ni associé à Cable News Network (CNN), Warner Bros. Discovery, ou à l’une de leurs filiales. Toutes les opinions et contenus publiés ici sont uniquement ceux de l’auteur."
+
+#: theme/smashing-magazine/templates/categories.html:3
+msgid "Categories"
+msgstr "Catégories"
+
+#: theme/smashing-magazine/templates/categories.html:8
+msgid "Categories for"
+msgstr "Catégories pour"
+
+#: theme/smashing-magazine/templates/comments.html:1
+msgid "There are"
+msgstr "Il y a"
+
+#: theme/smashing-magazine/templates/comments.html:1
+msgid "comments"
+msgstr "commentaires"
+
+#: theme/smashing-magazine/templates/github.html:4
+#: theme/smashing-magazine/templates/github.html:6
+msgid "Fork me on GitHub"
+msgstr "Voir sur GitHub"
+
+#: theme/smashing-magazine/templates/index.html:17
+msgid "Other articles"
+msgstr "Autres articles"
+
+#: theme/smashing-magazine/templates/index.html:36
+msgid "read more"
+msgstr "lire la suite"
+
+#: theme/smashing-magazine/templates/index.html:54
+msgid "Pages"
+msgstr "Pages"
+
+#: theme/smashing-magazine/templates/index.html:61
+msgid "This site currently has no content."
+msgstr "Ce site n’a actuellement aucun contenu."
+
+#: theme/smashing-magazine/templates/translations.html:3
+msgid "Translations:"
+msgstr "Traductions:"
+

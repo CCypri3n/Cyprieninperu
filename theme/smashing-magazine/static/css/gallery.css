@@ -1,0 +1,89 @@
+/* This ensures the gallery container aligns with the site's max-width and is centered */
+#container {
+  max-width: 800px; /* match your site's max width */
+  margin: 0 auto;   /* center horizontally */
+  padding: 10px;    /* optional padding inside container */
+  box-sizing: border-box;
+}
+
+/* Layout for tiles container */
+#tilesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  /* no justify-items */
+}
+
+.tileItem {
+  position: relative;
+  width: 100%; /* fill grid cell */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1 / 1; /* can be overridden inline */
+}
+
+.tileItem.videoTile .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: url("/theme/icons/play-button2.svg") no-repeat center center;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.tileItem:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.2);
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  padding-top: 60px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Modal Content (the image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 0 15px black;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+.modal-close:hover {
+  color: #bbb;
+}
+

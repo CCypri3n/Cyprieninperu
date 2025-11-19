@@ -1,0 +1,30 @@
+<footer class="post-info">
+        <abbr class="published" title="{{ article.date.isoformat() }}">
+                {{ _('Published:') }} {{ article.locale_date }}
+        </abbr>
+        {% if article.modified %}
+                <br />
+                <abbr class="modified" title="{{ article.modified.isoformat() }}">
+                       {{ _('Updated:') }} {{ article.locale_modified }}
+                </abbr>
+        {% endif %}
+
+        {% if article.authors %}
+                <address class="vcard author">
+                        {{ _('By') }}
+
+                                {% set about = pages | selectattr("slug", "equalto", "about") | first %}
+
+                                {% for author in article.authors %}
+                                        <a class="url fn" href="{{ SITEURL }}/{{ about.url }}">{{ author }}</a>
+                                {% endfor %}
+                </address>
+        {% endif %}
+
+        <p>{{ _('In')}} <a href="{{ SITEURL }}/{{ article.category.url }}">{{ CATEGORY_TRANSLATIONS[DEFAULT_LANG][article.category] if CATEGORY_TRANSLATIONS[DEFAULT_LANG][article.category] else article.category }}</a>.</p>
+        {% if article.stats %}
+        <p title="~{{ article.stats['wc'] }} mots">{{ article.stats['wc'] }} {{ _('words') }} — {{ _('Estimated reading time:') }} {{ article.stats['read_mins'] }} {{ _('minutes') if (article.stats['read_mins']) > 1 else _('minute') }}</p>
+        {% endif %}
+        {% include 'taglist.html' %}
+        {% import 'translations.html' as translations with context %}
+</footer><!-- /.post-info -->

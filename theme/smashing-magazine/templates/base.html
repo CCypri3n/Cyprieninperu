@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+        <head>
+                {% block head %}
+                        <meta charset="utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta name="generator" content="Pelican" />
+                        <title>{% block title %}{{ SITENAME|striptags }}{%endblock%}</title>
+                        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+                        <link rel="icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/icons/machu-picchu-outline.svg" type="image/svg+xml"/>
+                        <link rel="shortcut icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/icons/machu-picchu-outline.ico" type="image/x-icon"/>
+                        {% if FEED_ALL_ATOM %}
+                                <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME|striptags }} Atom Feed" />
+                        {% endif %}
+                        {% if FEED_ALL_RSS %}
+                                <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME|striptags }} RSS Feed" />
+                        {% endif %}
+                        {% block extra_head %}{% endblock extra_head %}
+                {% endblock head %}
+        </head>
+
+        <body id="index" class="home">
+                {% include 'github.html' %}
+                <header id="banner" class="body">
+                        <h1><a href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h1>
+                        <nav><ul>
+                                {% for title, link in MENUITEMS %}
+                                        <li><a href=href="{{ SITEURL }}/{{ link }}">{{ title }}</a></li>
+                                {% endfor %}
+                                {% if DISPLAY_PAGES_ON_MENU -%}
+                                        {% for pg in pages %}
+                                                <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+                                        {% endfor %}
+                                {% endif %}
+                                {% if DISPLAY_CATEGORIES_ON_MENU -%}
+                                        {% for cat, null in categories %}
+                                                <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ CATEGORY_TRANSLATIONS[DEFAULT_LANG][cat] if CATEGORY_TRANSLATIONS[DEFAULT_LANG][cat] else cat }}</a></li>
+                                        {% endfor %}
+                                {% endif %}
+                                {% for lang, url in lang_siteurls.items() %}
+                                {% if lang != DEFAULT_LANG %}
+                                {% if page is defined%}
+                                        {% if page.translations %}
+                                                {% for translation in page.translations %}
+                                                {% if translation.lang == lang %}
+                                                <li class="lang-switch">
+                                                                <a href="{{ SITEURL }}/{{ translation.url }}" title="Switch to {{ translation.lang }}">{{ translation.lang|upper }}</a>
+                                                        </li>
+                                                {% endif %}
+                                                {% endfor %}
+                                        {% else %}
+                                        <li class="lang-switch">
+                                                <a href="{{ url ~ '/' }}" title="Switch to {{ lang }}">{{ lang|upper }}</a>
+                                        </li>
+                                        {% endif %}
+                                {% elif article is defined %}
+                                        {% if article.translations %}
+                                                {% for translation in article.translations %}
+                                                {% if translation.lang == lang %}
+                                                <li class="lang-switch">
+                                                        <a href="{{ SITEURL }}/{{ translation.url }}" title="Switch to {{ translation.lang }}">{{ translation.lang|upper }}</a>
+                                                </li>
+                                                
+                                                {% endif %}
+                                                {% endfor %}
+                                        {% else %}
+                                        <li class="lang-switch">
+                                                <a href="{{ url ~ '/' }}" title="Switch to {{ lang }}">{{ lang|upper }}</a>
+                                        </li>
+                                        {% endif %}
+                                {% elif category is defined %}
+                                        {% set slug = category.slug %}
+                                        <li class="lang-switch">
+                                                <a href="{{ url ~ '/' ~ slug }}" title="Switch to {{ lang }}">{{ lang|upper }}</a>
+                                        </li>
+                                {% else %}
+                                        <li class="lang-switch">
+                                                <a href="{{ url ~ '/' }}" title="Switch to {{ lang }}">{{ lang|upper }}</a>
+                                        </li>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+                        </ul></nav>
+                </header><!-- /#banner -->
+                {% block content %}
+                {% endblock %}
+
+
+                <!-- <p>DEBUG: URL={{ SITEURL }}, LANG={{ LANG }}, DEFAULT_LANG={{ DEFAULT_LANG }}, page.url={{ page.url if page is defined else 'NO_PAGE' }}, article.url={{ article.url if article is defined else 'NO_ART' }}, category={{ category.url if category is defined else 'NO_CAT' }}</p> -->
+                
+                
+                <section id="extras" class="body">
+                        {% if LINKS %}
+                                <div class="blogroll">
+                                        <h2>{{ _(LINKS_WIDGET_NAME | default('links')) }}</h2>
+                                        <ul>
+                                                {% for name, link in LINKS %}
+                                                        <li><a href="{{ link }}">{{ name }}</a></li>
+                                                {% endfor %}
+                                        </ul>
+                                </div><!-- /.blogroll -->
+                        {% endif %}
+                        {% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
+                                <div class="social">
+                                        <h2>{{ _(SOCIAL_WIDGET_NAME | default('social')) }}</h2>
+                                        <ul>
+                                                {% if FEED_ALL_ATOM %}
+                                                        <li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate">{{ _('atom feed') }}</a></li>
+                                                {% endif %}
+                                                {% if FEED_ALL_RSS %}
+                                                        <li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate">{{ _('rss feed') }}</a></li>
+                                                {% endif %}
+
+                                                {% for name, link in SOCIAL %}
+                                                        <li><a href="{{ link }}">{{ name }}</a></li>
+                                                {% endfor %}
+                                        </ul>
+                                </div><!-- /.social -->
+                        {% endif %}
+                </section><!-- /#extras -->
+
+                <footer id="contentinfo" class="body">
+                        <address id="about" class="vcard body">
+                                {{ _('Proudly powered by') }} <a rel="nofollow" href="https://getpelican.com/">Pelican</a> — {{ _('Theme by') }} <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+                        </address><!-- /#about -->
+                        <p class="disclaimer">{{ _('This website, CNN – Cyprien News Network, is a personal blog and is not affiliated with, endorsed by, or connected to Cable News Network (CNN), Warner Bros. Discovery, or any of their subsidiaries.
+All opinions and content published here are solely those of the author.') }}</p>
+                </footer><!-- /#contentinfo -->
+
+                {% include 'analytics.html' %}
+                {% include 'disqus_script.html' %}
+        </body>
+<script src='/theme/js/carousel.js' defer></script>
+</html>
