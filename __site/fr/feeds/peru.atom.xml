@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cyprien au Pérou - peru</title><link href="https://cyprieninperu.netlify.app/fr/" rel="alternate"/><link href="https://cyprieninperu.netlify.app/feeds/peru.atom.xml" rel="self"/><id>https://cyprieninperu.netlify.app/fr/</id><updated>2025-11-15T10:20:00-05:00</updated><entry><title>Je voyage!</title><link href="https://cyprieninperu.netlify.app/fr/going-abroad/" rel="alternate"/><published>2025-11-15T10:20:00-05:00</published><updated>2025-11-15T10:20:00-05:00</updated><author><name>Cyprien Chevallier</name></author><id>tag:cyprieninperu.netlify.app,2025-11-15:/fr/going-abroad/</id><content type="html">&lt;p&gt;Je voyage au&amp;nbsp;Pérou!&lt;/p&gt;
+&lt;main class="carousel-container"&gt;
+&lt;div class="carousel"&gt;
+&lt;div class="item active"&gt;
+&lt;div class="image-wrapper"&gt;&lt;img alt="Photo 1" src="https://ik.imagekit.io/721zjc9b0/images/photo1_i3MZ-q6i7.jpeg?updatedAt=1763564526761"&gt;&lt;p class="caption"&gt;Maccu&amp;nbsp;Piccu&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="item"&gt;
+&lt;div class="image-wrapper"&gt;&lt;img alt="Photo 2" src="https://ik.imagekit.io/721zjc9b0/images/photo2_haWeNFZjzm.jpeg?updatedAt=1763564528924"&gt;&lt;p class="caption"&gt;Plane&amp;nbsp;mountains&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="item"&gt;
+&lt;div class="image-wrapper"&gt;&lt;img alt="Photo 3" src="https://ik.imagekit.io/721zjc9b0/images/photo3_DuQ3-q6B-.jpeg?updatedAt=1763564531312"&gt;&lt;p class="caption"&gt;Maccu Piccu more bird&amp;nbsp;view&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;/div&gt;
+&lt;/main&gt;</content><category term="peru"/></entry></feed>

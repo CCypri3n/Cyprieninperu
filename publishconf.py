@@ -18,6 +18,23 @@ DELETE_OUTPUT_DIRECTORY = True
 
 OUTPUT_PATH = '__site/'
 
+I18N_SUBSITES = {
+    'fr': {
+        'SITENAME': 'Cyprien au Pérou',
+        'OUTPUT_PATH': '__site/fr/',
+        'LOCALE': 'fr_FR',
+        'LINKS_WIDGET_NAME': 'Liens',
+        'SOCIAL_WIDGET_NAME': 'Social',
+    },
+    'de': {
+        'SITENAME': 'Cyprien in Peru',
+        'OUTPUT_PATH': '__site/de/',
+        'LOCALE': 'de_DE',
+        'LINKS_WIDGET_NAME': 'Links',
+        'SOCIAL_WIDGET_NAME': 'Sozial',
+    }
+}
+
 # Following items are often useful when publishing
 
 # DISQUS_SITENAME = ""
