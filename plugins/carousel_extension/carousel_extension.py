@@ -95,15 +95,36 @@ class CarouselProcessor(BlockProcessor):
 
             # Add play icon overlay if video
             if is_video:
-                etree.SubElement(wrapper_div, 'div', {'class': 'play-icon'})
+                playBtn = etree.SubElement(wrapper_div, 'div', {'class': 'play-btn'})
+                playBtnSvg = etree.SubElement(playBtn, 'svg', {'viewBox':'0 0 24 24'})
+                etree.SubElement(playBtnSvg, 'polygon', {'points':"8,5 19,12 8,19", 'fill':"white"})
 
             # Add caption paragraph
             p_caption = etree.SubElement(wrapper_div, 'p', {'class': 'caption'})
             p_caption.text = caption_text
 
         # Buttons as siblings inside main
-        etree.SubElement(main_element, 'button', {'class': 'btn prev'}).text = '<'
-        etree.SubElement(main_element, 'button', {'class': 'btn next'}).text = '>'
+        buttonElement = etree.SubElement(main_element, 'button', {'class': 'carousel-btn prev-btn'})
+        svgElement = etree.SubElement(buttonElement, 'svg', {'viewBox':"0 0 24 24"})
+        etree.SubElement(svgElement, 'path', {
+            'd': "M15 18l-6-6 6-6",
+            'stroke': 'currentColor',
+            'stroke-width': '2',
+            'fill': 'none',
+            'stroke-linecap': 'round'
+        })
+
+        
+        buttonElement = etree.SubElement(main_element, 'button', {'class': 'carousel-btn next-btn'})
+        svgElement = etree.SubElement(buttonElement, 'svg', {'viewBox':"0 0 24 24"})
+        etree.SubElement(svgElement, 'path', {
+            'd': "M9 6l6 6-6 6",
+            'stroke': 'currentColor',
+            'stroke-width': '2',
+            'fill': 'none',
+            'stroke-linecap': 'round'
+        })
+
 
         # Modal div once inside main
         modal_div = etree.SubElement(main_element, 'div', {'id': 'modal', 'class': 'modal'})

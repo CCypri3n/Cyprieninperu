@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   containers.forEach((container) => {
     const carousel = container.querySelector(".carousel");
     const items = carousel.querySelectorAll(".item");
-    const prevBtn = container.querySelector(".btn.prev");
-    const nextBtn = container.querySelector(".btn.next");
+    const prevBtn = container.querySelector(".carousel-btn.prev-btn");
+    const nextBtn = container.querySelector(".carousel-btn.next-btn");
+
 
     function showItem(index) {
       items.forEach((item, idx) => {
