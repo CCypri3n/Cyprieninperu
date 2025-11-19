@@ -1,15 +1,15 @@
-# French translations for CNN - Cyprien Content Network.
-# Copyright (C) 2025 CNN - Cyprien Content Network
-# This file is distributed under the same license as the CNN - Cyprien
-# Content Network project.
+# French translations for Cyprien in peru.
+# Copyright (C) 2025 Cyprien in peru
+# This file is distributed under the same license as the Cyprien in
+# peru project.
 # Cyprien Chevallier cyprien.chevallier@proton.me, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version:  1.0.0\n"
+"Project-Id-Version:  2.0.0\n"
 "Report-Msgid-Bugs-To: cyprien.chevallier@pm.me\n"
-"POT-Creation-Date: 2025-11-17 19:36-0500\n"
-"PO-Revision-Date: 2025-11-17 12:27-0500\n"
+"POT-Creation-Date: 2025-11-19 12:23-0500\n"
+"PO-Revision-Date: 2025-11-19 12:27-0500\n"
 "Last-Translator: Cyprien Chevallier cyprien.chevallier@pm.me\n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -77,29 +77,21 @@ msgstr "Auteurs"
 msgid "Authors on"
 msgstr "Auteurs sur"
 
-#: theme/smashing-magazine/templates/base.html:106
+#: theme/smashing-magazine/templates/base.html:108
 msgid "atom feed"
 msgstr "flux Atom"
 
-#: theme/smashing-magazine/templates/base.html:109
+#: theme/smashing-magazine/templates/base.html:111
 msgid "rss feed"
 msgstr "flux RSS"
 
-#: theme/smashing-magazine/templates/base.html:122
+#: theme/smashing-magazine/templates/base.html:124
 msgid "Proudly powered by"
 msgstr "Fonctionne grâce à"
 
-#: theme/smashing-magazine/templates/base.html:122
+#: theme/smashing-magazine/templates/base.html:124
 msgid "Theme by"
 msgstr "Thème conçu par"
-
-#: theme/smashing-magazine/templates/base.html:124
-msgid ""
-"This website, CNN – Cyprien News Network, is a personal blog and is not "
-"affiliated with, endorsed by, or connected to Cable News Network (CNN), "
-"Warner Bros. Discovery, or any of their subsidiaries.\n"
-"All opinions and content published here are solely those of the author."
-msgstr "Ce site, CNN – Cyprien News Network, est un blog personnel et n’est ni affilié, approuvé ni associé à Cable News Network (CNN), Warner Bros. Discovery, ou à l’une de leurs filiales. Toutes les opinions et contenus publiés ici sont uniquement ceux de l’auteur."
 
 #: theme/smashing-magazine/templates/categories.html:3
 msgid "Categories"

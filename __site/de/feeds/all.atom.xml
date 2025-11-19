@@ -15,7 +15,8 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;/div&gt;
+&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;div class="modal-content" id="modalVideo"&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/main&gt;</content><category term="Peru"/></entry><entry><title>I will travel!</title><link href="https://cyprieninperu.netlify.app/going-abroad/" rel="alternate"/><published>2025-11-15T10:20:00-05:00</published><updated>2025-11-15T10:20:00-05:00</updated><author><name>Cyprien Chevallier</name></author><id>tag:cyprieninperu.netlify.app,2025-11-15:/going-abroad/</id><content type="html">&lt;p&gt;Following is a post about my gap-year in peru. And a carousel,
 since they look really&amp;nbsp;nice.&lt;/p&gt;
 &lt;main class="carousel-container"&gt;
@@ -34,7 +35,8 @@ since they look really&amp;nbsp;nice.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;/div&gt;
+&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;div class="modal-content" id="modalVideo"&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/main&gt;
 &lt;p&gt;Hey look, it&amp;#8217;s the end of the carousel. Nice, huh? No?
 Let&amp;#8217;s add another one&amp;nbsp;then:&lt;/p&gt;
@@ -50,7 +52,8 @@ Let&amp;#8217;s add another one&amp;nbsp;then:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;/div&gt;
+&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;div class="modal-content" id="modalVideo"&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/main&gt;</content><category term="peru"/></entry><entry><title>Je voyage!</title><link href="https://cyprieninperu.netlify.app/fr/going-abroad/" rel="alternate"/><published>2025-11-15T10:20:00-05:00</published><updated>2025-11-15T10:20:00-05:00</updated><author><name>Cyprien Chevallier</name></author><id>tag:cyprieninperu.netlify.app,2025-11-15:/fr/going-abroad/</id><content type="html">&lt;p&gt;Je voyage au&amp;nbsp;Pérou!&lt;/p&gt;
 &lt;main class="carousel-container"&gt;
 &lt;div class="carousel"&gt;
@@ -67,5 +70,6 @@ Let&amp;#8217;s add another one&amp;nbsp;then:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;/div&gt;
+&lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;div class="modal-content" id="modalVideo"&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/main&gt;</content><category term="peru"/></entry></feed>

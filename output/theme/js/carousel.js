@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modalImage");
+  const modalVideo = document.getElementById("modalVideo");
   const modalClose = document.getElementById("modalClose");
 
   document.body.addEventListener('click', (event) => {
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const videoItem = event.target.closest('.carousel .item.video .image-wrapper');
 
     if (imageItem) {
+      modalVideo.style.display = 'none';
       modalImg.src = imageItem.src;
       modal.style.display = 'block';
 
@@ -42,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const existingVideo = modal.querySelector('video');
       if(existingVideo) existingVideo.remove();
       modalImg.style.display = 'block';
+      document.body.style.overflow = 'hidden';
     }
 
     if (videoItem) {
@@ -49,41 +52,63 @@ document.addEventListener("DOMContentLoaded", function () {
       const videoUrl = videoItem.getAttribute('data-video-url');
       if (!videoUrl) return;
 
-      // Create video element for modal playback
-      let video = document.createElement('video');
+      // remove existing video if any
+      const existingVideo = modalVideo.querySelector('video');
+      if (existingVideo) {
+        try { existingVideo.pause(); } catch (e) {}
+        existingVideo.remove();
+      }
+
+      // create a real <video> element and append it to the modalVideo container
+      const video = document.createElement('video');
       video.src = videoUrl;
       video.controls = true;
       video.autoplay = true;
-      video.style.maxWidth = '90vw';
-      video.style.maxHeight = '90vh';
-      video.style.borderRadius = '12px';
-      modal.appendChild(video);
+      video.playsInline = true;          // mobile hint
+      video.style.maxWidth = '100%';
+      video.style.maxHeight = '100%';
+
+      modalVideo.appendChild(video);
+      modalVideo.style.display = "block";
       modal.style.display = 'block';
+
+      document.body.style.overflow = 'hidden';
+
+      // Try to play (autoplay may be blocked without user gesture)
+      video.play().catch(()=>{/* ignore autoplay block; user can press play */});
     }
+
   });
 
-  modalClose.addEventListener('click', () => {
+  function killModal() {
     modal.style.display = 'none';
     modalImg.src = '';
-    const video = modal.querySelector('video');
-    if(video) video.remove();
+
+    // remove any appended <video> element and stop playback
+    const existingVideo = modalVideo.querySelector('video');
+    if (existingVideo) {
+      try { existingVideo.pause(); } catch (e) {}
+      existingVideo.remove();
+    }
+    modalVideo.style.display = 'none';
+    
+    document.body.style.overflow = '';
+
+  };
+
+  modalClose.addEventListener('click', () => {
+    killModal()
   });
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
-      modal.style.display = 'none';
-      modalImg.src = '';
-      const video = modal.querySelector('video');
-      if(video) video.remove();
+      killModal()
     }
   });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.style.display === "block") {
-      modal.style.display = "none";
-      modalImg.src = "";
-      const video = modal.querySelector('video');
-      if(video) video.remove();
+      killModal()
     }
   });
 });

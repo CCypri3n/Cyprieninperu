@@ -114,6 +114,7 @@ class CarouselProcessor(BlockProcessor):
 
         # Modal image inside modal div
         etree.SubElement(modal_div, 'img', {'id': 'modalImage', 'class': 'modal-content', 'src': '', 'alt': 'Full size image'})
+        etree.SubElement(modal_div, 'div', {'id': 'modalVideo', 'class': 'modal-content'})
 
 class CarouselExtension(Extension):
     def extendMarkdown(self, md):

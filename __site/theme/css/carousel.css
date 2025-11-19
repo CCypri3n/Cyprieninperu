@@ -8,10 +8,6 @@
   flex-direction: column;
   gap: var(--lx-gap);
   font-weight: 500;
-  color: #ffffe6;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgb(0 0 0 / 0.12);
   padding: 15px;
   box-sizing: border-box;
 }
@@ -23,8 +19,6 @@
   padding-top: 0;
   height: 45dvh;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-  background-color: #fff;
 }
 
 .carousel-container .carousel .item {
@@ -70,12 +64,12 @@
   max-height: 100%;
   width: auto;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
   background-color: #fff;
   flex-shrink: 0;
   border-radius: 12px 12px 0 0;
-  box-shadow: inset 0 0 10px rgb(0 0 0 / 0.05);
   cursor: pointer; /* Indicate clickable image */
+  display: block;
 }
 
 .carousel-container .carousel .item .caption {
@@ -159,6 +153,29 @@
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
+
+/* Make video inside the modal look exactly like the image */
+#modalVideo {
+  display: none;             /* initially hidden */
+  margin: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  overflow: hidden;          /* prevents gray line / overflow */
+  background-color: #000;    /* avoids bottom-line flash on load */
+}
+
+/* Style the actual <video> you append */
+#modalVideo video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        /* same behavior as your images */
+  display: block;             /* removes mysterious bottom gray line */
+  border-radius: 12px;
+  background-color: #000;     /* ensures no white gap on some browsers */
+}
+
 
 .modal-close {
   position: absolute;
