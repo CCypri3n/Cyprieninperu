@@ -48,28 +48,48 @@
   box-shadow: 0 6px 15px rgb(0 0 0 / 0.2);
 }
 
-/* The Modal (background) */
+/* ============================
+   MODAL — MATCHES CAROUSEL
+   ============================ */
+
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 9999; 
-  padding-top: 60px; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%;
-  overflow: auto; 
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  padding-top: 60px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Modal Content (the image) */
 .modal-content {
   margin: auto;
   display: block;
   max-width: 90vw;
   max-height: 90vh;
-  border-radius: 8px;
-  box-shadow: 0 0 15px black;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+/* For video container */
+#modalVideo {
+  display: none;
+  margin: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+#modalVideo video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+  background: #000;
 }
 
 /* Close Button */
@@ -83,7 +103,9 @@
   cursor: pointer;
   user-select: none;
 }
+
 .modal-close:hover {
   color: #bbb;
 }
+
 
