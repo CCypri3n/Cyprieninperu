@@ -1,4 +1,4 @@
-PY?=
+PY?=python3
 PELICAN?=pelican
 PELICANOPTS=
 
@@ -46,6 +46,8 @@ help:
 
 html:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	# Post-build: append utm_source=atomfeed to entry links in Atom feeds
+	"$(PY)" scripts/add_utm_to_feeds.py --dir "$(OUTPUTDIR)"
 
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"

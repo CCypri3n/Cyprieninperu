@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cyprien in Peru</title><link href="https://cyprieninperu.netlify.app/de/" rel="alternate"/><link href="https://cyprieninperu.netlify.app/feeds/all.atom.xml" rel="self"/><id>https://cyprieninperu.netlify.app/de/</id><updated>2025-11-15T10:20:00-05:00</updated><entry><title>Ich verreise!</title><link href="https://cyprieninperu.netlify.app/de/going-abroad/" rel="alternate"/><published>2025-11-15T10:20:00-05:00</published><updated>2025-11-15T10:20:00-05:00</updated><author><name>Cyprien Chevallier</name></author><id>tag:cyprieninperu.netlify.app,2025-11-15:/de/going-abroad/</id><content type="html">&lt;p&gt;Ich verreise nach&amp;nbsp;peru!&lt;/p&gt;
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:feed xmlns:ns0="http://www.w3.org/2005/Atom"><ns0:title>Cyprien in Peru</ns0:title><ns0:link href="https://cyprieninperu.netlify.app/de/" rel="alternate" /><ns0:link href="https://cyprieninperu.netlify.app/feeds/all.atom.xml" rel="self" /><ns0:id>https://cyprieninperu.netlify.app/de/</ns0:id><ns0:updated>2025-11-15T10:20:00-05:00</ns0:updated><ns0:entry><ns0:title>Ich verreise!</ns0:title><ns0:link href="https://cyprieninperu.netlify.app/de/going-abroad/?utm_source=atomfeed" rel="alternate" /><ns0:published>2025-11-15T10:20:00-05:00</ns0:published><ns0:updated>2025-11-15T10:20:00-05:00</ns0:updated><ns0:author><ns0:name>Cyprien Chevallier</ns0:name></ns0:author><ns0:id>tag:cyprieninperu.netlify.app,2025-11-15:/de/going-abroad/</ns0:id><ns0:content type="html">&lt;p&gt;Ich verreise nach&amp;nbsp;peru!&lt;/p&gt;
 &lt;main class="carousel-container"&gt;
 &lt;div class="carousel"&gt;
 &lt;div class="item active"&gt;
@@ -16,7 +16,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;/div&gt;
-&lt;/main&gt;</content><category term="Peru"/></entry><entry><title>I will travel!</title><link href="https://cyprieninperu.netlify.app/going-abroad/" rel="alternate"/><published>2025-11-15T10:20:00-05:00</published><updated>2025-11-15T10:20:00-05:00</updated><author><name>Cyprien Chevallier</name></author><id>tag:cyprieninperu.netlify.app,2025-11-15:/going-abroad/</id><content type="html">&lt;p&gt;Following is a post about my gap-year in peru. And a carousel,
+&lt;/main&gt;</ns0:content><ns0:category term="Peru" /></ns0:entry><ns0:entry><ns0:title>I will travel!</ns0:title><ns0:link href="https://cyprieninperu.netlify.app/going-abroad/?utm_source=atomfeed" rel="alternate" /><ns0:published>2025-11-15T10:20:00-05:00</ns0:published><ns0:updated>2025-11-15T10:20:00-05:00</ns0:updated><ns0:author><ns0:name>Cyprien Chevallier</ns0:name></ns0:author><ns0:id>tag:cyprieninperu.netlify.app,2025-11-15:/going-abroad/</ns0:id><ns0:content type="html">&lt;p&gt;Following is a post about my gap-year in peru. And a carousel,
 since they look really&amp;nbsp;nice.&lt;/p&gt;
 &lt;main class="carousel-container"&gt;
 &lt;div class="carousel"&gt;
@@ -51,7 +51,7 @@ Let&amp;#8217;s add another one&amp;nbsp;then:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;/div&gt;
-&lt;/main&gt;</content><category term="peru"/></entry><entry><title>Je voyage!</title><link href="https://cyprieninperu.netlify.app/fr/going-abroad/" rel="alternate"/><published>2025-11-15T10:20:00-05:00</published><updated>2025-11-15T10:20:00-05:00</updated><author><name>Cyprien Chevallier</name></author><id>tag:cyprieninperu.netlify.app,2025-11-15:/fr/going-abroad/</id><content type="html">&lt;p&gt;Je voyage au&amp;nbsp;Pérou!&lt;/p&gt;
+&lt;/main&gt;</ns0:content><ns0:category term="peru" /></ns0:entry><ns0:entry><ns0:title>Je voyage!</ns0:title><ns0:link href="https://cyprieninperu.netlify.app/fr/going-abroad/?utm_source=atomfeed" rel="alternate" /><ns0:published>2025-11-15T10:20:00-05:00</ns0:published><ns0:updated>2025-11-15T10:20:00-05:00</ns0:updated><ns0:author><ns0:name>Cyprien Chevallier</ns0:name></ns0:author><ns0:id>tag:cyprieninperu.netlify.app,2025-11-15:/fr/going-abroad/</ns0:id><ns0:content type="html">&lt;p&gt;Je voyage au&amp;nbsp;Pérou!&lt;/p&gt;
 &lt;main class="carousel-container"&gt;
 &lt;div class="carousel"&gt;
 &lt;div class="item active"&gt;
@@ -68,4 +68,4 @@ Let&amp;#8217;s add another one&amp;nbsp;then:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;button class="btn prev"&gt;&amp;lt;&lt;/button&gt;&lt;button class="btn next"&gt;&amp;gt;&lt;/button&gt;&lt;div class="modal" id="modal"&gt;&lt;span class="modal-close" id="modalClose"&gt;×&lt;/span&gt;&lt;img alt="Full size image" class="modal-content" id="modalImage" src=""&gt;&lt;/div&gt;
-&lt;/main&gt;</content><category term="peru"/></entry></feed>
+&lt;/main&gt;</ns0:content><ns0:category term="peru" /></ns0:entry></ns0:feed>
