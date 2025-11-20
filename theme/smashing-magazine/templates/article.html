@@ -11,6 +11,13 @@
   
   <meta property="og:image" content="{{ article.metadata.image or OG['image'] }}" />
 
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="{{ SITEURL }}" />
+  <meta property="twitter:url" content="{{ SITEURL }}/{{ article.url }}" />
+  <meta name="twitter:title" content="{{ SITENAME|striptags }} — {{ article.title | striptags }}" />
+  <meta name="twitter:description" content="{{ desc | truncate(150) | e }}" />
+  <meta name="twitter:image" content="{{ article.metadata.image or OG['image'] }}" />
+
   <meta property="article:author" content="{{ article.author_url or article.author or OG['author'] | striptags | safe }}" />
   
   {% if article.date %}

@@ -8,5 +8,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ SITEURL }}/{{ category.url }}" />
   <meta property="og:image" content="{{ OG['image'] }}" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="{{ SITEURL }}" />
+  <meta property="twitter:url" content="{{ SITEURL }}/{{ category.url }}" />
+  <meta name="twitter:title" content="{{ SITENAME|striptags }} — {{ category.title | striptags }} ({{ _('Category') }})" />
+  <meta name="twitter:description" content="{{ desc | truncate(150) | e }}" />
+  <meta name="twitter:image" content="{{ OG['image'] }}" />
 {% endblock %}
 {% block title %}{{ SITENAME|striptags }} - {{ category }}{% endblock %}

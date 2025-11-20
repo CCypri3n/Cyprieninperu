@@ -9,6 +9,13 @@
   <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
   
   <meta property="og:image" content="{{ page.metadata.image or OG['image'] }}" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="{{ SITEURL }}" />
+  <meta property="twitter:url" content="{{ SITEURL }}/{{ page.url }}" />
+  <meta name="twitter:title" content="{{ SITENAME|striptags }} — {{ page.title | striptags }}" />
+  <meta name="twitter:description" content="{{ desc | truncate(150) | e }}" />
+  <meta name="twitter:image" content="{{ page.metadata.image or OG['image'] }}" />
 {% endblock %}
 {% block content %}
     <div style="text-align: center;">
