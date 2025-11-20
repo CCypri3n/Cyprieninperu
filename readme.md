@@ -1,12 +1,76 @@
-# Cyprien in Peru - Personal Blog
+# Cyprien in Peru — Personal Blog
 
-This Github is hosting the files for my personal "Cyprien in Peru" Blog over at [cyprieninperu](https://cyprieninperu.netlify.app/).
+This repository contains the source files for the multilingual static site ["Cyprien in Peru"](https://cyprieninperu.netlify.app/), a personal blog documenting a year-long adventure in Peru. The site is generated using the [Pelican](https://getpelican.com/) static site generator.
 
-It was build with the help of [Pelican](https://getpelican.com), a great SSG built with python. I am using the standard theme, though i have adapted it to my needs, with support for the i18 translation plugin as well as the customization of different pages. I have also added support of the OpenGraph protocol.
+## Highlights
 
-I have included a few plugins, to be able to easily incorporate carousels directly inside my markdown files.
+- Full i18n support with English, French, and German translations
+- SEO and social meta support: OpenGraph, Twitter Cards, JSON-LD
+- Responsive design optimized for mobile devices
+- Privacy-friendly analytics with GoatCounter with support for "Urchin Tracking Module" (?utm_source=mail&utm_campaign=going_abroad)
+- Carousel and lazy-loading images to improve user experience and performance
+
+## Build & preview locally
+
+1. Create and activate a Python virtual environment:
+
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+2. Install Pelican and Markdown:
+
+    ```bash
+    pip install pelican markdown pybabel
+    ````
+
+3. Build the site and write output to `output/`:
+
+    ```bash
+    pelican content -o output -s pelicanconf.py
+    ```
+
+4. Serve and preview locally (from project root):
+
+    ```bash
+    # serve the generated site on http://localhost:8000
+    python3 -m http.server --directory output 8000
+    ```
+
+    or use Pelican:
+
+    ```bash
+    pelican -l
+    #-r for rebuild on detected changes
+    pelican -r -l
+    ```
+
+## Compile for publication
+
+1. Optional: Use Pybabel to update translations, if applicable
+
+    ```bash
+    pybabel extract -F babel.cfg -o messages.pot .
+    pybabel update -i messages.pot -d theme/locale
+    pybabel compile -d theme/locale
+    ```
+
+2. Generate the static site with Pelican to __site/ using publishconf.py.
+
+   ```bash
+   pelican content -o __site/ -s publishconf.py
+   ```
+
+3. Push the changes to the Github repo.
+
+    ```bash
+    git add .
+    git commit -m "Commit Message"
+    git push origin main
+    ```
 
 ## TO-DO
 
 - [ ] translate atom feed name and change position.
-- [ ] Add support for google rich
+- [ ] Improve Article metadata position (Mobile & Computer) -> CSS
