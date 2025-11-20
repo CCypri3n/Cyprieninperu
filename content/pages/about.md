@@ -2,8 +2,9 @@ Title: Who am I?
 Date: 2025-11-17
 Slug: about
 Lang: en
+Summary: My name is Cyprien and I am traveling to Peru for 12 months starting in August 2025 as part of a voluntary social year.
 
-## Hey there, thank you for being here!
+## Hey there, thank you for being here
 
 ![Cyprien](https://ik.imagekit.io/721zjc9b0/images/CyprienChevallier.PNG){.photo .author-photo}
 

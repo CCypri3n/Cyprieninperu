@@ -2,8 +2,9 @@ Title: Wer bin ich?
 Date: 2025-11-17
 Slug: about
 Lang: de
+Summary: Mein Name ist Cyprien und Ich reise im Rahmen eines Freiwilligen Sozialen Jahres ab August 2025 für 12 Monate nach Peru.
 
-## Hallo, schön, dass du da bist!
+## Hallo, schön, dass du da bist
 
 ![Cyprien](https://ik.imagekit.io/721zjc9b0/images/CyprienChevallier.PNG){.photo .author-photo}
 
