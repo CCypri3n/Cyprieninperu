@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-default-lang="en">
         <head>
                         <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,10 +21,10 @@
                                                 <li><a href="https://cyprieninperu.netlify.app/gallery/">Gallery</a></li>
                                                 <li><a href="https://cyprieninperu.netlify.app/peru/">Peru</a></li>
                                         <li class="lang-switch">
-                                                <a href="https://cyprieninperu.netlify.app/fr/" title="Switch to fr">FR</a>
+                                                <a class="lang-link" data-lang="fr" href="https://cyprieninperu.netlify.app/fr/" title="Switch to fr" onclick="try{localStorage.setItem('preferredLang','fr')}catch(e){}">FR</a>
                                         </li>
                                         <li class="lang-switch">
-                                                <a href="https://cyprieninperu.netlify.app/de/" title="Switch to de">DE</a>
+                                                <a class="lang-link" data-lang="de" href="https://cyprieninperu.netlify.app/de/" title="Switch to de" onclick="try{localStorage.setItem('preferredLang','de')}catch(e){}">DE</a>
                                         </li>
                         </ul></nav>
                 </header><!-- /#banner -->
@@ -69,7 +69,8 @@
                 </footer><!-- /#contentinfo -->
 
         </body>
-<script src='/theme/js/carousel.js' defer></script>
+                <script src="https://cyprieninperu.netlify.app/theme/js/lang-redirect.js" defer></script>
+                <script src='/theme/js/carousel.js' defer></script>
 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </html>

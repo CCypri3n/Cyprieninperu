@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-default-lang="fr">
         <head>
                           <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,6 +30,11 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/fr/about/" />
 <meta property="og:image" content="https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png" />
+
+            <link rel="alternate" hreflang="en" href="/fr/../about/" />
+        <link rel="alternate" hreflang="fr" href="/fr/about/" />
+            <link rel="alternate" hreflang="de" href="/fr/../de/about/" />
+  <link rel="alternate" hreflang="x-default" href="/fr/" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="/fr" />
@@ -82,11 +87,11 @@
                                                 <li><a href="/fr/gallery/">Gallérie</a></li>
                                                 <li><a href="/fr/peru/">Pérou</a></li>
                                                 <li class="lang-switch">
-                                                                <a href="/fr/../about/" title="Switch to en">EN</a>
-                                                        </li>
+                                                        <a class="lang-link" data-lang="en" href="/fr/../about/" title="Switch to en" onclick="try{localStorage.setItem('preferredLang','en')}catch(e){}">EN</a>
+                                                </li>
                                                 <li class="lang-switch">
-                                                                <a href="/fr/../de/about/" title="Switch to de">DE</a>
-                                                        </li>
+                                                        <a class="lang-link" data-lang="de" href="/fr/../de/about/" title="Switch to de" onclick="try{localStorage.setItem('preferredLang','de')}catch(e){}">DE</a>
+                                                </li>
                         </ul></nav>
                 </header><!-- /#banner -->
   <section id="content" class="body">
@@ -126,7 +131,8 @@ Si tu veux soutenir ce projet, tu peux faire un don et le&nbsp;partager.</p>
                 </footer><!-- /#contentinfo -->
 
         </body>
-<script src='/theme/js/carousel.js' defer></script>
+                <script src="/fr/../theme/js/lang-redirect.js" defer></script>
+                <script src='/theme/js/carousel.js' defer></script>
 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </html>

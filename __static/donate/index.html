@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-default-lang="en">
         <head>
                         <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,6 +28,11 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://cyprieninperu.netlify.app/donate/" />
 <meta property="og:image" content="https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png" />
+
+        <link rel="alternate" hreflang="en" href="https://cyprieninperu.netlify.app/donate/" />
+            <link rel="alternate" hreflang="fr" href="https://cyprieninperu.netlify.app/fr/donate/" />
+            <link rel="alternate" hreflang="de" href="https://cyprieninperu.netlify.app/de/donate/" />
+  <link rel="alternate" hreflang="x-default" href="https://cyprieninperu.netlify.app/" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="cyprieninperu.netlify.app" />
@@ -80,11 +85,11 @@
                                                 <li><a href="https://cyprieninperu.netlify.app/gallery/">Gallery</a></li>
                                                 <li><a href="https://cyprieninperu.netlify.app/peru/">Peru</a></li>
                                                 <li class="lang-switch">
-                                                                <a href="https://cyprieninperu.netlify.app/fr/donate/" title="Switch to fr">FR</a>
-                                                        </li>
+                                                        <a class="lang-link" data-lang="fr" href="https://cyprieninperu.netlify.app/fr/donate/" title="Switch to fr" onclick="try{localStorage.setItem('preferredLang','fr')}catch(e){}">FR</a>
+                                                </li>
                                                 <li class="lang-switch">
-                                                                <a href="https://cyprieninperu.netlify.app/de/donate/" title="Switch to de">DE</a>
-                                                        </li>
+                                                        <a class="lang-link" data-lang="de" href="https://cyprieninperu.netlify.app/de/donate/" title="Switch to de" onclick="try{localStorage.setItem('preferredLang','de')}catch(e){}">DE</a>
+                                                </li>
                         </ul></nav>
                 </header><!-- /#banner -->
     <div style="text-align: center;">
@@ -138,7 +143,8 @@
                 </footer><!-- /#contentinfo -->
 
         </body>
-<script src='/theme/js/carousel.js' defer></script>
+                <script src="https://cyprieninperu.netlify.app/theme/js/lang-redirect.js" defer></script>
+                <script src='/theme/js/carousel.js' defer></script>
 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </html>

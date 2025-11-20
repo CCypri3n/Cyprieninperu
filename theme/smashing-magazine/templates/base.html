@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}" data-default-lang="{{ DEFAULT_LANG }}">
         <head>
                 {% block head %}
                         <meta charset="utf-8" />
@@ -45,13 +45,13 @@
                                                 {% for translation in page.translations %}
                                                 {% if translation.lang == lang %}
                                                 <li class="lang-switch">
-                                                                <a href="{{ SITEURL }}/{{ translation.url }}" title="Switch to {{ translation.lang }}">{{ translation.lang|upper }}</a>
-                                                        </li>
+                                                        <a class="lang-link" data-lang="{{ translation.lang }}" href="{{ SITEURL }}/{{ translation.url }}" title="Switch to {{ translation.lang }}" onclick="try{localStorage.setItem('preferredLang','{{ translation.lang }}')}catch(e){}">{{ translation.lang|upper }}</a>
+                                                </li>
                                                 {% endif %}
                                                 {% endfor %}
                                         {% else %}
                                         <li class="lang-switch">
-                                                <a href="{{ url ~ '/' }}" title="Switch to {{ lang }}">{{ lang|upper }}</a>
+                                                <a class="lang-link" data-lang="{{ lang }}" href="{{ url ~ '/' }}" title="Switch to {{ lang }}" onclick="try{localStorage.setItem('preferredLang','{{ lang }}')}catch(e){}">{{ lang|upper }}</a>
                                         </li>
                                         {% endif %}
                                 {% elif article is defined %}
@@ -59,24 +59,24 @@
                                                 {% for translation in article.translations %}
                                                 {% if translation.lang == lang %}
                                                 <li class="lang-switch">
-                                                        <a href="{{ SITEURL }}/{{ translation.url }}" title="Switch to {{ translation.lang }}">{{ translation.lang|upper }}</a>
+                                                        <a class="lang-link" data-lang="{{ translation.lang }}" href="{{ SITEURL }}/{{ translation.url }}" title="Switch to {{ translation.lang }}" onclick="try{localStorage.setItem('preferredLang','{{ translation.lang }}')}catch(e){}">{{ translation.lang|upper }}</a>
                                                 </li>
                                                 
                                                 {% endif %}
                                                 {% endfor %}
                                         {% else %}
                                         <li class="lang-switch">
-                                                <a href="{{ url ~ '/' }}" title="Switch to {{ lang }}">{{ lang|upper }}</a>
+                                                <a class="lang-link" data-lang="{{ lang }}" href="{{ url ~ '/' }}" title="Switch to {{ lang }}" onclick="try{localStorage.setItem('preferredLang','{{ lang }}')}catch(e){}">{{ lang|upper }}</a>
                                         </li>
                                         {% endif %}
                                 {% elif category is defined %}
                                         {% set slug = category.slug %}
                                         <li class="lang-switch">
-                                                <a href="{{ url ~ '/' ~ slug }}" title="Switch to {{ lang }}">{{ lang|upper }}</a>
+                                                <a class="lang-link" data-lang="{{ lang }}" href="{{ url ~ '/' ~ slug }}" title="Switch to {{ lang }}" onclick="try{localStorage.setItem('preferredLang','{{ lang }}')}catch(e){}">{{ lang|upper }}</a>
                                         </li>
                                 {% else %}
                                         <li class="lang-switch">
-                                                <a href="{{ url ~ '/' }}" title="Switch to {{ lang }}">{{ lang|upper }}</a>
+                                                <a class="lang-link" data-lang="{{ lang }}" href="{{ url ~ '/' }}" title="Switch to {{ lang }}" onclick="try{localStorage.setItem('preferredLang','{{ lang }}')}catch(e){}">{{ lang|upper }}</a>
                                         </li>
                                 {% endif %}
                                 {% endif %}
@@ -128,7 +128,8 @@
                 {% include 'analytics.html' %}
                 {% include 'disqus_script.html' %}
         </body>
-<script src='/theme/js/carousel.js' defer></script>
+                <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/lang-redirect.js" defer></script>
+                <script src='/theme/js/carousel.js' defer></script>
 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </html>

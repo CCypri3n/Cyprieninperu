@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-default-lang="de">
         <head>
                         <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,6 +31,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cyprieninperu.netlify.app/de/the-adventure-begins/" />
 <meta property="og:image" content="https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png" />
+
+            <link rel="alternate" hreflang="en" href="https://cyprieninperu.netlify.app/de/../the-adventure-begins/" />
+            <link rel="alternate" hreflang="fr" href="https://cyprieninperu.netlify.app/de/../fr/the-adventure-begins/" />
+        <link rel="alternate" hreflang="de" href="https://cyprieninperu.netlify.app/de/the-adventure-begins/" />
+  <link rel="alternate" hreflang="x-default" href="https://cyprieninperu.netlify.app/de/" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="cyprieninperu.netlify.app/de" />
@@ -82,11 +87,11 @@
                                                 <li><a href="https://cyprieninperu.netlify.app/de/gallery/">Gallerie</a></li>
                                                 <li class="active"><a href="https://cyprieninperu.netlify.app/de/peru/">Peru</a></li>
                                                 <li class="lang-switch">
-                                                        <a href="https://cyprieninperu.netlify.app/de/../the-adventure-begins/" title="Switch to en">EN</a>
+                                                        <a class="lang-link" data-lang="en" href="https://cyprieninperu.netlify.app/de/../the-adventure-begins/" title="Switch to en" onclick="try{localStorage.setItem('preferredLang','en')}catch(e){}">EN</a>
                                                 </li>
                                                 
                                                 <li class="lang-switch">
-                                                        <a href="https://cyprieninperu.netlify.app/de/../fr/the-adventure-begins/" title="Switch to fr">FR</a>
+                                                        <a class="lang-link" data-lang="fr" href="https://cyprieninperu.netlify.app/de/../fr/the-adventure-begins/" title="Switch to fr" onclick="try{localStorage.setItem('preferredLang','fr')}catch(e){}">FR</a>
                                                 </li>
                                                 
                         </ul></nav>
@@ -155,7 +160,8 @@
                 </footer><!-- /#contentinfo -->
 
         </body>
-<script src='/theme/js/carousel.js' defer></script>
+                <script src="https://cyprieninperu.netlify.app/de/../theme/js/lang-redirect.js" defer></script>
+                <script src='/theme/js/carousel.js' defer></script>
 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </html>

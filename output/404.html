@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-default-lang="en">
         <head>
                         <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,10 +20,10 @@
                                                 <li><a href="/gallery/">Gallery</a></li>
                                                 <li><a href="/peru/">Peru</a></li>
                                         <li class="lang-switch">
-                                                <a href="/fr/" title="Switch to fr">FR</a>
+                                                <a class="lang-link" data-lang="fr" href="/fr/" title="Switch to fr" onclick="try{localStorage.setItem('preferredLang','fr')}catch(e){}">FR</a>
                                         </li>
                                         <li class="lang-switch">
-                                                <a href="/de/" title="Switch to de">DE</a>
+                                                <a class="lang-link" data-lang="de" href="/de/" title="Switch to de" onclick="try{localStorage.setItem('preferredLang','de')}catch(e){}">DE</a>
                                         </li>
                         </ul></nav>
                 </header><!-- /#banner -->
@@ -68,7 +68,8 @@ Please check your <span class="caps">URL</span> or return to the <a href="/">hom
                 </footer><!-- /#contentinfo -->
 
         </body>
-<script src='/theme/js/carousel.js' defer></script>
+                <script src="/theme/js/lang-redirect.js" defer></script>
+                <script src='/theme/js/carousel.js' defer></script>
 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </html>

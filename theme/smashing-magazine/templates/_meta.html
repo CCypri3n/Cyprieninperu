@@ -61,6 +61,45 @@
 <meta property="og:url" content="{{ url }}" />
 <meta property="og:image" content="{{ image }}" />
 
+{# Hreflang / rel=alternate tags for language variants #}
+{% if lang_siteurls is defined %}
+  {% for lang, langurl in lang_siteurls.items() %}
+    {% if article is defined %}
+      {% set added = false %}
+      {% if article.translations %}
+        {% for t in article.translations %}
+          {% if t.lang == lang %}
+            <link rel="alternate" hreflang="{{ lang }}" href="{{ SITEURL }}/{{ t.url }}" />
+            {% set added = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% if not added and lang == DEFAULT_LANG %}
+        <link rel="alternate" hreflang="{{ lang }}" href="{{ SITEURL }}/{{ article.url }}" />
+      {% endif %}
+    {% elif page is defined %}
+      {% set added = false %}
+      {% if page.translations %}
+        {% for t in page.translations %}
+          {% if t.lang == lang %}
+            <link rel="alternate" hreflang="{{ lang }}" href="{{ SITEURL }}/{{ t.url }}" />
+            {% set added = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% if not added and lang == DEFAULT_LANG %}
+        <link rel="alternate" hreflang="{{ lang }}" href="{{ SITEURL }}/{{ page.url }}" />
+      {% endif %}
+    {% elif category is defined %}
+      {# Categories typically have localized paths under lang_siteurls, attempt to link to localized category pages if they exist #}
+      <link rel="alternate" hreflang="{{ lang }}" href="{{ langurl ~ '/' ~ category.url }}" />
+    {% else %}
+      <link rel="alternate" hreflang="{{ lang }}" href="{{ langurl ~ '/' }}" />
+    {% endif %}
+  {% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/" />
+{% endif %}
+
 {# Twitter tags #}
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="{{ domain }}" />
