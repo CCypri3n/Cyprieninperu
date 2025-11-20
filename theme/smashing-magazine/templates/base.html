@@ -102,7 +102,7 @@
                         {% endif %}
                         {% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
                                 <div class="social">
-                                        <h2>{{ _(SOCIAL_WIDGET_NAME | default('social')) }}</h2>
+                                        <h2>{{ _(SOCIAL_WIDGET_NAME | default('Social')) }}</h2>
                                         <ul>
                                                 {% if FEED_ALL_ATOM %}
                                                         <li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate">{{ _('atom feed') }}</a></li>
@@ -118,7 +118,6 @@
                                 </div><!-- /.social -->
                         {% endif %}
                 </section><!-- /#extras -->
-
                 <footer id="contentinfo" class="body">
                         <address id="about" class="vcard body">
                                 {{ _('Proudly powered by') }} <a rel="nofollow" href="https://getpelican.com/">Pelican</a> — {{ _('Theme by') }} <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.

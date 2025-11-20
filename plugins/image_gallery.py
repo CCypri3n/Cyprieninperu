@@ -64,3 +64,4 @@ def update_gallery_json(generator):
 
 def register():
     signals.article_generator_finalized.connect(update_gallery_json)
+    

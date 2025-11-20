@@ -38,13 +38,15 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (
-    ("PrivaTube", "https://privatube.netlify.app/"),
+    ("Donate", "https://www.betterplace.org/de/projects/142389?utm_campaign=user_share&utm_medium=ppp_sticky&utm_source=Link&utm_content=bp"),
+    ("Ecoselva", "https://ecoselva.org/"),
+    ('CACI Satinaki', 'https://cacisatinaki.com/'),
+    ('PachaMama', 'https://peru-kaffee.de/'),
 )
 
 # Social widget
 SOCIAL = (
     ("Instagram", "https://www.instagram.com/ccypri3n/"),
-    ("Github", "https://github.com/CCypri3n"),
 )
 
 #MENUITEMS = ()
@@ -65,6 +67,12 @@ I18N_SUBSITES = {
         'LOCALE': 'fr_FR',
         'LINKS_WIDGET_NAME': 'Liens',
         'SOCIAL_WIDGET_NAME': 'Social',
+        'LINKS': [
+            ('Faire un don', 'https://www.betterplace.org/de/projects/142389?utm_campaign=user_share&utm_medium=ppp_sticky&utm_source=Link&utm_content=bp'), 
+            ('Ecoselva', 'https://ecoselva.org/'),
+            ('CACI Satinaki', 'https://cacisatinaki.com/'),
+            ('PachaMama', 'https://peru-kaffee.de/'),
+                  ],
     },
     'de': {
         'SITENAME': 'Cyprien in Peru',
@@ -72,7 +80,13 @@ I18N_SUBSITES = {
         'LOCALE': 'de_DE',
         'LINKS_WIDGET_NAME': 'Links',
         'SOCIAL_WIDGET_NAME': 'Sozial',
-    }
+        'LINKS': [
+            ('Spenden', 'https://www.betterplace.org/de/projects/142389?utm_campaign=user_share&utm_medium=ppp_sticky&utm_source=Link&utm_content=bp'),
+            ('Ecoselva', 'https://ecoselva.org/'),
+            ('CACI Satinaki', 'https://cacisatinaki.com/'),
+            ('PachaMama', 'https://peru-kaffee.de/'),
+        ],
+    },
 }
 
 ARTICLE_PATHS = ['articles']

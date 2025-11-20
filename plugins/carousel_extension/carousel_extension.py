@@ -48,7 +48,7 @@ class CarouselProcessor(BlockProcessor):
                 caption_text = caption_text.strip()
             else:
                 main_part = line.strip()
-                caption_text = ''
+                caption_text = False
 
             # Try to match video syntax with thumbnail and video URL
             m = MD_IMAGE_VIDEO_RE.match(main_part)
@@ -100,8 +100,9 @@ class CarouselProcessor(BlockProcessor):
                 etree.SubElement(playBtnSvg, 'polygon', {'points':"8,5 19,12 8,19", 'fill':"white"})
 
             # Add caption paragraph
-            p_caption = etree.SubElement(wrapper_div, 'p', {'class': 'caption'})
-            p_caption.text = caption_text
+            if caption_text:
+                p_caption = etree.SubElement(wrapper_div, 'p', {'class': 'caption'})
+                p_caption.text = caption_text 
 
         # Buttons as siblings inside main
         buttonElement = etree.SubElement(main_element, 'button', {'class': 'carousel-btn prev-btn'})

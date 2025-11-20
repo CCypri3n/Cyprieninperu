@@ -375,6 +375,28 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 
 #about .bio {float: right; max-width: 500px;}
 
+/* Author photo for about pages: float right with spacing */
+#about .author-photo {
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    max-width: 220px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Also support author-photo in page content (pages are rendered inside #content) */
+#content .author-photo {
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    max-width: 220px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
 /*
 	Footer
 *****************/

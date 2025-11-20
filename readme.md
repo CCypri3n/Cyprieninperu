@@ -8,10 +8,7 @@ I have included a few plugins, to be able to easily incorporate carousels direct
 
 ## TO-DO
 
-- [ ] Update JS and CSS of Caroussel, to display the modal nicely.
-- [ ] Optional: Use different caroussel, for smooth sliding.
-- [ ] Add buttons when modal is opened for carousel and gallery.
 - [ ] Get the first real articles going.
-- [ ] Update about page
-- [ ] Update urls
+- [ ] Update about page.
+- [ ] Update urls.
 - [ ] translate atom feed name and change position.
