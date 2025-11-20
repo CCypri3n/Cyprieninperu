@@ -10,5 +10,3 @@ I have included a few plugins, to be able to easily incorporate carousels direct
 
 - [ ] translate atom feed name and change position.
 - [ ] Add support for google rich
-
-ADD BLOCK TITLE FOR CUSTOM SITE TITLE

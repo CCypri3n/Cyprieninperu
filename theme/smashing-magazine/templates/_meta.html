@@ -1,0 +1,181 @@
+{# Centralized meta and structured data include #}
+{# Expects article/page/category/tag variables to be available in the template context #}
+{% set site_name = SITENAME|striptags %}
+{% set default_image = OG['image'] %}
+
+{# Determine context type and canonical values #}
+{% if article is defined %}
+  {% set obj = article %}
+  {% set obj_type = 'article' %}
+  {% set title = article.title|striptags %}
+  {% set url = (SITEURL ~ '/' ~ article.url) %}
+  {% set image = article.metadata.image or default_image %}
+  {% set desc = (article.summary | striptags) if article.summary else (OG[DEFAULT_LANG]['description'] | striptags) %}
+{% elif page is defined %}
+  {% set obj = page %}
+  {% set obj_type = 'page' %}
+  {% set title = page.title|striptags %}
+  {% set url = (SITEURL ~ '/' ~ page.url) %}
+  {% set image = page.metadata.image or default_image %}
+  {% set desc = (page.summary | striptags) if page.summary else (OG[DEFAULT_LANG]['description'] | striptags) %}
+{% elif category is defined %}
+  {% set obj = category %}
+  {% set obj_type = 'collection' %}
+  {% set title = category.title|striptags %}
+  {% set url = (SITEURL ~ '/' ~ category.url) %}
+  {% set image = default_image %}
+  {% set desc = (category.summary | striptags) if category.summary else (OG[DEFAULT_LANG]['description'] | striptags) %}
+{% else %}
+  {% set obj = none %}
+  {% set obj_type = 'website' %}
+  {% set title = site_name %}
+  {% set url = SITEURL %}
+  {% set image = default_image %}
+  {% set desc = (OG[DEFAULT_LANG]['description'] | striptags) %}
+{% endif %}
+
+{# Safe short description for meta tags #}
+{% set short_desc = desc | truncate(150) | e %}
+
+{# Domain for twitter:domain (strip protocol) #}
+{% set domain = (SITEURL or 'https://cyprieninperu.netlify.app').replace('https://','').replace('http://','').rstrip('/') %}
+
+<meta name="description" content="{{ short_desc }}" />
+<meta property="og:description" content="{{ short_desc }}" />
+
+{# og:title: homepage shows just site name #}
+{% if obj_type == 'website' and title == site_name %}
+  <meta property="og:title" content="{{ site_name }}" />
+{% else %}
+  <meta property="og:title" content="{{ site_name }} — {{ title|e }}" />
+{% endif %}
+
+<meta property="og:type" content="{{ 'article' if obj_type == 'article' else 'website' }}" />
+<meta property="og:url" content="{{ url }}" />
+<meta property="og:image" content="{{ image }}" />
+
+{# Twitter tags #}
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain" content="{{ domain }}" />
+<meta property="twitter:url" content="{{ url }}" />
+{% if obj_type == 'website' and title == site_name %}
+  <meta name="twitter:title" content="{{ site_name }}" />
+{% else %}
+  <meta name="twitter:title" content="{{ site_name }} — {{ title|e }}" />
+{% endif %}
+<meta name="twitter:description" content="{{ short_desc }}" />
+<meta name="twitter:image" content="{{ image }}" />
+
+{# Structured data: Article or WebPage/CollectionPage + BreadcrumbList #}
+{% if obj_type == 'article' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "{{ url }}"},
+  "headline": "{{ title|e }}",
+  "description": "{{ desc | truncate(200) | e }}",
+  "image": ["{{ image }}"],
+  "author": {"@type": "Person", "name": "{{ (article.author or OG['author'])|e }}"},
+  "publisher": {"@type": "Organization", "name": "{{ site_name|e }}", "logo": {"@type": "ImageObject", "url": "{{ default_image }}"}},
+  "datePublished": "{{ article.date.isoformat() if article.date else '' }}",
+  "dateModified": "{{ article.modified.isoformat() if article.modified else '' }}"
+}
+</script>
+{% endif %}
+
+{# Article-specific OpenGraph/Article meta properties #}
+{% if obj_type == 'article' %}
+  <meta property="article:author" content="{{ article.author_url or article.author or OG['author'] | striptags | e }}" />
+  {% if article.date %}
+    <meta property="article:published_time" content="{{ article.date.isoformat() }}" />
+  {% endif %}
+  {% if article.modified %}
+    <meta property="article:modified_time" content="{{ article.modified.isoformat() }}" />
+    <meta property="og:updated_time" content="{{ article.modified.isoformat() }}" />
+  {% endif %}
+  {% if article.category %}
+    <meta property="article:section" content="{{ article.category | striptags | e }}" />
+  {% endif %}
+  {% if article.tags %}
+    {% for tag in article.tags %}
+      <meta property="article:tag" content="{{ tag | striptags | e }}" />
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+{# WebPage JSON-LD and page-specific metas for non-article pages #}
+{% if obj_type == 'page' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "{{ url }}"},
+  "name": "{{ title|e }}",
+  "description": "{{ desc | truncate(200) | e }}",
+  "url": "{{ url }}",
+  "image": ["{{ image }}"],
+  "publisher": {"@type": "Organization", "name": "{{ site_name|e }}", "logo": {"@type": "ImageObject", "url": "{{ default_image }}"}},
+  "datePublished": "{{ page.date.isoformat() if page.date else '' }}",
+  "dateModified": "{{ page.modified.isoformat() if page.modified else '' }}"
+}
+</script>
+
+  <meta property="page:author" content="{{ page.author_url or page.author or OG['author'] | striptags | e }}" />
+  {% if page.date %}
+    <meta property="page:published_time" content="{{ page.date.isoformat() }}" />
+  {% endif %}
+  {% if page.modified %}
+    <meta property="page:modified_time" content="{{ page.modified.isoformat() }}" />
+    <meta property="og:updated_time" content="{{ page.modified.isoformat() }}" />
+  {% endif %}
+  {% if page.category %}
+    <meta property="page:section" content="{{ page.category | striptags | e }}" />
+  {% endif %}
+  {% if page.tags %}
+    {% for tag in page.tags %}
+      <meta property="page:tag" content="{{ tag | striptags | e }}" />
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+{# CollectionPage JSON-LD for category/tag/author lists #}
+{% if obj_type == 'collection' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ site_name|e }} — {{ title|e }}",
+  "description": "{{ desc | truncate(200) | e }}",
+  "url": "{{ url }}",
+  "mainEntity": {"@type": "ItemList"}
+}
+</script>
+{% endif %}
+
+{# WebSite JSON-LD for homepage #}
+{% if obj_type == 'website' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site_name|e }}",
+  "url": "{{ SITEURL }}",
+  "description": "{{ desc | truncate(200) | e }}",
+  "publisher": {"@type": "Organization", "name": "{{ site_name|e }}", "logo": {"@type": "ImageObject", "url": "{{ default_image }}"}},
+  "image": {"@type": "ImageObject", "url": "{{ default_image }}"}
+}
+</script>
+{% endif %}
+
+{# BreadcrumbList: Home -> current page #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ SITEURL }}"},
+    {"@type": "ListItem", "position": 2, "name": "{{ title|e }}", "item": "{{ url }}"}
+  ]
+}
+</script>

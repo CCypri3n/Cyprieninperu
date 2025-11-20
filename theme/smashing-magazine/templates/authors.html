@@ -1,21 +1,8 @@
 {% extends "base.html" %}
 
 {% block head -%}
-  {{ super() -}}
-  {% set desc = (OG[DEFAULT_LANG]['description'] | striptags) %}
-  <meta name="description" content="{{ desc | truncate(150) | e }}" />
-  <meta property="og:description" content="{{ desc | truncate(150) | e }}" />
-  <meta property="og:title" content="{{ SITENAME|striptags }} — {{ _('Authors') }}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ SITEURL }}/authors/" />
-  <meta property="og:image" content="{{ OG['image'] }}" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta property="twitter:domain" content="{{ SITEURL }}" />
-  <meta property="twitter:url" content="{{ SITEURL }}/authors/" />
-  <meta name="twitter:title" content="{{ SITENAME|striptags }} — {{ _('Authors') }}" />
-  <meta name="twitter:description" content="{{ desc | truncate(150) | e }}" />
-  <meta name="twitter:image" content="{{ OG['image'] }}" />
+    {{ super() -}}
+    {% include '_meta.html' %}
 {% endblock %}
 
 {% block title %}{{ SITENAME|striptags }} - {{ _('Authors') }}{% endblock %}

@@ -2,21 +2,7 @@
 
 {% block head -%}
     {{ super() -}}
-    {# Safe description for categories list #}
-    {% set desc = (OG[DEFAULT_LANG]['description'] | striptags) %}
-    <meta name="description" content="{{ desc | truncate(150) | e }}" />
-    <meta property="og:description" content="{{ desc | truncate(150) | e }}" />
-    <meta property="og:title" content="{{ SITENAME|striptags }} — {{ _('Categories') }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ SITEURL }}" />
-    <meta property="og:image" content="{{ OG['image'] }}" />
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="{{ SITEURL }}" />
-    <meta property="twitter:url" content="{{ SITEURL }}/categories/" />
-    <meta name="twitter:title" content="{{ SITENAME|striptags }} — {{ _('Categories') }}" />
-    <meta name="twitter:description" content="{{ desc | truncate(150) | e }}" />
-    <meta name="twitter:image" content="{{ OG['image'] }}" />
+    {% include '_meta.html' %}
 {% endblock %}
 
 {% block title %}{{ SITENAME|striptags }} - {{ _('Categories') }}{% endblock %}

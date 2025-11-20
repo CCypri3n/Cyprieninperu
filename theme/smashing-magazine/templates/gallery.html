@@ -1,43 +1,7 @@
 {% extends "base.html" %}
 {% block head -%}
   {{ super() -}}
-  {% set desc = (page.summary | striptags) if page.summary else (OG[DEFAULT_LANG]['description'] | striptags) %}
-    <meta name="description" content="{{ desc | truncate(150) | e }}" />
-    <meta property="og:description" content="{{ desc | truncate(150) | e }}" />
-  
-  <meta property="og:title" content="{{ SITENAME|striptags }} — {{ page.title | striptags }}" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
-  
-  <meta property="og:image" content="{{ page.metadata.image or OG['image'] }}" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta property="twitter:domain" content="{{ SITEURL }}" />
-  <meta property="twitter:url" content="{{ SITEURL }}/{{ page.url }}" />
-  <meta name="twitter:title" content="{{ SITENAME|striptags }} — {{ page.title | striptags }}" />
-  <meta name="twitter:description" content="{{ desc | truncate(150) | e }}" />
-  <meta name="twitter:image" content="{{ page.metadata.image or OG['image'] }}" />
-  
-  <meta property="article:author" content="{{ page.author_url or page.author or OG['author'] | striptags | safe }}" />
-  
-  {% if page.date %}
-    <meta property="article:published_time" content="{{ page.date.isoformat() }}" />
-  {% endif %}
-  
-  {% if page.modified %}
-    <meta property="article:modified_time" content="{{ page.modified.isoformat() }}" />
-    <meta property="og:updated_time" content="{{ page.modified.isoformat() }}" />
-  {% endif %}
-  
-  {% if page.category %}
-    <meta property="page:section" content="{{ page.category | striptags | safe }}" />
-  {% endif %}
-  
-  {% if page.tags %}
-    {% for tag in page.tags %}
-      <meta property="page:tag" content="{{ tag | striptags | safe }}" />
-    {% endfor %}
-  {% endif %}
+  {% include '_meta.html' %}
 {% endblock %}
 {% block content %}
 <div id="container">
