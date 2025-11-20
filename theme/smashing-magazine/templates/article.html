@@ -5,7 +5,7 @@
   {% set desc = (article.summary | striptags) if article.summary else (OG[DEFAULT_LANG]['description'] | striptags) %}
     <meta name="description" content="{{ desc | truncate(150) | e }}" />
     <meta property="og:description" content="{{ desc | truncate(150) | e }}" />
-  <meta property="og:title" content="Cyprien in peru - {{ article.title | striptags }}" />
+  <meta property="og:title" content="{{ SITENAME|striptags }} — {{ article.title | striptags }}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
   

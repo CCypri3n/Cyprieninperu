@@ -5,7 +5,7 @@
     <meta name="description" content="{{ desc | truncate(150) | e }}" />
     <meta property="og:description" content="{{ desc | truncate(150) | e }}" />
 
-  <meta property="og:title" content="{{ page.title | striptags }}" />
+  <meta property="og:title" content="{{ SITENAME|striptags }} — {{ page.title | striptags }}" />
   <meta property="og:type" content="page" />
   <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
   

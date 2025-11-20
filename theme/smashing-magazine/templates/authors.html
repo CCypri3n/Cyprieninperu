@@ -5,7 +5,7 @@
   {% set desc = (OG[DEFAULT_LANG]['description'] | striptags) %}
   <meta name="description" content="{{ desc | truncate(150) | e }}" />
   <meta property="og:description" content="{{ desc | truncate(150) | e }}" />
-  <meta property="og:title" content="{{ SITENAME|striptags }} - {{ _('Authors') }}" />
+  <meta property="og:title" content="{{ SITENAME|striptags }} — {{ _('Authors') }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ SITEURL }}/authors/" />
   <meta property="og:image" content="{{ OG['image'] }}" />
