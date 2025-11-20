@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-default-lang="en">
         <head>
                         <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                         <meta name="generator" content="Pelican" />
                         <title>Cyprien in Peru - Authors</title>
                         <link rel="stylesheet" href="https://cyprieninperu.netlify.app/theme/css/main.css" />
+                        <link rel="stylesheet" href="https://cyprieninperu.netlify.app/theme/css/mobile.css" />
                         <link rel="icon" href="https://cyprieninperu.netlify.app/theme/icons/machu-picchu-outline.svg" type="image/svg+xml"/>
                         <link rel="shortcut icon" href="https://cyprieninperu.netlify.app/theme/icons/machu-picchu-outline.ico" type="image/x-icon"/>
                                 <link href="https://cyprieninperu.netlify.app/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Cyprien in Peru Atom Feed" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Cyprien in Peru" />
+<meta name="theme-color" content="#000305" />
+<meta name="format-detection" content="telephone=no" />
 
 
 
@@ -21,6 +28,11 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://cyprieninperu.netlify.app" />
 <meta property="og:image" content="https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png" />
+
+      <link rel="alternate" hreflang="en" href="https://cyprieninperu.netlify.app/" />
+      <link rel="alternate" hreflang="fr" href="https://cyprieninperu.netlify.app/fr/" />
+      <link rel="alternate" hreflang="de" href="https://cyprieninperu.netlify.app/de/" />
+  <link rel="alternate" hreflang="x-default" href="https://cyprieninperu.netlify.app/" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="cyprieninperu.netlify.app" />
@@ -66,10 +78,10 @@
                                                 <li><a href="https://cyprieninperu.netlify.app/gallery/">Gallery</a></li>
                                                 <li><a href="https://cyprieninperu.netlify.app/peru/">Peru</a></li>
                                         <li class="lang-switch">
-                                                <a href="https://cyprieninperu.netlify.app/fr/" title="Switch to fr">FR</a>
+                                                <a class="lang-link" data-lang="fr" href="https://cyprieninperu.netlify.app/fr/" title="Switch to fr" onclick="try{localStorage.setItem('preferredLang','fr')}catch(e){}">FR</a>
                                         </li>
                                         <li class="lang-switch">
-                                                <a href="https://cyprieninperu.netlify.app/de/" title="Switch to de">DE</a>
+                                                <a class="lang-link" data-lang="de" href="https://cyprieninperu.netlify.app/de/" title="Switch to de" onclick="try{localStorage.setItem('preferredLang','de')}catch(e){}">DE</a>
                                         </li>
                         </ul></nav>
                 </header><!-- /#banner -->
@@ -112,7 +124,8 @@
                 </footer><!-- /#contentinfo -->
 
         </body>
-<script src='/theme/js/carousel.js' defer></script>
+                <script src="https://cyprieninperu.netlify.app/theme/js/lang-redirect.js" defer></script>
+                <script src='/theme/js/carousel.js' defer></script>
 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </html>

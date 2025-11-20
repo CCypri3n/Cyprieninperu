@@ -59,10 +59,14 @@ def process_file(path):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--dir', '-d', default='output', help='Pelican output directory')
+    p.add_argument('--dirs', '-D', nargs='*', help='One or more site directories to scan (default: output __site)')
     args = p.parse_args()
-    base = args.dir
-    patterns = [os.path.join(base, '**', '*.atom.xml'), os.path.join(base, '**', 'all.atom.xml')]
+    bases = args.dirs if args.dirs else ['output', '__site']
+    patterns = []
+    for base in bases:
+        patterns.append(os.path.join(base, '**', '*.atom.xml'))
+        patterns.append(os.path.join(base, '**', 'all.atom.xml'))
+    print(f"Scanning directories: {', '.join(bases)}")
     files = set()
     for pat in patterns:
         files.update(glob.glob(pat, recursive=True))
