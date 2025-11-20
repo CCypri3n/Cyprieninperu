@@ -1,0 +1,455 @@
+/* Mobile-First Responsive Design Improvements */
+
+/* ===== MOBILE BREAKPOINT: 0px - 599px ===== */
+@media (max-width: 599px) {
+  /* Body & Layout */
+  .body {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  /* Headings */
+  h1 { font-size: 1.5em; }
+  h2 { font-size: 1.3em; }
+  h3 { font-size: 1.1em; }
+  h4 { font-size: 1em; }
+
+  /* Banner/Header */
+  #banner {
+    margin: 0 auto;
+    padding: 0.5em 10px;
+  }
+
+  #banner h1 {
+    font-size: 1.8em;
+    line-height: 1.2;
+    margin-bottom: 0.3em;
+  }
+
+  #banner h1 strong {
+    font-size: 0.4em;
+    display: block;
+  }
+
+  /* Navigation */
+  #banner nav {
+    background: #000305;
+    font-size: 0.9em;
+    line-height: 25px;
+    margin: 0.5em auto 1em auto;
+    padding: 0;
+    text-align: left;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  #banner nav ul {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  #banner nav li {
+    float: none;
+    display: inline-block;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  #banner nav a:link, #banner nav a:visited {
+    display: inline-block;
+    height: auto;
+    padding: 8px 10px;
+    font-size: 0.9em;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  /* Language switcher mobile */
+  #banner nav li.lang-switch {
+    float: none;
+    margin-left: 0;
+    margin: 0;
+  }
+
+  #banner nav li.lang-switch a {
+    padding: 8px 8px;
+    font-size: 0.85em;
+    min-width: 28px;
+  }
+
+  /* Featured Section */
+  #featured {
+    padding: 15px;
+    margin-bottom: 1em;
+    max-width: 100%;
+  }
+
+  #featured figure {
+    float: none;
+    margin: 0 0 1em 0;
+    max-width: 100%;
+    display: block;
+  }
+
+  #featured figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Content Area */
+  #content {
+    padding: 15px;
+    margin-bottom: 1em;
+    max-width: 100%;
+  }
+
+  .entry-title {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+
+  /* Post Info */
+  .post-info {
+    float: none;
+    margin: 10px 0;
+    padding: 5px 0;
+    width: 100%;
+  }
+
+  .post-info p {
+    margin: 5px 0;
+    font-size: 0.85em;
+  }
+
+  .readmore {
+    float: none;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  /* Author Photo - Stack on mobile */
+  #content .author-photo,
+  #about .author-photo {
+    float: none;
+    max-width: 100%;
+    margin: 1em 0;
+    display: block;
+  }
+
+  /* Blog Listing */
+  #posts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #posts-list .hentry {
+    padding-left: 0;
+    padding: 1em 0;
+    border-top: 1px solid #eee;
+  }
+
+  #posts-list footer {
+    position: static;
+    float: none;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Extras/Sidebar */
+  #extras {
+    margin: 0;
+    padding: 10px;
+    overflow: auto;
+  }
+
+  #extras .blogroll,
+  #extras .social {
+    float: none;
+    max-width: 100%;
+    margin-bottom: 1.5em;
+  }
+
+  #extras .blogroll li {
+    float: none;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  #extras li {
+    border-bottom: 1px solid #eee;
+  }
+
+  #extras a:link, #extras a:visited {
+    display: block;
+    padding: 10px 5px;
+  }
+
+  /* About Section */
+  #about {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  #about .primary,
+  #about .bio {
+    float: none;
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+
+  #about .photo {
+    float: left;
+    margin: 5px 10px 5px 0;
+  }
+
+  /* Tables - Responsive */
+  table {
+    width: 100%;
+    font-size: 0.9em;
+    margin: 1em 0;
+  }
+
+  thead th {
+    padding: 0.3em 0.2em;
+    font-size: 0.9em;
+  }
+
+  tbody td {
+    padding: 0.3em 0.2em;
+    word-break: break-word;
+  }
+
+  /* Forms */
+  #add-comment label {
+    float: none;
+    display: block;
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+
+  #add-comment input[type='text'],
+  #add-comment input[type='email'],
+  #add-comment input[type='url'],
+  #add-comment textarea {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  #add-comment textarea {
+    height: 120px;
+  }
+
+  #add-comment input[type='submit'] {
+    float: none;
+    display: block;
+    width: 100%;
+  }
+
+  /* Lists */
+  ul, ol {
+    margin: 1em 0 1em 1.2em;
+  }
+
+  li {
+    margin: 0.3em 0;
+  }
+
+  /* Code blocks */
+  pre {
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 0.85em;
+    overflow-x: auto;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    margin: 10px;
+    padding: 10px;
+    border-left: 3px solid #C74350;
+    font-style: italic;
+  }
+
+  /* Note blocks */
+  div.note {
+    float: none;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  /* About Author */
+  #about-author {
+    padding: 10px;
+    margin: 1em 0;
+  }
+
+  #about-author .photo {
+    float: left;
+    margin: 5px 10px 5px 0;
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    font-size: 0.75em;
+    padding: 10px;
+    max-width: 100%;
+    margin: 1em 0;
+  }
+}
+
+/* ===== TABLET BREAKPOINT: 600px - 899px ===== */
+@media (min-width: 600px) and (max-width: 899px) {
+  .body {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  #banner h1 {
+    font-size: 2.5em;
+  }
+
+  #banner nav {
+    font-size: 1em;
+    margin: 0.5em auto 1.5em auto;
+  }
+
+  #featured, #content, #about {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  #featured figure {
+    float: right;
+    margin: 0 0 1em 1.5em;
+    max-width: 200px;
+  }
+
+  .entry-title {
+    font-size: 2em;
+  }
+
+  #extras .blogroll {
+    max-width: 100%;
+  }
+
+  #extras .blogroll li {
+    float: left;
+    margin-right: 15px;
+    max-width: calc(50% - 10px);
+  }
+
+  #extras .social {
+    max-width: 100%;
+  }
+
+  .post-info {
+    float: right;
+    margin: 10px;
+  }
+
+  #content .author-photo,
+  #about .author-photo {
+    float: right;
+    margin-left: 1.5em;
+    max-width: 200px;
+  }
+}
+
+/* ===== DESKTOP BREAKPOINT: 900px+ ===== */
+@media (min-width: 900px) {
+  .body {
+    max-width: 800px;
+  }
+
+  /* Default desktop styles apply */
+}
+
+/* ===== CAROUSEL MOBILE FIXES ===== */
+@media (max-width: 599px) {
+  .carousel-container {
+    margin: 1em 0;
+  }
+
+  .carousel {
+    max-width: 100%;
+  }
+
+  .carousel .item img,
+  .carousel .item.video .image-wrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  .carousel button {
+    padding: 8px 10px;
+    font-size: 1em;
+  }
+
+  .modal-content {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
+}
+
+/* ===== GALLERY MOBILE FIXES ===== */
+@media (max-width: 599px) {
+  #tilesView {
+    margin: 0;
+  }
+
+  #tilesContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  #tilesContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+/* ===== GENERIC RESPONSIVE UTILITIES ===== */
+@media (max-width: 599px) {
+  /* Hide elements that are too crowded on mobile */
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  /* Force single-column layouts */
+  [float="left"], [float="right"] {
+    float: none !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 600px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}

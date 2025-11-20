@@ -3,6 +3,13 @@
 {% set site_name = SITENAME|striptags %}
 {% set default_image = OG['image'] %}
 
+{# Mobile-friendly meta tags #}
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="{{ site_name }}" />
+<meta name="theme-color" content="#000305" />
+<meta name="format-detection" content="telephone=no" />
+
 {# Determine context type and canonical values #}
 {% if article is defined %}
   {% set obj = article %}
