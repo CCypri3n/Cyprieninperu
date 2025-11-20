@@ -168,14 +168,37 @@
 </script>
 {% endif %}
 
-{# BreadcrumbList: Home -> current page #}
+{# BreadcrumbList: build a localized multi-level breadcrumb (Home -> Category -> Page/Article) #}
+{% set lang = (article.lang if article is defined else (page.lang if page is defined else DEFAULT_LANG)) %}
+{% set home_name = _('Home') if _ is defined else 'Home' %}
+{% set crumbs = [ {'name': home_name, 'url': SITEURL} ] %}
+
+{# For articles include category if available and resolvable #}
+{% if obj_type == 'article' and article.category %}
+  {% if lang in CATEGORY_TRANSLATIONS and (article.category in CATEGORY_TRANSLATIONS[lang]) %}
+    {% set cat_name = CATEGORY_TRANSLATIONS[lang][article.category] %}
+  {% else %}
+    {% set cat_name = article.category %}
+  {% endif %}
+  {% if article.category.url is defined %}
+    {% set cat_url = SITEURL ~ '/' ~ article.category.url %}
+  {% else %}
+    {% set cat_url = SITEURL ~ '/' ~ article.category %}
+  {% endif %}
+  {% set crumbs = crumbs + [ {'name': cat_name, 'url': cat_url} ] %}
+{% endif %}
+
+{# Finally the current page/article #}
+{% set crumbs = crumbs + [ {'name': title, 'url': url} ] %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ SITEURL }}"},
-    {"@type": "ListItem", "position": 2, "name": "{{ title|e }}", "item": "{{ url }}"}
+    {% for c in crumbs %}
+    {"@type": "ListItem", "position": {{ loop.index }}, "name": "{{ c.name|e }}", "item": "{{ c.url }}" }{% if not loop.last %},{% endif %}
+    {% endfor %}
   ]
 }
 </script>
