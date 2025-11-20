@@ -3,6 +3,7 @@ Date: 2025-10-27T09:00
 Category: Peru
 Slug: going-abroad
 Lang: de
+Summary: Endlich habe ich es geschafft, meinen ersten richtigen Artikel zu veröffentlichen. Ich beschreibe meinen ersten Tag in Peru bis hin zu meiner Reise in meine neue Heimat Miguel Grau.
 
 *Obwohl ich nun schon seit mehr als drei Woch- 2 Monaten in Peru bin, habe ich es bislang nicht geschafft, auch nur einen einzigen Artikel zu veröffentlichen – bis jetzt! Heute möchte ich von den wenigen Tagen in Lima berichten, die als Vorbereitung für meinen Einsatz in Miguel Grau dienten.*
 

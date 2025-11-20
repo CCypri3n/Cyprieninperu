@@ -7,13 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalVideo = document.getElementById("modalVideo");
   const modalClose = document.getElementById("modalClose");
 
-  /* ============================
-     Build Gallery Tiles
-     ============================ */
-
+  // Fetch your gallery data
   fetch('/gallery.json')
     .then(res => res.json())
     .then(items => {
+      // Create tiles with data-src attribute for lazy loading
       items.forEach(item => {
         const tile = document.createElement("div");
         tile.classList.add("tileItem");
@@ -21,28 +19,50 @@ document.addEventListener("DOMContentLoaded", () => {
         if (item.type === 'video') {
           tile.classList.add("videoTile");
           tile.dataset.videoUrl = item.video_url;
-          tile.style.backgroundImage = `url(${item.thumbnail_url})`;
-
-          const playBtn = document.createElement('div');
-            playBtn.classList.add('play-icon');
-
-            playBtn.innerHTML = `
-              <svg viewBox="0 0 24 24">
-                <polygon points="8,5 19,12 8,19" fill="white"></polygon>
-              </svg>
-            `;
-
-            tile.appendChild(playBtn);
-
-
+          // Set a placeholder background, actual image loads lazily later
+          tile.dataset.bgUrl = `url(${item.thumbnail_url})`;
         } else {
           const imgUrl = item.url.startsWith('http')
             ? item.url
             : `${item.url.startsWith('/') ? '' : '/'}${item.url}`;
-          tile.style.backgroundImage = `url(${imgUrl})`;
+          tile.dataset.bgUrl = `url(${imgUrl})`;
         }
 
+        // Append tile without setting backgroundImage yet
         tilesContainer.appendChild(tile);
+      });
+
+      // Set up Intersection Observer for lazy loading
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const tile = entry.target;
+
+            // Load background image
+            const bgUrl = tile.dataset.bgUrl;
+            if (bgUrl) {
+              tile.style.backgroundImage = bgUrl;
+            }
+
+            // If video, handle differently if needed
+            if (tile.classList.contains("videoTile")) {
+              // Optional: load video thumbnail or setup
+            }
+
+            // Stop observing once loaded
+            obs.unobserve(tile);
+          }
+          else {
+            tile.style.backgroundImage = '';
+          }
+        });
+      }, {
+        rootMargin: '200px' // Preload a bit before they enter viewport
+      });
+
+      // Observe all tiles
+      document.querySelectorAll('.tileItem').forEach(tile => {
+        observer.observe(tile);
       });
     })
     .catch(console.error);

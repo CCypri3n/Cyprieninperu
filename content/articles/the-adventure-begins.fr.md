@@ -4,6 +4,7 @@ Category: Peru
 Slug: the-adventure-begins
 Author: Cyprien Chevallier
 Lang: fr
+Summary: Puis-je me presenter? Cyprien, 18 ans et en route pour le Pérou.
 
 Salut,
 

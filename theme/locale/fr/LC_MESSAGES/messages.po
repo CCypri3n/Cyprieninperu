@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  2.0.0\n"
 "Report-Msgid-Bugs-To: cyprien.chevallier@pm.me\n"
-"POT-Creation-Date: 2025-11-19 12:23-0500\n"
+"POT-Creation-Date: 2025-11-19 22:41-0500\n"
 "PO-Revision-Date: 2025-11-19 12:27-0500\n"
 "Last-Translator: Cyprien Chevallier cyprien.chevallier@pm.me\n"
 "Language: fr\n"
@@ -25,15 +25,15 @@ msgstr ""
 msgid "Archives for"
 msgstr "Archives pour"
 
-#: theme/smashing-magazine/templates/article.html:25
+#: theme/smashing-magazine/templates/article.html:51
 msgid "Permalink to"
 msgstr "Lien permanent vers"
 
-#: theme/smashing-magazine/templates/article.html:35
+#: theme/smashing-magazine/templates/article.html:61
 msgid "Comments"
 msgstr "Commentaires"
 
-#: theme/smashing-magazine/templates/article.html:47
+#: theme/smashing-magazine/templates/article.html:73
 msgid "Please enable JavaScript to view the comments."
 msgstr "Veuillez activer JavaScript pour afficher les commentaires."
 
@@ -85,19 +85,20 @@ msgstr "flux Atom"
 msgid "rss feed"
 msgstr "flux RSS"
 
-#: theme/smashing-magazine/templates/base.html:124
+#: theme/smashing-magazine/templates/base.html:123
 msgid "Proudly powered by"
 msgstr "Fonctionne grâce à"
 
-#: theme/smashing-magazine/templates/base.html:124
+#: theme/smashing-magazine/templates/base.html:123
 msgid "Theme by"
 msgstr "Thème conçu par"
 
-#: theme/smashing-magazine/templates/categories.html:3
+#: theme/smashing-magazine/templates/categories.html:7
+#: theme/smashing-magazine/templates/categories.html:13
 msgid "Categories"
 msgstr "Catégories"
 
-#: theme/smashing-magazine/templates/categories.html:8
+#: theme/smashing-magazine/templates/categories.html:18
 msgid "Categories for"
 msgstr "Catégories pour"
 
@@ -114,21 +115,32 @@ msgstr "commentaires"
 msgid "Fork me on GitHub"
 msgstr "Voir sur GitHub"
 
-#: theme/smashing-magazine/templates/index.html:17
+#: theme/smashing-magazine/templates/index.html:28
 msgid "Other articles"
 msgstr "Autres articles"
 
-#: theme/smashing-magazine/templates/index.html:36
+#: theme/smashing-magazine/templates/index.html:47
 msgid "read more"
 msgstr "lire la suite"
 
-#: theme/smashing-magazine/templates/index.html:54
+#: theme/smashing-magazine/templates/index.html:65
 msgid "Pages"
 msgstr "Pages"
 
-#: theme/smashing-magazine/templates/index.html:61
+#: theme/smashing-magazine/templates/index.html:72
 msgid "This site currently has no content."
 msgstr "Ce site n’a actuellement aucun contenu."
+
+#: theme/smashing-magazine/templates/tags.html:6
+#: theme/smashing-magazine/templates/tags.html:12
+#, fuzzy
+msgid "Tags"
+msgstr "Pages"
+
+#: theme/smashing-magazine/templates/tags.html:17
+#, fuzzy
+msgid "Tags for"
+msgstr "Catégories pour"
 
 #: theme/smashing-magazine/templates/translations.html:3
 msgid "Translations:"

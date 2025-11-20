@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
+{% block head -%}
+    {{ super() -}}
+    {# Safe description for categories list #}
+    {% set desc = (OG[DEFAULT_LANG]['description'] | striptags) %}
+    <meta name="description" content="{{ desc | truncate(150) | e }}" />
+    <meta property="og:description" content="{{ desc | truncate(150) | e }}" />
+    <meta property="og:title" content="{{ OG[DEFAULT_LANG]['title'] | striptags }} - {{ _('Categories') }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ SITEURL }}" />
+    <meta property="og:image" content="{{ OG['image'] }}" />
+{% endblock %}
+
 {% block title %}{{ SITENAME|striptags }} - {{ _('Categories') }}{% endblock %}
 
 {% block content %}

@@ -3,6 +3,7 @@ Date: 2025-10-10 09:00
 Category: peru
 Slug: going-abroad
 Lang: fr
+Summary: J'ai enfin réussi à publier mon premier véritable article. J'y décris mon premier jour au Pérou, jusqu'à mon voyage vers ma nouvelle maison, Miguel Grau.
 
 *Bien que je sois au Pérou depuis plus de trois semai- 2 mois, je n’avais encore rien publié — jusqu’à aujourd’hui ! Je vais te raconter ces quelques jours passés à Lima, qui ont servi de préparation à mon engagement à Miguel Grau.*
 

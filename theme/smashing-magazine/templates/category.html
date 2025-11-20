@@ -1,2 +1,12 @@
 {% extends "index.html" %}
+{% block head -%}
+  {{ super() -}}
+  {% set desc = (category.summary | striptags) if category.summary else (OG[DEFAULT_LANG]['description'] | striptags) %}
+    <meta name="description" content="{{ desc | truncate(150) | e }}" />
+    <meta property="og:description" content="{{ desc | truncate(150) | e }}" />
+  <meta property="og:title" content="{{ OG[DEFAULT_LANG]['title'] | striptags }} - Category: {{ category.title | striptags }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ SITEURL }}/{{ category.url }}" />
+  <meta property="og:image" content="{{ OG['image'] }}" />
+{% endblock %}
 {% block title %}{{ SITENAME|striptags }} - {{ category }}{% endblock %}

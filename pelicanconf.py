@@ -132,3 +132,22 @@ CATEGORY_TRANSLATIONS = {
         'articles':'Artikel',
     }
 }
+
+# The defaults for the OpenGraph headers.
+
+OG = {
+    'en': {
+        'description':'Cyprien in Peru is a personal blog for my one year adventure in Peru.',
+        'author':'Cyprien Chevallier',
+    },
+    'fr': {
+        'description':'Cyprien au Pérou est un blog personnel pour mon aventure d\'un an au Pérou ',
+        'author':'Cyprien Chevallier'
+    },
+    'de': {
+        'description':'Cyprien in Peru ist ein persönlicher Blog für mein einjähriges Abenteuer in Peru',
+        'author':'Cyprien Chevallier',
+    },
+    'author':'Cyprien Chevallier',
+    'image':'https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png',
+}

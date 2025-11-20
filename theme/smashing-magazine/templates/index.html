@@ -1,4 +1,17 @@
 {% extends "base.html" %}
+{% block head -%}
+    {{ super() -}}
+    {# Use a safe plain-text description for the homepage meta tags #}
+    {% set desc = (OG[DEFAULT_LANG]['description'] | striptags) %}
+    <meta name="description" content="{{ desc | truncate(150) | e }}" />
+    <meta property="og:description" content="{{ desc | truncate(150) | e }}" />
+
+    <meta property="og:title" content="{{ SITENAME|striptags }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ SITEURL }}" />
+  <meta property="og:image" content="{{ OG['image'] }}" />
+
+{% endblock %}
 {% block content_title %}{% endblock %}
 {% block content %}
     {% if articles %}

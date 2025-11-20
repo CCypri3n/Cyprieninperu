@@ -2,8 +2,34 @@
 {% block html_lang %}{{ article.lang }}{% endblock %}
 {% block head -%}
   {{ super() -}}
-  {% if article.summary %}
-    <meta name="description" content="{{ article.summary | striptags | safe | truncate(150) }}" />
+  {% set desc = (article.summary | striptags) if article.summary else (OG[DEFAULT_LANG]['description'] | striptags) %}
+    <meta name="description" content="{{ desc | truncate(150) | e }}" />
+    <meta property="og:description" content="{{ desc | truncate(150) | e }}" />
+  <meta property="og:title" content="Cyprien in peru - {{ article.title | striptags }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+  
+  <meta property="og:image" content="{{ article.metadata.image or OG['image'] }}" />
+
+  <meta property="article:author" content="{{ article.author_url or article.author or OG['author'] | striptags | safe }}" />
+  
+  {% if article.date %}
+    <meta property="article:published_time" content="{{ article.date.isoformat() }}" />
+  {% endif %}
+  
+  {% if article.modified %}
+    <meta property="article:modified_time" content="{{ article.modified.isoformat() }}" />
+    <meta property="og:updated_time" content="{{ article.modified.isoformat() }}" />
+  {% endif %}
+  
+  {% if article.category %}
+    <meta property="article:section" content="{{ article.category | striptags | safe }}" />
+  {% endif %}
+  
+  {% if article.tags %}
+    {% for tag in article.tags %}
+      <meta property="article:tag" content="{{ tag | striptags | safe }}" />
+    {% endfor %}
   {% endif %}
 {% endblock %}
 
