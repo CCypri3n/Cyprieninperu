@@ -284,7 +284,6 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 }
 
 #featured figure {
-    border: 2px solid #eee;
     float: right;
     margin: 0.786em 2em 0 5em;
     max-width: 248px;
@@ -296,6 +295,41 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 
 #featured h3 a:link, #featured h3 a:visited {color: #000305; text-decoration: none;}
 #featured h3 a:hover, #featured h3 a:active {color: #fff;}
+
+/* Featured horizontal tile (image left, text right) */
+#featured .featured-tile {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+}
+
+#featured .featured-figure {
+    flex: 0 0 320px;
+    margin: 0;
+}
+
+#featured .featured-figure img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#featured .featured-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#featured .entry-title { margin-top: 0; margin-bottom: 0.5em; }
+#featured .featured-summary { margin-top: 0.6em; color: #444; }
+
+/* Make featured tile visually interactive */
+#featured .featured-tile { cursor: pointer; }
+#featured .featured-tile:focus { outline: 3px solid rgba(199,67,80,0.14); outline-offset: 3px; }
+#featured .featured-tile:hover .entry-title a { color: #C74350; text-decoration: underline; }
 
 /*
 	Body
@@ -516,7 +550,21 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 .tile-figure img { display:block; width:100%; height:160px; object-fit:cover; border-radius:6px; }
 .tile-title { margin: 0 0 6px 0; font-size: 1.1em; }
 .tile-summary { color: #444; font-size: 0.95em; margin: 0; }
-.tile-info {margin: 0}
+.tile-info { margin: 0; color: #666; font-size: 0.92em;}
+
+/* Featured-only: show date and reading time inline with a separator */
+#featured .tile-info { display: inline-block; color: #666; font-size: 0.92em; }
+#featured .tile-info + .tile-info:before { content: " • "; color: #999; padding: 0 6px; }
+
+/* Featured spacing: summary close to title, info positioned after summary with a larger gap */
+#featured .entry-title { margin-bottom: 0.15rem; }
+#featured .featured-summary { margin-top: 0.15rem; margin-bottom: 0.6rem; }
+#featured .featured-meta { margin-bottom: 0.9rem; }
+#featured .featured-meta .tile-info { display: inline-block; margin-right: 0.6rem; }
+
+/* Keep other tiles unchanged: restore default small spacing */
+.tile-body .tile-title { margin-bottom: 0.6rem; }
+.tile-body .tile-summary { margin-bottom: 0.8rem; }
 
 /* Make the whole tile feel interactive */
 .tile { cursor: pointer; }

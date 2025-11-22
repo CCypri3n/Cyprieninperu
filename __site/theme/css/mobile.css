@@ -453,3 +453,45 @@
     display: none !important;
   }
 }
+
+/* Responsive adjustments for article tiles */
+@media (max-width: 899px) {
+  #posts-list.tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 599px) {
+  #posts-list.tiles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0;
+  }
+  .tile-figure img { height: 200px; object-fit: cover; }
+}
+
+/* Stack featured tile on narrower viewports */
+@media (max-width: 899px) {
+  #featured .featured-tile {
+    display: flex;
+    flex-direction: column;
+  }
+  #featured .featured-figure { flex: 0 0 auto; width: 100%; }
+  #featured .featured-figure img { height: auto; width: 100%; object-fit: cover; border-radius: 6px; }
+  #featured .featured-body { padding-top: 12px; }
+}
+
+/* Mobile: ensure info items flow nicely and stack if space is tight */
+@media (max-width: 599px) {
+  .tile-info { display: inline-block; font-size: 0.95em; color: #666; }
+  .tile-info + .tile-info:before { content: " • "; color: #999; padding: 0 6px; }
+  /* If there isn't room, allow wrapping */
+  .tile-info { white-space: normal; }
+  /* Featured: smaller gaps on mobile */
+  #featured .entry-title { margin-bottom: 0.1rem; }
+  #featured .featured-summary { margin-top: 0.1rem; margin-bottom: 0.4rem; }
+}

@@ -11,9 +11,23 @@
         {# First item #}
             {% if loop.first and not articles_page.has_previous() %}
                 <aside id="featured" class="body">
-                    <article>
-                        <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
-                        {% include 'article_infos.html' %}{{ article.summary }}{% include 'comments.html' %}
+                    <article class="hentry featured-tile tile" data-href="{{ SITEURL }}/{{ article.url }}" tabindex="0">
+                        {% if article.metadata.image %}
+                        <figure class="featured-figure">
+                            <a href="{{ SITEURL }}/{{ article.url }}"><img src="{{ article.metadata.image }}" alt="{{ article.title }}"/></a>
+                        </figure>
+                        {% endif %}
+                        <div class="featured-body">
+                            <div class="featured-meta">
+                                <abbr class="published tile-info" title="{{ article.date.strftime('%d.%m.%Y') }}">{{ _('Published:') }} {{ article.locale_date }}</abbr>
+                                {% if article.stats %}
+                                    <span title="~{{ article.stats['wc'] }} {{ _('words') }}" class="statistics tile-info">{{ _('Estimated reading time:') }} {{ article.stats['read_mins'] }} {{ _('minutes') if (article.stats['read_mins']) > 1 else _('minute') }}</span>
+                                {% endif %}
+                            </div>
+                            <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
+                            <div class="featured-summary">{{ article.summary }}</div>
+                            {% include 'comments.html' %}
+                        </div>
                     </article>
                 </aside><!-- /#featured -->
                 {% if loop.length > 1 %}
