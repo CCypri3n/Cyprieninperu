@@ -16,6 +16,7 @@
 @import url("fonts.css");
 @import url("carousel.css");
 @import url("gallery.css");
+@import url("mobile.css");
 
 /***** Global *****/
 /* Body */
@@ -348,6 +349,53 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 #extras .social {
     float: right;
     max-width: 175px;
+}
+
+    /* Newsletter */
+
+#newsletter .newsletter-form input {
+    border: solid 2px #C74350;
+    border-radius: 12px;
+}
+
+#newsletter .newsletter-button, .newsletter-input {
+    padding: 7px;
+}
+
+#newsletter .newsletter-button {
+    background-color: transparent;           /* Same no background */
+    cursor: pointer;                         /* Pointer cursor */
+    color: #444;                            /* Same dark gray text */
+    border: none;                           /* Remove any borders except bottom */
+    border-bottom: 1px solid #F4E3E3;      /* Same subtle underline color as extras */
+    font-size: inherit;                     /* Match font sizes */
+    padding: 0.3em 0.25em;                  /* Same padding as extras links */                     /* Make it block to match link area */
+    text-decoration: none;                  /* Remove underline text decoration */
+}
+
+#newsletter .newsletter-button:hover {
+    background-color: #C74350;      /* Your theme’s red background */
+    color: #fff;                    /* White text */
+    text-shadow: 1px 1px 1px #333; /* Text shadow for readability */
+}
+
+#newsletter li {border-bottom: 1px solid #fff; display: inline-block}
+
+.newsletter-form {
+    display: flex;            /* Align children (input & button) horizontally */
+    align-items: center;      /* Vertically center input and button */
+    flex-wrap: wrap;          /* Wrap on smaller screens if needed */
+}
+
+.newsletter-input {
+    flex: 1 1 auto;           /* Inputs expand nicely; buttons keep natural size */
+    min-width: 150px;         /* Prevent input from shrinking too small */
+}
+
+#newsletter .newsletter-note {
+    text-align: center;
+    margin-top: 0;            /* No margin needed as margin-bottom on .newsletter-row exists */
+    color: #444;
 }
 
 /*

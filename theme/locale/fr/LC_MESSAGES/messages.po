@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  2.0.0\n"
 "Report-Msgid-Bugs-To: cyprien.chevallier@pm.me\n"
-"POT-Creation-Date: 2025-11-19 22:41-0500\n"
+"POT-Creation-Date: 2025-11-21 19:33-0500\n"
 "PO-Revision-Date: 2025-11-19 12:27-0500\n"
 "Last-Translator: Cyprien Chevallier cyprien.chevallier@pm.me\n"
 "Language: fr\n"
@@ -19,21 +19,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
+#: theme/smashing-magazine/templates/_meta.html:219
+msgid "Home"
+msgstr "accueil"
+
 #: theme/smashing-magazine/templates/archives.html:4
 #: theme/smashing-magazine/templates/period_archives.html:4
 #, fuzzy
 msgid "Archives for"
 msgstr "Archives pour"
 
-#: theme/smashing-magazine/templates/article.html:51
+#: theme/smashing-magazine/templates/article.html:23
 msgid "Permalink to"
 msgstr "Lien permanent vers"
 
-#: theme/smashing-magazine/templates/article.html:61
+#: theme/smashing-magazine/templates/article.html:33
 msgid "Comments"
 msgstr "Commentaires"
 
-#: theme/smashing-magazine/templates/article.html:73
+#: theme/smashing-magazine/templates/article.html:45
 msgid "Please enable JavaScript to view the comments."
 msgstr "Veuillez activer JavaScript pour afficher les commentaires."
 
@@ -69,16 +73,17 @@ msgstr "minutes"
 msgid "minute"
 msgstr "minute"
 
-#: theme/smashing-magazine/templates/authors.html:3
+#: theme/smashing-magazine/templates/authors.html:8
 msgid "Authors"
 msgstr "Auteurs"
 
-#: theme/smashing-magazine/templates/authors.html:8
+#: theme/smashing-magazine/templates/authors.html:13
 msgid "Authors on"
 msgstr "Auteurs sur"
 
 #: theme/smashing-magazine/templates/base.html:108
-msgid "atom feed"
+#, fuzzy
+msgid "Atom feed"
 msgstr "flux Atom"
 
 #: theme/smashing-magazine/templates/base.html:111
@@ -86,19 +91,34 @@ msgid "rss feed"
 msgstr "flux RSS"
 
 #: theme/smashing-magazine/templates/base.html:123
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: theme/smashing-magazine/templates/base.html:126
+msgid "Your Email"
+msgstr "Ton e-mail"
+
+#: theme/smashing-magazine/templates/base.html:128
+msgid "Subscribe"
+msgstr "S'abonner"
+
+#: theme/smashing-magazine/templates/base.html:131
+msgid "No spam — unsubscribe anytime."
+msgstr "Pas de spam – Désabonne-toi à tout moment."
+
+#: theme/smashing-magazine/templates/base.html:138
 msgid "Proudly powered by"
 msgstr "Fonctionne grâce à"
 
-#: theme/smashing-magazine/templates/base.html:123
+#: theme/smashing-magazine/templates/base.html:138
 msgid "Theme by"
 msgstr "Thème conçu par"
 
-#: theme/smashing-magazine/templates/categories.html:7
-#: theme/smashing-magazine/templates/categories.html:13
+#: theme/smashing-magazine/templates/categories.html:8
 msgid "Categories"
 msgstr "Catégories"
 
-#: theme/smashing-magazine/templates/categories.html:18
+#: theme/smashing-magazine/templates/categories.html:13
 msgid "Categories for"
 msgstr "Catégories pour"
 
@@ -115,29 +135,28 @@ msgstr "commentaires"
 msgid "Fork me on GitHub"
 msgstr "Voir sur GitHub"
 
-#: theme/smashing-magazine/templates/index.html:28
+#: theme/smashing-magazine/templates/index.html:21
 msgid "Other articles"
 msgstr "Autres articles"
 
-#: theme/smashing-magazine/templates/index.html:47
+#: theme/smashing-magazine/templates/index.html:40
 msgid "read more"
 msgstr "lire la suite"
 
-#: theme/smashing-magazine/templates/index.html:65
+#: theme/smashing-magazine/templates/index.html:58
 msgid "Pages"
 msgstr "Pages"
 
-#: theme/smashing-magazine/templates/index.html:72
+#: theme/smashing-magazine/templates/index.html:65
 msgid "This site currently has no content."
 msgstr "Ce site n’a actuellement aucun contenu."
 
-#: theme/smashing-magazine/templates/tags.html:6
-#: theme/smashing-magazine/templates/tags.html:12
+#: theme/smashing-magazine/templates/tags.html:7
 #, fuzzy
 msgid "Tags"
 msgstr "Pages"
 
-#: theme/smashing-magazine/templates/tags.html:17
+#: theme/smashing-magazine/templates/tags.html:12
 #, fuzzy
 msgid "Tags for"
 msgstr "Catégories pour"

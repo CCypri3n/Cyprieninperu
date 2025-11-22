@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  2.0.0\n"
 "Report-Msgid-Bugs-To: cyprien.chevallier@pm.me\n"
-"POT-Creation-Date: 2025-11-19 22:41-0500\n"
+"POT-Creation-Date: 2025-11-21 19:33-0500\n"
 "PO-Revision-Date: 2025-11-19 12:27-0500\n"
 "Last-Translator: Cyprien Chevallier cyprien.chevallier@pm.me\n"
 "Language: de\n"
@@ -19,20 +19,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
+#: theme/smashing-magazine/templates/_meta.html:219
+msgid "Home"
+msgstr "Start"
+
 #: theme/smashing-magazine/templates/archives.html:4
 #: theme/smashing-magazine/templates/period_archives.html:4
 msgid "Archives for"
 msgstr "Archiv für"
 
-#: theme/smashing-magazine/templates/article.html:51
+#: theme/smashing-magazine/templates/article.html:23
 msgid "Permalink to"
 msgstr "Permanenter Link zu"
 
-#: theme/smashing-magazine/templates/article.html:61
+#: theme/smashing-magazine/templates/article.html:33
 msgid "Comments"
 msgstr "Kommentare"
 
-#: theme/smashing-magazine/templates/article.html:73
+#: theme/smashing-magazine/templates/article.html:45
 msgid "Please enable JavaScript to view the comments."
 msgstr "Bitte aktivieren Sie JavaScript, um die Kommentare anzuzeigen."
 
@@ -58,7 +62,7 @@ msgstr "worte"
 
 #: theme/smashing-magazine/templates/article_infos.html:26
 msgid "Estimated reading time:"
-msgstr "Geschätze Lesezeit:"
+msgstr "Geschätzte Lesezeit:"
 
 #: theme/smashing-magazine/templates/article_infos.html:26
 msgid "minutes"
@@ -68,16 +72,17 @@ msgstr "Minuten"
 msgid "minute"
 msgstr "Minute"
 
-#: theme/smashing-magazine/templates/authors.html:3
+#: theme/smashing-magazine/templates/authors.html:8
 msgid "Authors"
 msgstr "Autoren"
 
-#: theme/smashing-magazine/templates/authors.html:8
+#: theme/smashing-magazine/templates/authors.html:13
 msgid "Authors on"
 msgstr "Autoren auf"
 
 #: theme/smashing-magazine/templates/base.html:108
-msgid "atom feed"
+#, fuzzy
+msgid "Atom feed"
 msgstr "Atom-Feed"
 
 #: theme/smashing-magazine/templates/base.html:111
@@ -85,19 +90,34 @@ msgid "rss feed"
 msgstr "RSS-Feed"
 
 #: theme/smashing-magazine/templates/base.html:123
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: theme/smashing-magazine/templates/base.html:126
+msgid "Your Email"
+msgstr "Deine E-Mail"
+
+#: theme/smashing-magazine/templates/base.html:128
+msgid "Subscribe"
+msgstr "Abonnieren"
+
+#: theme/smashing-magazine/templates/base.html:131
+msgid "No spam — unsubscribe anytime."
+msgstr "Kein Spam – Abmeldung jederzeit möglich."
+
+#: theme/smashing-magazine/templates/base.html:138
 msgid "Proudly powered by"
 msgstr "Betrieben mit"
 
-#: theme/smashing-magazine/templates/base.html:123
+#: theme/smashing-magazine/templates/base.html:138
 msgid "Theme by"
 msgstr "Theme von"
 
-#: theme/smashing-magazine/templates/categories.html:7
-#: theme/smashing-magazine/templates/categories.html:13
+#: theme/smashing-magazine/templates/categories.html:8
 msgid "Categories"
 msgstr "Kategorien"
 
-#: theme/smashing-magazine/templates/categories.html:18
+#: theme/smashing-magazine/templates/categories.html:13
 msgid "Categories for"
 msgstr "Kategorien für"
 
@@ -114,29 +134,28 @@ msgstr "Kommentare"
 msgid "Fork me on GitHub"
 msgstr "Forke mich auf GitHub\"   # natürlicher: \"Auf GitHub forken"
 
-#: theme/smashing-magazine/templates/index.html:28
+#: theme/smashing-magazine/templates/index.html:21
 msgid "Other articles"
 msgstr "Weitere Artikel"
 
-#: theme/smashing-magazine/templates/index.html:47
+#: theme/smashing-magazine/templates/index.html:40
 msgid "read more"
 msgstr "weiterlesen"
 
-#: theme/smashing-magazine/templates/index.html:65
+#: theme/smashing-magazine/templates/index.html:58
 msgid "Pages"
 msgstr "Seiten"
 
-#: theme/smashing-magazine/templates/index.html:72
+#: theme/smashing-magazine/templates/index.html:65
 msgid "This site currently has no content."
 msgstr "Diese Website hat derzeit keinen Inhalt."
 
-#: theme/smashing-magazine/templates/tags.html:6
-#: theme/smashing-magazine/templates/tags.html:12
+#: theme/smashing-magazine/templates/tags.html:7
 #, fuzzy
 msgid "Tags"
 msgstr "Seiten"
 
-#: theme/smashing-magazine/templates/tags.html:17
+#: theme/smashing-magazine/templates/tags.html:12
 #, fuzzy
 msgid "Tags for"
 msgstr "Kategorien für"

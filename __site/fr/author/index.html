@@ -6,7 +6,6 @@
                         <meta name="generator" content="Pelican" />
                         <title>Cyprien au Pérou - Cyprien Chevallier</title>
                         <link rel="stylesheet" href="https://cyprieninperu.netlify.app/fr/../theme/css/main.css" />
-                        <link rel="stylesheet" href="https://cyprieninperu.netlify.app/fr/../theme/css/mobile.css" />
                         <link rel="icon" href="https://cyprieninperu.netlify.app/fr/../theme/icons/machu-picchu-outline.svg" type="image/svg+xml"/>
                         <link rel="shortcut icon" href="https://cyprieninperu.netlify.app/fr/../theme/icons/machu-picchu-outline.ico" type="image/x-icon"/>
                                 <link href="https://cyprieninperu.netlify.app/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Cyprien au Pérou Atom Feed" />
@@ -65,7 +64,7 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cyprieninperu.netlify.app/fr" },    {"@type": "ListItem", "position": 2, "name": "Cyprien au Pérou", "item": "https://cyprieninperu.netlify.app/fr" }  ]
+    {"@type": "ListItem", "position": 1, "name": "accueil", "item": "https://cyprieninperu.netlify.app/fr" },    {"@type": "ListItem", "position": 2, "name": "Cyprien au Pérou", "item": "https://cyprieninperu.netlify.app/fr" }  ]
 }
 </script>        </head>
 
@@ -296,11 +295,25 @@
                                 <div class="social">
                                         <h2>Social</h2>
                                         <ul>
-                                                        <li><a href="https://cyprieninperu.netlify.app/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">flux Atom</a></li>
+                                                        <li><a href="https://cyprieninperu.netlify.app/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">Atom feed</a></li>
 
                                                         <li><a href="https://www.instagram.com/ccypri3n/">Instagram</a></li>
                                         </ul>
                                 </div><!-- /.social -->
+                        <div id="newsletter" class="newsletter newsletter-widget">
+                                <div class="newsletter-inner">
+                                        <h2 class="newsletter-title">Newsletter</h2>
+                                        <form name="newsletter" method="POST" netlify class="newsletter-form" novalidate>
+                                                <div class="newsletter-row">
+                                                        <input type="email" name="email" class="newsletter-input" placeholder="Ton e-mail" aria-label="Ton e-mail" required />
+                                                        <li>
+                                                                <button type="submit" class="newsletter-button">S'abonner</button>
+                                                        </li>
+                                                </div>
+                                                <p class="newsletter-note"><i>Pas de spam – Désabonne-toi à tout moment.</i></p>
+                                        </form>
+                                </div>
+                        </div>
                 </section><!-- /#extras -->
                 <footer id="contentinfo" class="body">
                         <address id="about" class="vcard body">

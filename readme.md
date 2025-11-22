@@ -56,10 +56,10 @@ This repository contains the source files for the multilingual static site ["Cyp
     pybabel compile -d theme/locale
     ```
 
-2. Generate the static site with Pelican to __site/ using publishconf.py.
+2. Generate the static site with the wrapper that includes custom scripts.
 
    ```bash
-   pelican content -o __site/ -s publishconf.py
+   bash bin/build_and_patch.sh
    ```
 
 3. Push the changes to the Github repo.
@@ -72,5 +72,4 @@ This repository contains the source files for the multilingual static site ["Cyp
 
 ## TO-DO
 
-- [ ] translate atom feed name and change position.
 - [ ] Improve Article metadata position (Mobile & Computer) -> CSS

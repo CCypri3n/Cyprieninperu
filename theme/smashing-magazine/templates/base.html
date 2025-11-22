@@ -7,7 +7,6 @@
                         <meta name="generator" content="Pelican" />
                         <title>{% block title %}{{ SITENAME|striptags }}{%endblock%}</title>
                         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
-                        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/mobile.css" />
                         <link rel="icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/icons/machu-picchu-outline.svg" type="image/svg+xml"/>
                         <link rel="shortcut icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/icons/machu-picchu-outline.ico" type="image/x-icon"/>
                         {% if FEED_ALL_ATOM %}
@@ -93,7 +92,7 @@
                 <section id="extras" class="body">
                         {% if LINKS %}
                                 <div class="blogroll">
-                                        <h2>{{ _(LINKS_WIDGET_NAME | default('links')) }}</h2>
+                                        <h2>{{ _(LINKS_WIDGET_NAME | default('Links')) }}</h2>
                                         <ul>
                                                 {% for name, link in LINKS %}
                                                         <li><a href="{{ link }}">{{ name }}</a></li>
@@ -106,7 +105,7 @@
                                         <h2>{{ _(SOCIAL_WIDGET_NAME | default('Social')) }}</h2>
                                         <ul>
                                                 {% if FEED_ALL_ATOM %}
-                                                        <li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate">{{ _('atom feed') }}</a></li>
+                                                        <li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate">{{ _('Atom feed') }}</a></li>
                                                 {% endif %}
                                                 {% if FEED_ALL_RSS %}
                                                         <li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate">{{ _('rss feed') }}</a></li>
@@ -118,6 +117,21 @@
                                         </ul>
                                 </div><!-- /.social -->
                         {% endif %}
+                {# Newsletter placed between links and social for consistent styling #}
+                        <div id="newsletter" class="newsletter newsletter-widget">
+                                <div class="newsletter-inner">
+                                        <h2 class="newsletter-title">{{ _('Newsletter') }}</h2>
+                                        <form name="newsletter" method="POST" netlify class="newsletter-form" novalidate>
+                                                <div class="newsletter-row">
+                                                        <input type="email" name="email" class="newsletter-input" placeholder="{{ _('Your Email') }}" aria-label="{{ _('Your Email') }}" required />
+                                                        <li>
+                                                                <button type="submit" class="newsletter-button">{{ _('Subscribe') }}</button>
+                                                        </li>
+                                                </div>
+                                                <p class="newsletter-note"><i>{{ _('No spam — unsubscribe anytime.') }}</i></p>
+                                        </form>
+                                </div>
+                        </div>
                 </section><!-- /#extras -->
                 <footer id="contentinfo" class="body">
                         <address id="about" class="vcard body">
