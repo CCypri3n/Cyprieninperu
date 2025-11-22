@@ -73,3 +73,5 @@ This repository contains the source files for the multilingual static site ["Cyp
 ## TO-DO
 
 - [ ] Improve Article metadata position (Mobile & Computer) -> CSS
+- [ ] Add Thumbnails for Articles
+- [ ] Add unsubscribe page (User writes e-mail, POST request with content unsubscribe)

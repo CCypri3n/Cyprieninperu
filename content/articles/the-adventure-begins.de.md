@@ -4,6 +4,7 @@ Category: Peru
 Slug: the-adventure-begins
 Author: Cyprien Chevallier
 Lang: de
+Image: https://ik.imagekit.io/721zjc9b0/images/CyprienChevallier.PNG?updatedAt=1763588699789
 Summary: Darf ich mich vorstellen? Cyprien, 18 Jahre alt und auf dem Weg nach Peru.
 
 Hey!

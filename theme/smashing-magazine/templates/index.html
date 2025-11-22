@@ -13,34 +13,44 @@
                 <aside id="featured" class="body">
                     <article>
                         <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
-                        {% include 'article_infos.html' %}{{ article.content }}{% include 'comments.html' %}
+                        {% include 'article_infos.html' %}{{ article.summary }}{% include 'comments.html' %}
                     </article>
                 </aside><!-- /#featured -->
                 {% if loop.length > 1 %}
                     <section id="content" class="body">
                         <h1>{{ _('Other articles') }}</h1>
                         <hr />
-                        <ol id="posts-list" class="hfeed">
+                        <ol id="posts-list" class="hfeed tiles">
                 {% endif %}
         {# other items #}
             {% else %}
                 {% if loop.first %}
                     <section id="content" class="body">
-                        <ol id="posts-list" class="hfeed" start="{{ articles_paginator.per_page -1 }}">
+                        <ol id="posts-list" class="hfeed tiles" start="{{ articles_paginator.per_page -1 }}">
                 {% endif %}
-                <li><article class="hentry">
-                    <header>
-                        <h1><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                               title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
-                    </header>
-
-                    <div class="entry-content">
-                        {% include 'article_infos.html' %}
-                        {{ article.summary }}
-                        <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">{{ _('read more')}} </a>
-                        {% include 'comments.html' %}
-                    </div><!-- /.entry-content -->
-                </article></li>
+                                <li>
+                                      <article class="hentry tile" data-href="{{ SITEURL }}/{{ article.url }}" tabindex="0">
+                                        {# Top image from article metadata (if present) #}
+                                        {% if article.metadata.image %}
+                                            <figure class="tile-figure">
+                                                <a href="{{ SITEURL }}/{{ article.url }}">
+                                                    <img src="{{ article.metadata.image }}" alt="{{ article.title }}" />
+                                                </a>
+                                            </figure>
+                                        {% endif %}
+                                        <div class="tile-body">
+                                            <h2 class="tile-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+                                            <p class="tile-summary">{{ article.summary }}</p>
+                                            <hr />
+                                            <abbr class="published tile-info" title="{{ article.date.strftime('%d.%m.%Y') }}">
+                                                    {{ _('Published:') }} {{ article.locale_date }}
+                                            </abbr>
+                                            {% if article.stats %}
+                                                <p title="~{{ article.stats['wc'] }} {{ _('words') }}" class="statistics tile-info">{{ _('Estimated reading time:') }} {{ article.stats['read_mins'] }} {{ _('minutes') if (article.stats['read_mins']) > 1 else _('minute') }}</p>
+                                            {% endif %}
+                                        </div>
+                                    </article>
+                                </li>
             {% endif %}
             {% if loop.last %}
                 {% if loop.length > 1 or articles_page.has_other_pages() %}
@@ -67,3 +77,7 @@
         </section>
     {% endif %}
 {% endblock content %}
+{% block script -%}
+{{ super() -}}
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/article-tiles.js" defer></script>
+{% endblock script %}

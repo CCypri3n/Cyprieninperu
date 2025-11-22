@@ -453,3 +453,23 @@
     display: none !important;
   }
 }
+
+/* Responsive adjustments for article tiles */
+@media (max-width: 899px) {
+  #posts-list.tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 599px) {
+  #posts-list.tiles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0;
+  }
+  .tile-figure img { height: 200px; object-fit: cover; }
+}

@@ -1,5 +1,5 @@
 <footer class="post-info">
-        <abbr class="published" title="{{ article.date.isoformat() }}">
+        <abbr class="published" title="{{ article.date.strftime('%d.%m.%Y') }}">
                 {{ _('Published:') }} {{ article.locale_date }}
         </abbr>
         {% if article.modified %}
@@ -23,7 +23,7 @@
 
         <p>{{ _('In')}} <a href="{{ SITEURL }}/{{ article.category.url }}">{{ CATEGORY_TRANSLATIONS[DEFAULT_LANG][article.category] if CATEGORY_TRANSLATIONS[DEFAULT_LANG][article.category] else article.category }}</a>.</p>
         {% if article.stats %}
-        <p title="~{{ article.stats['wc'] }} mots">{{ article.stats['wc'] }} {{ _('words') }} — {{ _('Estimated reading time:') }} {{ article.stats['read_mins'] }} {{ _('minutes') if (article.stats['read_mins']) > 1 else _('minute') }}</p>
+        <p title="~{{ article.stats['wc'] }} {{ _('words') }}">{{ article.stats['wc'] }} {{ _('words') }} — {{ _('Estimated reading time:') }} {{ article.stats['read_mins'] }} {{ _('minutes') if (article.stats['read_mins']) > 1 else _('minute') }}</p>
         {% endif %}
         {% include 'taglist.html' %}
         {% import 'translations.html' as translations with context %}
