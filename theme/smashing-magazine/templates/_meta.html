@@ -41,7 +41,7 @@
 {# Safe short description for meta tags #}
 {% set short_desc = desc | truncate(150) | e %}
 {# Safe short description for thumbsmith #}
-{% set thumbsmith_desc = desc | truncate(100) | e %}
+{% set param_desc = desc | truncate(100) | e %}
 {# Domain for twitter:domain (strip protocol) #}
 {% set domain = (SITEURL or 'https://cyprieninperu.netlify.app').replace('https://','').replace('http://','').rstrip('/') %}
 <meta name="description" content="{{ short_desc }}" />
@@ -169,7 +169,6 @@
   {% endif %}
   {% if page.category %}
     <meta property="page:section" content="{{ page.category | striptags | e }}" />
-    {% set param_category = page.category %}
   {% endif %}
   {% if page.tags %}
     {% for tag in page.tags %}
@@ -240,7 +239,8 @@
 {% set query_params = {
     'title': title|urlencode,
     'logo': OG['logo'],
-    'site_name': OG[DEFAULT_LANG]['site_name'],
+    'site_name': OG[DEFAULT_LANG]['site_name']|urlencode,
+    'summary':param_desc|urlencode,
 } %}
 {# Conditionally add optional params #}
 {% if obj_type == 'article' or obj_type == 'page' %}
@@ -248,7 +248,7 @@
     {% set _ = query_params.update({'category': param_category|urlencode}) %}
   {% endif %}
   {% if param_date %}
-    {% set _ = query_params.update({'date': param_date.isoformat()|urlencode}) %}
+    {% set _ = query_params.update({'date': param_date.strftime('%d.%m.%Y')|urlencode}) %}
   {% endif %}
   {% if image and image != default_image %}
     {% set _ = query_params.update({'image': (SITEURL ~ '/' ~ image)|urlencode}) %}
@@ -260,4 +260,7 @@
 {# Compose final OG image URL #}
 {% set og_image_url = base_image_url ~ (('?'+query_string) if query_string else '') %}
 <meta property="og:image" content="{{ og_image_url }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyprien in Peru image for thumbsmith" />
 <meta name="twitter:image" content="{{ og_image_url }}" />
