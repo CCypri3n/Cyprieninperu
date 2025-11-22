@@ -121,7 +121,8 @@
                         <div id="newsletter" class="newsletter newsletter-widget">
                                 <div class="newsletter-inner">
                                         <h2 class="newsletter-title">{{ _('Newsletter') }}</h2>
-                                        <form name="newsletter" method="POST" netlify class="newsletter-form" novalidate>
+                                        <form name="newsletter" action="https://api.postcatch.io/submit/0ed158cd-2cf5-41d7-bb10-681669947280" method="POST" class="newsletter-form" novalidate>
+                                                <input type="hidden" name="form-name" value="newsletter" />
                                                 <div class="newsletter-row">
                                                         <input type="email" name="email" class="newsletter-input" placeholder="{{ _('Your Email') }}" aria-label="{{ _('Your Email') }}" required />
                                                         <li>
@@ -130,6 +131,7 @@
                                                 </div>
                                                 <p class="newsletter-note"><i>{{ _('No spam — unsubscribe anytime.') }}</i></p>
                                         </form>
+                                        <div id="newsletter-success" style="display:none; color: #C74350; margin-top: 1em;">{{ _('Thank you for subscribing!') }}</div>
                                 </div>
                         </div>
                 </section><!-- /#extras -->
@@ -144,6 +146,7 @@
         </body>
                 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/lang-redirect.js" defer></script>
                 <script src='/theme/js/carousel.js' defer></script>
+                <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/newsletter-form.js" defer></script>
 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </html>

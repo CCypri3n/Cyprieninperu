@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  2.0.0\n"
 "Report-Msgid-Bugs-To: cyprien.chevallier@pm.me\n"
-"POT-Creation-Date: 2025-11-21 19:33-0500\n"
+"POT-Creation-Date: 2025-11-21 20:02-0500\n"
 "PO-Revision-Date: 2025-11-19 12:27-0500\n"
 "Last-Translator: Cyprien Chevallier cyprien.chevallier@pm.me\n"
 "Language: de\n"
@@ -93,23 +93,27 @@ msgstr "RSS-Feed"
 msgid "Newsletter"
 msgstr "Newsletter"
 
-#: theme/smashing-magazine/templates/base.html:126
+#: theme/smashing-magazine/templates/base.html:127
 msgid "Your Email"
 msgstr "Deine E-Mail"
 
-#: theme/smashing-magazine/templates/base.html:128
+#: theme/smashing-magazine/templates/base.html:129
 msgid "Subscribe"
 msgstr "Abonnieren"
 
-#: theme/smashing-magazine/templates/base.html:131
+#: theme/smashing-magazine/templates/base.html:132
 msgid "No spam — unsubscribe anytime."
 msgstr "Kein Spam – Abmeldung jederzeit möglich."
 
-#: theme/smashing-magazine/templates/base.html:138
+#: theme/smashing-magazine/templates/base.html:134
+msgid "Thank you for subscribing!"
+msgstr "Danke fürs Anmelden!"
+
+#: theme/smashing-magazine/templates/base.html:140
 msgid "Proudly powered by"
 msgstr "Betrieben mit"
 
-#: theme/smashing-magazine/templates/base.html:138
+#: theme/smashing-magazine/templates/base.html:140
 msgid "Theme by"
 msgstr "Theme von"
 
