@@ -63,7 +63,7 @@
                         <div id="newsletter" class="newsletter newsletter-widget">
                                 <div class="newsletter-inner">
                                         <h2 class="newsletter-title">Newsletter</h2>
-                                        <form name="newsletter" method="POST" netlify class="newsletter-form" novalidate>
+                                        <form name="newsletter" action="https://api.postcatch.io/submit/0ed158cd-2cf5-41d7-bb10-681669947280" method="POST" class="newsletter-form" novalidate>
                                                 <input type="hidden" name="form-name" value="newsletter" />
                                                 <div class="newsletter-row">
                                                         <input type="email" name="email" class="newsletter-input" placeholder="Your Email" aria-label="Your Email" required />
@@ -73,7 +73,7 @@
                                                 </div>
                                                 <p class="newsletter-note"><i>No spam — unsubscribe anytime.</i></p>
                                         </form>
-                                        <div id="newsletter-success" style="display:none; color: green; margin-top: 1em;">Thank you for subscribing!</div>
+                                        <div id="newsletter-success" style="display:none; color: #C74350; margin-top: 1em;">Thank you for subscribing!</div>
                                 </div>
                         </div>
                 </section><!-- /#extras -->
@@ -85,35 +85,8 @@
 
         </body>
                 <script src="https://devccypri3n1563.netlify.app/theme/js/lang-redirect.js" defer></script>
-                <script src='/theme/js/carousel.js' defer></script>
+                <script src='https://devccypri3n1563.netlify.app/theme/js/carousel.js' defer></script>
+                <script src="https://devccypri3n1563.netlify.app/theme/js/newsletter_form.js" defer></script>
 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
-<script>
-  const form = document.querySelector('form[name="newsletter"]');
-  const successMessage = document.getElementById('newsletter-success');
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault(); // prevent default form submission
-
-    const formData = new FormData(form);
-
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
-    })
-    .then(response => {
-      if (response.ok) {
-        form.style.display = 'none';         // hide the form
-        successMessage.style.display = 'block'; // show success message
-        form.reset();
-      } else {
-        alert('There was a problem submitting your form');
-      }
-    })
-    .catch(error => {
-      alert('Error submitting form: ' + error.message);
-    });
-  });
-</script>
 </html>

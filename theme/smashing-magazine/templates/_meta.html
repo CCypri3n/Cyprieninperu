@@ -2,14 +2,12 @@
 {# Expects article/page/category/tag variables to be available in the template context #}
 {% set site_name = SITENAME|striptags %}
 {% set default_image = OG['image'] %}
-
 {# Mobile-friendly meta tags #}
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="{{ site_name }}" />
 <meta name="theme-color" content="#000305" />
 <meta name="format-detection" content="telephone=no" />
-
 {# Determine context type and canonical values #}
 {% if article is defined %}
   {% set obj = article %}
@@ -40,27 +38,22 @@
   {% set image = default_image %}
   {% set desc = (OG[DEFAULT_LANG]['description'] | striptags) %}
 {% endif %}
-
 {# Safe short description for meta tags #}
 {% set short_desc = desc | truncate(150) | e %}
-
+{# Safe short description for thumbsmith #}
+{% set thumbsmith_desc = desc | truncate(100) | e %}
 {# Domain for twitter:domain (strip protocol) #}
 {% set domain = (SITEURL or 'https://cyprieninperu.netlify.app').replace('https://','').replace('http://','').rstrip('/') %}
-
 <meta name="description" content="{{ short_desc }}" />
 <meta property="og:description" content="{{ short_desc }}" />
-
 {# og:title: homepage shows just site name #}
 {% if obj_type == 'website' and title == site_name %}
   <meta property="og:title" content="{{ site_name }}" />
 {% else %}
   <meta property="og:title" content="{{ site_name }} — {{ title|e }}" />
 {% endif %}
-
 <meta property="og:type" content="{{ 'article' if obj_type == 'article' else 'website' }}" />
 <meta property="og:url" content="{{ url }}" />
-<meta property="og:image" content="{{ image }}" />
-
 {# Hreflang / rel=alternate tags for language variants #}
 {% if lang_siteurls is defined %}
   {% for lang, langurl in lang_siteurls.items() %}
@@ -99,7 +92,6 @@
   {% endfor %}
   <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/" />
 {% endif %}
-
 {# Twitter tags #}
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="{{ domain }}" />
@@ -110,8 +102,6 @@
   <meta name="twitter:title" content="{{ site_name }} — {{ title|e }}" />
 {% endif %}
 <meta name="twitter:description" content="{{ short_desc }}" />
-<meta name="twitter:image" content="{{ image }}" />
-
 {# Structured data: Article or WebPage/CollectionPage + BreadcrumbList #}
 {% if obj_type == 'article' %}
 <script type="application/ld+json">
@@ -129,19 +119,21 @@
 }
 </script>
 {% endif %}
-
 {# Article-specific OpenGraph/Article meta properties #}
 {% if obj_type == 'article' %}
   <meta property="article:author" content="{{ article.author_url or article.author or OG['author'] | striptags | e }}" />
   {% if article.date %}
     <meta property="article:published_time" content="{{ article.date.isoformat() }}" />
+    {% set param_date = article.date %}
   {% endif %}
   {% if article.modified %}
     <meta property="article:modified_time" content="{{ article.modified.isoformat() }}" />
     <meta property="og:updated_time" content="{{ article.modified.isoformat() }}" />
+    {% set param_date = article.modified %}
   {% endif %}
   {% if article.category %}
     <meta property="article:section" content="{{ article.category | striptags | e }}" />
+    {% set param_category = article.category %}
   {% endif %}
   {% if article.tags %}
     {% for tag in article.tags %}
@@ -149,7 +141,6 @@
     {% endfor %}
   {% endif %}
 {% endif %}
-
 {# WebPage JSON-LD and page-specific metas for non-article pages #}
 {% if obj_type == 'page' %}
 <script type="application/ld+json">
@@ -166,17 +157,19 @@
   "dateModified": "{{ page.modified.isoformat() if page.modified else '' }}"
 }
 </script>
-
   <meta property="page:author" content="{{ page.author_url or page.author or OG['author'] | striptags | e }}" />
   {% if page.date %}
     <meta property="page:published_time" content="{{ page.date.isoformat() }}" />
+    {% set param_date = page.date %}
   {% endif %}
   {% if page.modified %}
     <meta property="page:modified_time" content="{{ page.modified.isoformat() }}" />
     <meta property="og:updated_time" content="{{ page.modified.isoformat() }}" />
+    {% set param_date = page.modified %}
   {% endif %}
   {% if page.category %}
     <meta property="page:section" content="{{ page.category | striptags | e }}" />
+    {% set param_category = page.category %}
   {% endif %}
   {% if page.tags %}
     {% for tag in page.tags %}
@@ -184,7 +177,6 @@
     {% endfor %}
   {% endif %}
 {% endif %}
-
 {# CollectionPage JSON-LD for category/tag/author lists #}
 {% if obj_type == 'collection' %}
 <script type="application/ld+json">
@@ -198,7 +190,6 @@
 }
 </script>
 {% endif %}
-
 {# WebSite JSON-LD for homepage #}
 {% if obj_type == 'website' %}
 <script type="application/ld+json">
@@ -213,12 +204,10 @@
 }
 </script>
 {% endif %}
-
 {# BreadcrumbList: build a localized multi-level breadcrumb (Home -> Category -> Page/Article) #}
 {% set lang = (article.lang if article is defined else (page.lang if page is defined else DEFAULT_LANG)) %}
 {% set home_name = _('Home') if _ is defined else 'Home' %}
 {% set crumbs = [ {'name': home_name, 'url': SITEURL} ] %}
-
 {# For articles include category if available and resolvable #}
 {% if obj_type == 'article' and article.category %}
   {% if lang in CATEGORY_TRANSLATIONS and (article.category in CATEGORY_TRANSLATIONS[lang]) %}
@@ -233,10 +222,8 @@
   {% endif %}
   {% set crumbs = crumbs + [ {'name': cat_name, 'url': cat_url} ] %}
 {% endif %}
-
 {# Finally the current page/article #}
 {% set crumbs = crumbs + [ {'name': title, 'url': url} ] %}
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -248,3 +235,29 @@
   ]
 }
 </script>
+{% set base_image_url = "https://cdn.thumbsmith.com/v1/u/cyprieninperu/default.png" %}
+{# Build dictionary with mandatory parameters #}
+{% set query_params = {
+    'title': title|urlencode,
+    'logo': OG['logo'],
+    'site_name': OG[DEFAULT_LANG]['site_name'],
+} %}
+{# Conditionally add optional params #}
+{% if obj_type == 'article' or obj_type == 'page' %}
+  {% if param_category %}
+    {% set _ = query_params.update({'category': param_category|urlencode}) %}
+  {% endif %}
+  {% if param_date %}
+    {% set _ = query_params.update({'date': param_date.isoformat()|urlencode}) %}
+  {% endif %}
+  {% if image and image != default_image %}
+    {% set _ = query_params.update({'image': (SITEURL ~ '/' ~ image)|urlencode}) %}
+  {% endif %}
+{% endif %}
+{# Build the query string, filtering-out empty values #}
+{% set filtered_params = query_params | dictsort | selectattr('1') | list %}
+{% set query_string = filtered_params | map('join', '=') | join('&') %}
+{# Compose final OG image URL #}
+{% set og_image_url = base_image_url ~ (('?'+query_string) if query_string else '') %}
+<meta property="og:image" content="{{ og_image_url }}" />
+<meta name="twitter:image" content="{{ og_image_url }}" />

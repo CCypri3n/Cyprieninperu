@@ -139,15 +139,20 @@ OG = {
     'en': {
         'description':'Cyprien in Peru is a personal blog for my one year adventure in Peru.',
         'author':'Cyprien Chevallier',
+        'site_name':'Cyprien in Peru'
     },
     'fr': {
         'description':'Cyprien au Pérou est un blog personnel pour mon aventure d\'un an au Pérou ',
-        'author':'Cyprien Chevallier'
+        'author':'Cyprien Chevallier',
+        'site_name':'Cyprien au Pérou',
     },
     'de': {
         'description':'Cyprien in Peru ist ein persönlicher Blog für mein einjähriges Abenteuer in Peru',
         'author':'Cyprien Chevallier',
+        'site_name':'Cyprien in Peru',
     },
     'author':'Cyprien Chevallier',
-    'image':'https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png',
+    'image':'https://ik.imagekit.io/721zjc9b0/images/P8260493_DxO_oWrPud-bS.jpg?updatedAt=1763596726655',
+    'logo':'https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png?updatedAt=1763607436597',
+    'date':'23-08-2025',
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  2.0.0\n"
 "Report-Msgid-Bugs-To: cyprien.chevallier@pm.me\n"
-"POT-Creation-Date: 2025-11-21 20:02-0500\n"
+"POT-Creation-Date: 2025-11-21 21:39-0500\n"
 "PO-Revision-Date: 2025-11-19 12:27-0500\n"
 "Last-Translator: Cyprien Chevallier cyprien.chevallier@pm.me\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: theme/smashing-magazine/templates/_meta.html:219
+#: theme/smashing-magazine/templates/_meta.html:209
 msgid "Home"
 msgstr "Start"
 
