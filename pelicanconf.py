@@ -8,7 +8,7 @@ TIMEZONE = 'America/Lima'
 
 PLUGIN_PATHS = ['plugins']
 
-PLUGINS = ['i18n_subsites', 'statistics', 'image_gallery']
+PLUGINS = ['i18n_subsites', 'statistics', 'image_gallery', 'metadata_goatcounter_viewcount']
 
 
 MARKDOWN = {

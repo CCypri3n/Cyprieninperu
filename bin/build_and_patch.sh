@@ -16,6 +16,9 @@ fi
 
 echo "Using Python: $PYTHON"
 
+echo "Fetching data from Goatcounter API"
+$PYTHON scripts/goatcounter_viewcount.py
+
 PELICAN_CMD=("-m" "pelican" "content" "-o" "__site/" "-s" "publishconf.py")
 if [ "$#" -gt 0 ]; then
   # allow extra pelican args from caller
