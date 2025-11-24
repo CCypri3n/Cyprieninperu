@@ -17,6 +17,7 @@
 {% block content %}
   <section id="content" class="body">
     <article>
+      {% include 'article_infos.html' %}
       <header>
         <h1 class="entry-title">
           <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
@@ -25,7 +26,6 @@
       </header>
 
       <div class="entry-content">
-        {% include 'article_infos.html' %}
         {{ article.content }}
       </div><!-- /.entry-content -->
       {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}

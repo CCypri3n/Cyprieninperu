@@ -3,6 +3,7 @@ Date: 2025-10-27T09:00
 Category: Peru
 Slug: going-abroad
 Lang: de
+Author: Cyprien Chevallier
 Image: https://ik.imagekit.io/721zjc9b0/images/P8260499_DxO_P4ImBAGCG7.jpg?updatedAt=1763596729839
 Summary: Endlich habe ich es geschafft, meinen ersten richtigen Artikel zu veröffentlichen. Ich beschreibe meinen ersten Tag in Peru bis hin zu meiner Reise in meine neue Heimat Miguel Grau.
 

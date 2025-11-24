@@ -210,6 +210,8 @@ cython_debug/
 # Built Visual Studio Code Extensions
 *.vsix
 
+.github/*
+
 # Ruff stuff:
 .ruff_cache/
 

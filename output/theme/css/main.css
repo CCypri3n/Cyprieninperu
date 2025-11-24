@@ -431,6 +431,23 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
     color: #444;
 }
 
+/* Article info (full article view): avatar left, text right */
+.article-info { margin-bottom: 1rem; clear: both; }
+.article-info .author-block { display: flex; align-items: center; gap: 12px; }
+.article-info .author-avatar { margin: 0; flex: 0 0 auto; width: 72px; height: 72px; border-radius: 50%; overflow: hidden; }
+.article-info .author-avatar img,
+.article-info .author-avatar svg { width: 100%; height: 100%; display: block; object-fit: cover; }
+.article-info .author-text { flex: 1 1 auto; min-width: 0; }
+.article-info .author-name { font-weight: 700; margin-bottom: 0.25rem; }
+.article-info .author-meta { color: #666; font-size: 0.95em; }
+.article-info .meta-sep { color: #999; padding: 0 6px; }
+
+/* Responsive: reduce avatar size on small screens and allow wrapping */
+@media (max-width: 640px) {
+    .article-info .author-block { gap: 8px; }
+    .article-info .author-avatar { width: 56px; height: 56px; }
+}
+
 /*
 	About
 *****************/

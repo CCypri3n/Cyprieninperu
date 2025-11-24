@@ -1,30 +1,50 @@
-<footer class="post-info">
-        <abbr class="published" title="{{ article.date.strftime('%d.%m.%Y') }}">
-                {{ _('Published:') }} {{ article.locale_date }}
-        </abbr>
-        {% if article.modified %}
-                <br />
-                <abbr class="modified" title="{{ article.modified.isoformat() }}">
-                       {{ _('Updated:') }} {{ article.locale_modified }}
-                </abbr>
+<div class="post-info article-info">
+        {# author avatar: prefer article.metadata.author_image, fallback to about.metadata.image if available #}
+        {% set about = pages | selectattr("slug", "equalto", "about") | first %}
+        {# Resolve avatar from site config AUTHOR_AVATAR mapping; try authors in order, fallback to Default #}
+        {% set avatar = SITEURL ~ '/' ~ THEME_STATIC_DIR ~ '/icons/default_avatar.svg' %}
+        {% if article.author %}
+                {% set avatar = AUTHOR_AVATAR[article.author|string] %}
         {% endif %}
+        <div class="author-block">
+                {% if avatar %}
+                        <figure class="author-avatar">
+                                {% if avatar.startswith('<') %}
+                                        {{ avatar|safe }}
+                                {% else %}
+                                        <img src="{{ avatar }}" alt="{{ article.author }}" />
+                                {% endif %}
+                        </figure>
+                {% else %}
+                        <figure class="author-avatar">
+                                {# empty fallback: render empty SVG circle to keep layout stable #}
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#cccccc"/></svg>
+                        </figure>
+                {% endif %}
+                <div class="author-text">
+                        {% if article.authors %}
+                                <div class="author-name vcard">
+                                        {% set about = pages | selectattr("slug", "equalto", "about") | first %}
+                                        {% for author in article.authors %}
+                                                <a class="url fn" href="{{ SITEURL }}/{{ about.url }}">{{ author }}</a>{% if not loop.last %}, {% endif %}
+                                        {% endfor %}
+                                </div>
+                        {% endif %}
 
-        {% if article.authors %}
-                <address class="vcard author">
-                        {{ _('By') }}
+                        <div class="author-meta">
+                                {% if article.modified %}
+                                        <abbr class="published" title="{{ article.modified.strftime('%d.%m.%Y') }}">{{ article.locale_modified }}</abbr>
+                                {% else %}
+                                        <abbr class="published" title="{{ article.date.strftime('%d.%m.%Y') }}">{{ article.locale_date }}</abbr>
+                                {% endif %}
+                                {% if article.stats %}
+                                        <span class="meta-sep">&nbsp;•&nbsp;</span>
+                                        <span class="reading-time" title="~{{ article.stats['wc'] }} {{ _('words') }}">{{ article.stats['read_mins'] }} {{ _('minutes') if (article.stats['read_mins']) > 1 else _('minute') }}</span>
+                                {% endif %}
+                        </div>
+                </div>
+        </div>
 
-                                {% set about = pages | selectattr("slug", "equalto", "about") | first %}
-
-                                {% for author in article.authors %}
-                                        <a class="url fn" href="{{ SITEURL }}/{{ about.url }}">{{ author }}</a>
-                                {% endfor %}
-                </address>
-        {% endif %}
-
-        <p>{{ _('In')}} <a href="{{ SITEURL }}/{{ article.category.url }}">{{ CATEGORY_TRANSLATIONS[DEFAULT_LANG][article.category] if CATEGORY_TRANSLATIONS[DEFAULT_LANG][article.category] else article.category }}</a>.</p>
-        {% if article.stats %}
-        <p title="~{{ article.stats['wc'] }} {{ _('words') }}">{{ article.stats['wc'] }} {{ _('words') }} — {{ _('Estimated reading time:') }} {{ article.stats['read_mins'] }} {{ _('minutes') if (article.stats['read_mins']) > 1 else _('minute') }}</p>
-        {% endif %}
         {% include 'taglist.html' %}
         {% import 'translations.html' as translations with context %}
-</footer><!-- /.post-info -->
+</div>

@@ -156,3 +156,8 @@ OG = {
     'logo':'https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png?updatedAt=1763607436597',
     'date':'23-08-2025',
 }
+
+AUTHOR_AVATAR = {
+    "Cyprien Chevallier":"https://ik.imagekit.io/721zjc9b0/images/CyprienChevallier_R2MC3rPjn.JPG",
+    "Baum":"https://ik.imagekit.io/721zjc9b0/images/CyprienChevallier_R2MC3rPjn.JPG",
+}
