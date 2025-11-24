@@ -448,6 +448,57 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
     .article-info .author-avatar { width: 56px; height: 56px; }
 }
 
+/* Share buttons (article) */
+.share-buttons { display: inline-flex; gap: 10px; margin-top: 1rem; align-items: center; }
+
+/* Reset anchor presentation so link defaults don't affect icons */
+.share-button {
+    text-decoration: none !important;
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    color: #000 !important; /* default icon color (black) */
+    cursor: pointer;
+}
+
+.share-button:focus { outline: 3px solid rgba(199,67,80,0.18); outline-offset: 3px; }
+
+.share-icon { width: 100%; height: 100%; display: block; }
+.share-icon path { fill: currentColor; }
+
+/* Per-button hover colors (change only the icon color) */
+.share-button.facebook { --share-hover: #1877F2; }
+.share-button.linkedin { --share-hover: #0A66C2; }
+.share-button.link { --share-hover: #C74350; }
+.share-button:hover { color: var(--share-hover) !important; background: none !important; }
+
+/* Ensure anchor pseudo-class rules don't apply visual backgrounds to our buttons */
+a.share-button, a.share-button:link, a.share-button:visited, a.share-button:hover, a.share-button:active {
+    background: none !important;
+    text-decoration: none !important;
+}
+
+/* Row that contains share buttons on the left and views on the right */
+.share-views-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 1rem; }
+.share-views-row .share-buttons { margin-top: 0; }
+
+.page-views { color: #666; font-size: 0.95em; display: inline-flex; align-items: center; gap: 8px; }
+.page-views .views-inner { display: inline-flex; align-items: center; gap: 6px; }
+.page-views .views-icon { width: 18px; height: 18px; display: block; color: #666; }
+.page-views .views-count { font-weight: 600; color: #444; }
+
+@media (max-width: 540px) {
+    .share-views-row { flex-direction: column; align-items: flex-start; }
+    .page-views { margin-top: 8px; }
+}
+
+
 /*
 	About
 *****************/

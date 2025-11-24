@@ -72,6 +72,17 @@ This repository contains the source files for the multilingual static site ["Cyp
 
 ## TO-DO
 
-- [ ] Improve Article metadata position (Mobile & Computer) -> CSS
-- [ ] Add Thumbnails for Articles
+- [ ] Add Share button to articles
 - [ ] Add unsubscribe page (User writes e-mail, POST request with content unsubscribe)
+
+## Things to consider before going on main:
+
+- Update Newsletter Form URL
+
+https://www.facebook.com/sharer/sharer.php?u=https://cyprieninperu.wixsite.com/france/post/que-le-voyage-commence-une-ann%C3%A9e-au-p%C3%A9rou
+
+https://x.com/share?url=https://cyprieninperu.wixsite.com/france/post/que-le-voyage-commence-une-ann%25C3%25A9e-au-p%25C3%25A9rou
+
+https://www.linkedin.com/shareArticle?mini=true&url=https://cyprieninperu.wixsite.com/france/post/que-le-voyage-commence-une-ann%C3%A9e-au-p%C3%A9rou
+
+Lien Copié (https://cyprieninperu.wixsite.com/france/post/que-le-voyage-commence-une-année-au-pérou)
