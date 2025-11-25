@@ -2,6 +2,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import formatdate, make_msgid, formataddr
+from bs4 import BeautifulSoup as BS
 
 from rich.console import Console
 from rich.prompt import Prompt
@@ -30,7 +31,7 @@ Translations = {
         'plain_text':'Bonjour,\n\nCe message contient du contenu HTML. Veuillez l\'ouvrir dans une application de messagerie plus moderne ou ouvrez le lien suivant dans un navigateur internet: {{ARTICLE_URL}}'
     },
     'de':{
-        'plain_text':'Hallo,\n\nDiese Nachricht enthält HTML Inhalte. Bitte öffnen Sie diese E-Mail in einer modernen E-Mail Anwendung oder öffnen Sie folgenden Link in einem Browser: {{ARTICLE_URL}}'
+        'plain_text':'Hallo,\n\nDiese Nachricht enthält HTML Inhalte. Bitte öffnen Sie diese E-Mail in einer modernen E-Mail Anwendung oder öffnen Sie folgenden Link mit einem Browser: {{ARTICLE_URL}}'
     },
     'en':{
         'plain_text':'Hello,\n\nThis message contains HTML content. Please view it in a modern email client or open the following URL with a browser: {{ARTICLE_URL}}'
@@ -74,18 +75,18 @@ def main():
     with open(addresses, 'r') as file:
         email_data = json.load(file)
 
-    mails = email_data.get(lang, [])
-
-    for i in mails:
-        mail = email_handler(lang, path)
-        mail.send(mail.html_content(), i)
+    mails = email_data.get(lang, {})
+    for count, i in enumerate(mails.items()):
+        name, address = i
+        mail = email_handler(lang, path, check_mail=True if count == 0 else False)
+        mail.send(mail.html_content(name, address), address)
         time.sleep(2) # Prevent blocking because of too many requests
 
 
 class email_handler:
     """This class handles the sending of emails.
     """
-    def __init__(self, lang:str, path:str, base_url: str = "https://cyprieninperu.netlify.app/", recipients: str = None):
+    def __init__(self, lang:str, path:str, domain: str = "https://cyprieninperu.netlify.app/", base_url: str = "https://cyprieninperu.netlify.app/newsletters/", recipients: str = None, check_mail: bool = False):
         """Intializes the email_handler class.
 
         Args:
@@ -107,11 +108,16 @@ class email_handler:
         if not os.path.isfile(path) and path.split('.')[:-1] != 'html':
             raise Exception(f'Unknown file: {path}')
         self.path = path
+        self.check_mail = check_mail
+        self.base_url = base_url
+        self.domain = domain
 
-    def html_content(self) -> str:
+    def html_content(self, name, mail) -> str:
         with open(self.path, "r", encoding="utf-8") as f:
             html = f.read()
-        return html #Add Jinja2 Syntax Support
+        html = html.replace('{{NAME}}', name)
+        html = html.replace('{{BASE_URL}}', self.domain)
+        return html.replace('{{MAIL}}', mail) #Add Jinja2 Syntax Support
 
     def send(self, content: str, recipient_email: str = "cyprieninperu@pm.me"):
         msg = MIMEMultipart("alternative")
@@ -119,19 +125,27 @@ class email_handler:
         msg["To"] = recipient_email
         if self.bcc:
             msg["Bcc"] = self.bcc
-        msg["Subject"] = "Cyprien au Pérou - Newsletter du Lundi, 24 Novembre 2025"
+        msg["Subject"] = BS(content, 'html.parser').title.string
         msg["Date"] = formatdate(localtime=True)
         msg["Message-ID"] = make_msgid(domain="pm.me")
 
-        plain_text = "Hello,\n\nThis message contains HTML content. Please view it in a modern email client or open the following URL with a browser: " # URL should represent Netlify with the e-mail html.
+        if self.check_mail:
+            if Prompt.ask(f"[bold {"yellow"}]GLOBAL[/bold {"yellow"}] › You are sending {msg}. \nContinue?", default="y").lower() != "y":
+                exit()
+
+        plain_text = self.plain_text()
         msg.attach(MIMEText(plain_text, "plain", "utf-8"))
         msg.attach(MIMEText(content, "html", "utf-8"))
         try:
             with smtplib.SMTP_SSL(self.smtp_server, self.smtp_port) as server:
                 server.login(self.smtp_user, self.smtp_password)
-                #server.send_message(msg)
+                server.send_message(msg) # ATTENTION --- DELETE # TO ACTUALLY SEND
+                console.log(f'E-Mail sent successfully to {msg["To"]}')
         except Exception as e:
             print(f"Error: {e}")
+    
+    def plain_text(self):
+        return Translations[self.lang]['plain_text'].replace('{{ARTICLE_URL}}', f'{self.base_url}{self.path.split('/')[-1]}')
 
 if __name__ == '__main__':
     main()
