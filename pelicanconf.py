@@ -91,7 +91,7 @@ I18N_SUBSITES = {
 
 ARTICLE_PATHS = ['articles']
 PAGE_PATHS = ['pages']
-STATIC_PATHS = ['extra']
+STATIC_PATHS = ['extra', 'newsletters']
 EXTRA_PATH_METADATA = {
     'extra/gallery.json': {'path': 'gallery.json'},
 }

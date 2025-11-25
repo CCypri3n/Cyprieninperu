@@ -1,0 +1,72 @@
+<mjml lang="fr">
+  <mj-head>
+    <mj-title>Cyprien au Pérou - Newsletter du Lundi, 24 Novembre 2025</mj-title>
+  </mj-head>
+  <mj-body>
+    <mj-raw>
+      <!-- Company Header -->
+    </mj-raw>
+    <mj-raw>
+      <!-- Image Header -->
+    </mj-raw>
+    <mj-section background-color="#F5F4EF">
+      <mj-column>
+        <mj-image width="100px" src="https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png?updatedAt=1763607436597" href="https://cyprieninperu.netlify.app/fr/" padding="0"></mj-image>
+        <mj-text align="center" color="#000" font-size="40px" font-family="'Yanone Kaffeesatz', arial, serif" padding-bottom="0">Cyprien au Pérou</mj-text>
+        <mj-text align="center" color="#3B3B3B" padding-top="5px">Lundi, 24 Novembre 2025</mj-text>
+        <mj-image fluid-on-mobile="true" src="https://ik.imagekit.io/721zjc9b0/images/P8230536_DxO_HipNVxR4H.jpeg?updatedAt=1763594090488"></mj-image>
+      </mj-column>
+    </mj-section>
+    <mj-raw>
+      <!-- Intro text -->
+    </mj-raw>
+    <mj-section background-color="#F5F4EF">
+      <mj-column width="400px">
+        <mj-text font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" font-size="20px" font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" color="#000">Un nouveau départ</mj-text>
+        <mj-text color="#3B3B3B">Bonjour tout le monde,<br><br>vous l'avez peut-être déja remarqué, mais le design de ma Newsletter a changé. Et pas que! J'ai entièrement refais le site web et l'ai publié sur une autre addresse que vous trouverez si dessous.<br><br>Pourquoi? Tout simplement parce que avant, c'était plus compliqué pour moi de publier des articles, envoyer des images et d'adapter le site à ma façon. Sur le nouveau site par exemple le changement de langue est facilité et il y a une galerie qui affiche (presque) toutes mes images que je publie, pour avoir un jolie aperçu du pérou et de cette année incroyable.<br><br> J'ai transferé toutes les addresse mail sur mon nouveau système ainsi que mes articles, que j'ai retravaillé. Le site est en developpement constant, donc je vais ajouter des fonctions au fur-et-à-mesure.<br><br>Bonne lecture à toutes et à tous,<br>buenos días y hasta la proxíma! </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-raw>
+      <!-- Side image -->
+    </mj-raw>
+    <mj-section background-color="#F5F4EF">
+      <mj-raw>
+        <!-- Left image -->
+      </mj-raw>
+      <mj-column>
+        <mj-image width="300px" src="https://ik.imagekit.io/721zjc9b0/images/P8280563_DxO_v0TnIeDUT.jpg"></mj-image>
+      </mj-column>
+      <mj-raw>
+        <!-- right paragraph -->
+      </mj-raw>
+      <mj-column>
+        <mj-text font-family="'Yanone Kaffeesatz', arial, serif" font-size="20px" color="#000">11 heures plus tard...</mj-text>
+        <mj-text color="#3B3B3B" font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">... je suis arrivé à Pichanaki, une grande ville, surtout marqué par la route principale large et divisé de manière inconnue en plusieures voies. À 7 heure du matin, la circulation était dense, marqué surtout par des petit moto-taxis, pick-up et differente camionette probablement en route pour le travail. Fatigué, et surtout un peu paumé, Erik et moi avons attendu Aurelia, avec qui j'étais en contact pour gérer notre arrivé. Après s'être trompé quelques fois de personnes, car j'étais sûr et certain d'avoir reconnus Aurelia, me basant seulement sur une photo de profil légerement floue, un pick-up noir s'est présenté à nous, avec Aurelia et quelques autre personne assisent à l'interieure...</mj-text>
+        <mj-button background-color="#C74350" href="https://cyprieninperu.netlify.app/fr/">Lire l'article</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-raw>
+      <!-- Icons -->
+    </mj-raw>
+    <mj-section background-color="#fbfbfb">	
+      <mj-column>
+        <mj-social font-size="15px" icon-size="30px" mode="horizontal">
+          <mj-social-element name="facebook" href="https://cyprieninperu.netlify.app/newsletters/FR-24-11-2025.html">
+          </mj-social-element>
+          <mj-social-element name="linkedin" href="https://cyprieninperu.netlify.app/newsletters/FR-24-11-2025.html">
+          </mj-social-element>
+          <mj-social-element src="https://ik.imagekit.io/721zjc9b0/icons/hyperlink_vj1Nszgi1.svg" href="https://cyprieninperu.netlify.app/newsletters/FR-24-11-2025.html">
+          </mj-social-element>
+        </mj-social>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fbfbfb">
+      <mj-column>
+    <mj-text align="center" color="#3B3B3B">Pour se désabonner, changer de langue ou simplement me contacter, il suffit de répondre à cet <a href="mailto:cyprineinperu@pm.me?subject=Réponse-Newsletter"
+                                                        style="color: #C74350; text-decoration: none;">e-mail</a>.</mj-text>
+        <mj-text align="center" font-style="italic" color="#3B3B3B"> © Cyprien au Pérou - Tout droits réservé.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
