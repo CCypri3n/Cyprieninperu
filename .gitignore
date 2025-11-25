@@ -230,3 +230,4 @@ __marimo__/
 thoughts.txt
 test.py
 .DS_Store
+.emails.json

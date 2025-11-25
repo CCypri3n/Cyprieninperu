@@ -2,9 +2,18 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import formatdate, make_msgid, formataddr
+
+from rich.console import Console
+from rich.prompt import Prompt
+from rich.text import Text
+
 import os
 from dotenv import load_dotenv
+import json
 
+import time
+
+console = Console()
 load_dotenv()
 
 EMAIL = os.getenv('EMAIL')
@@ -28,10 +37,55 @@ Translations = {
     }
 }
 
+languages = ['fr', 'de', 'en']
+
+def __input(prompt_text, default="", style="cyan"):
+    """Enhanced global input with consistent styling."""
+    return Prompt.ask(f"[bold {style}]GLOBAL[/bold {style}] › {prompt_text}", default=default)
+
+def main():
+    lang = __input(
+            "Please select a language (fr, de, en)\nEnter your choice:",
+            style="yellow"
+        ).lower()
+    while lang not in languages:
+        console.print("[bold red]Invalid option! Please try again.[/bold red]")
+        lang = __input(
+            "Please select a language (fr, de, en)\nEnter your choice:",
+            style="yellow"
+        ).lower()
+    
+    path = __input(
+            "Please enter a path for your html (MJML) template.\nEnter your choice:",
+            style="yellow"
+        )
+    while path.split('.')[:-1] != 'html' and not os.path.isfile(path):
+        console.print("[bold red]Invalid option! Check the path and file type (HTML). Please try again.[/bold red]")
+        path = __input(
+            "Please enter a path for your html (MJML) template.\nEnter your choice:",
+            style="yellow"
+        )
+    
+    addresses = __input("Please enter a path your e-mail address json.\nEnter your choice:", style="yellow", default="newslettermjml/.emails.json")
+    while addresses.split('.')[:-1] != 'json' and not os.path.isfile(addresses):
+        console.print("[bold red]Invalid option! Check the path and file type (json). Please try again.[/bold red]")
+        addresses = __input("Please enter a path your e-mail address json.\nEnter your choice:", style="yellow", default="newslettermjml/.emails.json")
+
+    with open(addresses, 'r') as file:
+        email_data = json.load(file)
+
+    mails = email_data.get(lang, [])
+
+    for i in mails:
+        mail = email_handler(lang, path)
+        mail.send(mail.html_content(), i)
+        time.sleep(2) # Prevent blocking because of too many requests
+
+
 class email_handler:
     """This class handles the sending of emails.
     """
-    def __init__(self, lang:str, path:str, recipients: str, base_url: str = "https://cyprieninperu.netlify.app/"):
+    def __init__(self, lang:str, path:str, base_url: str = "https://cyprieninperu.netlify.app/", recipients: str = None):
         """Intializes the email_handler class.
 
         Args:
@@ -47,10 +101,10 @@ class email_handler:
         self.display_name = ""
         self.sender_email = "Cyprieninperu@pm.me"
         self.bcc = recipients
-        if lang not in ['fr', 'de', 'en']:
+        if lang not in languages:
             raise Exception('Language undefined')
         self.lang = lang
-        if not os.path.isfile(path):
+        if not os.path.isfile(path) and path.split('.')[:-1] != 'html':
             raise Exception(f'Unknown file: {path}')
         self.path = path
 
@@ -63,7 +117,8 @@ class email_handler:
         msg = MIMEMultipart("alternative")
         msg["From"] = formataddr((self.display_name, self.sender_email))
         msg["To"] = recipient_email
-        msg["Bcc"] = self.bcc
+        if self.bcc:
+            msg["Bcc"] = self.bcc
         msg["Subject"] = "Cyprien au Pérou - Newsletter du Lundi, 24 Novembre 2025"
         msg["Date"] = formatdate(localtime=True)
         msg["Message-ID"] = make_msgid(domain="pm.me")
@@ -79,6 +134,4 @@ class email_handler:
             print(f"Error: {e}")
 
 if __name__ == '__main__':
-    input()
-    email = email_handler("fr", "/Users/cyprien/Coding/Snakes/StaticSiteGenerator", "example@icloud.com,example@gmail.com")
-    email.send(email.html_content())
+    main()
