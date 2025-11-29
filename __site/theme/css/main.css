@@ -331,6 +331,18 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 #featured .featured-tile:focus { outline: 3px solid rgba(199,67,80,0.14); outline-offset: 3px; }
 #featured .featured-tile:hover .entry-title a { color: #C74350; text-decoration: underline; }
 
+/* Override legacy float-based featured rules so the flex layout behaves predictably.
+   This neutralizes `#featured figure { float: right; margin: ... }` and ensures
+   the `.featured-figure` used in the template does not float or introduce a large gap. */
+#featured .featured-figure,
+#featured .featured-figure img {
+    float: none !important;
+    margin: 0 !important;
+}
+
+#featured .featured-tile { gap: 12px; }
+#featured .featured-figure { flex: 0 0 280px; }
+
 /*
 	Body
 *****************/

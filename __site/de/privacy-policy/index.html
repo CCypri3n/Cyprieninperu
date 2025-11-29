@@ -65,7 +65,11 @@
         <body id="index" class="home">
                 <header id="banner" class="body">
                         <h1><a href="https://devccypri3n1563.netlify.app/de/">Cyprien in Peru</a></h1>
-                        <nav><ul>
+                        <!-- Mobile hamburger toggle (visible only on small screens) -->
+                        <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="hamburger" aria-hidden="true"></span>
+                        </button>
+                        <nav id="main-nav" class="main-nav"><ul>
                                                 <li><a href="https://devccypri3n1563.netlify.app/de/about/">Wer bin&nbsp;ich?</a></li>
                                                 <li><a href="https://devccypri3n1563.netlify.app/de/donate/">Spenden</a></li>
                                                 <li><a href="https://devccypri3n1563.netlify.app/de/gallery/">Gallerie</a></li>
@@ -259,6 +263,7 @@ Peru<br>
         </body>
                 <script src="https://devccypri3n1563.netlify.app/de/../theme/js/lang-redirect.js" defer></script>
                 <script src='https://devccypri3n1563.netlify.app/de/../theme/js/carousel.js' defer></script>
+                <script src="https://devccypri3n1563.netlify.app/de/../theme/js/mobile-nav.js" defer></script>
                 <script src="https://devccypri3n1563.netlify.app/de/../theme/js/newsletter_form.js" defer></script>
                 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
                         async src="//gc.zgo.at/count.js"></script>

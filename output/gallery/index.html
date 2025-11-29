@@ -61,7 +61,11 @@
         <body id="index" class="home">
                 <header id="banner" class="body">
                         <h1><a href="/">Cyprien in Peru</a></h1>
-                        <nav><ul>
+                        <!-- Mobile hamburger toggle (visible only on small screens) -->
+                        <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="hamburger" aria-hidden="true"></span>
+                        </button>
+                        <nav id="main-nav" class="main-nav"><ul>
                                                 <li><a href="/about/">Who am&nbsp;I?</a></li>
                                                 <li><a href="/donate/">Donate</a></li>
                                                 <li class="active"><a href="/gallery/">Gallery</a></li>
@@ -137,6 +141,7 @@
         </body>
                 <script src="/theme/js/lang-redirect.js" defer></script>
                 <script src='/theme/js/carousel.js' defer></script>
+                <script src="/theme/js/mobile-nav.js" defer></script>
                 <script src="/theme/js/newsletter_form.js" defer></script>
                 <script data-goatcounter="https://cyprieninperu.goatcounter.com/count"
                         async src="//gc.zgo.at/count.js"></script>

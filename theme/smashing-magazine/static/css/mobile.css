@@ -1,5 +1,8 @@
 /* Mobile-First Responsive Design Improvements */
 
+/* Hide mobile-only controls by default; shown explicitly inside the mobile breakpoint */
+.mobile-nav-toggle { display: none; }
+
 /* ===== MOBILE BREAKPOINT: 0px - 599px ===== */
 @media (max-width: 599px) {
   /* Body & Layout */
@@ -55,8 +58,67 @@
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: nowrap;
+    /* Allow wrapping so the nav can form two rows instead of requiring horizontal scroll */
+    flex-wrap: wrap;
   }
+
+  /* Mobile hamburger: hidden by default, visible on small screens */
+  .mobile-nav-toggle {
+    display: none;
+    background: #000305; /* dark background so white stripes are visible */
+    border: none;
+    padding: 8px 10px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    z-index: 120;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    /* keep a generous hit area but keep the visible hamburger centered */
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-nav-toggle .hamburger,
+  .mobile-nav-toggle .hamburger::before,
+  .mobile-nav-toggle .hamburger::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff; /* white stripes */
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .mobile-nav-toggle .hamburger::before,
+  .mobile-nav-toggle .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .mobile-nav-toggle .hamburger::before { top: -7px; }
+  .mobile-nav-toggle .hamburger::after { top: 7px; }
+
+  /* On small screens hide the nav list by default and show when .open is present */
+  #banner nav.main-nav ul { display: none; }
+  #banner nav.main-nav.open ul { display: flex; flex-direction: column; gap: 0; padding: 8px 0; }
+  #banner nav.main-nav.open { background: #000305; border-radius: 5px; padding: 8px; }
+  #banner nav.main-nav.open ul li { display: block; }
+
+  /* Show hamburger toggle on small screens */
+  .mobile-nav-toggle { display: block; }
+
+  /* Prevent the hamburger from overlapping the title: reserve space on the right */
+  #banner h1 { padding-right: 68px; }
+
+  /* Smooth horizontal scrolling for nav on touch devices */
+  #banner nav ul { -webkit-overflow-scrolling: touch; }
 
   #banner nav li {
     float: none;
@@ -68,10 +130,11 @@
   #banner nav a:link, #banner nav a:visited {
     display: inline-block;
     height: auto;
-    padding: 8px 10px;
-    font-size: 0.9em;
+    padding: 12px 14px;
+    font-size: 0.95em;
     line-height: 1.2;
     white-space: nowrap;
+    touch-action: manipulation;
   }
 
   /* Language switcher mobile */
@@ -93,6 +156,10 @@
     margin-bottom: 1em;
     max-width: 100%;
   }
+
+  /* Make featured tile more compact on very small screens */
+  #featured .featured-tile { gap: 10px; }
+  #featured .featured-figure img { height: auto; max-height: 220px; object-fit: cover; }
 
   #featured figure {
     float: none;
@@ -209,9 +276,14 @@
     margin-bottom: 1em;
   }
 
+  /* On mobile, stack the about photo above the text to avoid text wrapping beside the image */
   #about .photo {
-    float: left;
-    margin: 5px 10px 5px 0;
+    float: none !important;
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 0 1em 0;
+    object-fit: cover;
   }
 
   /* Tables - Responsive */
@@ -388,6 +460,11 @@
 @media (max-width: 599px) {
   .carousel-container {
     margin: 1em 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    touch-action: pan-y;
   }
 
   .carousel {
@@ -409,6 +486,8 @@
     max-width: 95vw;
     max-height: 80vh;
   }
+  /* Make carousel controls easier to tap on small screens */
+  .carousel-container .carousel-btn { width: 44px; height: 44px; }
 }
 
 /* ===== GALLERY MOBILE FIXES ===== */
@@ -465,11 +544,12 @@
 }
 
 @media (max-width: 599px) {
+  /* Force single-column tiles on small screens so items don't become too narrow */
   #posts-list.tiles {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 0;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 0 !important;
   }
   .tile-figure img { height: 200px; object-fit: cover; }
 }
@@ -494,4 +574,11 @@
   /* Featured: smaller gaps on mobile */
   #featured .entry-title { margin-bottom: 0.1rem; }
   #featured .featured-summary { margin-top: 0.1rem; margin-bottom: 0.4rem; }
+
+    /* Share buttons: increase hit area on mobile and improve focus state */
+    .share-buttons { gap: 12px; }
+    .share-button { width: 40px !important; height: 40px !important; }
+    .share-icon { width: 20px; height: 20px; }
+    .share-button:focus { outline: 3px solid rgba(199,67,80,0.22); }
+    .share-button[data-copied="true"] { transform: translateY(-2px); }
 }
