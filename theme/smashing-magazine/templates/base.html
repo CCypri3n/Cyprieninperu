@@ -137,7 +137,23 @@
                 </section><!-- /#extras -->
                 <footer id="contentinfo" class="body">
                         <address id="about" class="vcard body">
-                                {{ _('Proudly powered by') }} <a rel="nofollow" href="https://getpelican.com/">Pelican</a> — {{ _('Theme by') }} <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+                                {{ _('Proudly powered by') }} <a rel="nofollow" href="https://getpelican.com/">Pelican</a> — {{ _('Theme by') }} <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>
+
+                                {# Determine the current language for the rendered page and render privacy link inline #}
+                                {% set current_lang = DEFAULT_LANG %}
+                                {% if page is defined %}
+                                        {% set current_lang = page.lang %}
+                                {% elif article is defined %}
+                                        {% set current_lang = article.lang %}
+                                {% elif LANG is defined %}
+                                        {% set current_lang = LANG %}
+                                {% endif %}
+
+                                {% if current_lang == DEFAULT_LANG %}
+                                        &nbsp;—&nbsp;<a class="footer-privacy" href="{{ SITEURL }}/privacy-policy/" rel="privacy">{{ _('Privacy policy') }}</a>
+                                {% else %}
+                                        &nbsp;—&nbsp;<a class="footer-privacy" href="{{ SITEURL }}/{{ current_lang }}/privacy-policy/" rel="privacy">{{ _('Privacy policy') }}</a>
+                                {% endif %}
                         </address><!-- /#about -->
                 </footer><!-- /#contentinfo -->
 

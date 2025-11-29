@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  2.0.0\n"
 "Report-Msgid-Bugs-To: cyprien.chevallier@pm.me\n"
-"POT-Creation-Date: 2025-11-21 21:39-0500\n"
+"POT-Creation-Date: 2025-11-29 12:24-0500\n"
 "PO-Revision-Date: 2025-11-19 12:27-0500\n"
 "Last-Translator: Cyprien Chevallier cyprien.chevallier@pm.me\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: theme/smashing-magazine/templates/_meta.html:209
+#: theme/smashing-magazine/templates/_meta.html:208
 msgid "Home"
 msgstr "Start"
 
@@ -28,7 +28,7 @@ msgstr "Start"
 msgid "Archives for"
 msgstr "Archiv für"
 
-#: theme/smashing-magazine/templates/article.html:23
+#: theme/smashing-magazine/templates/article.html:24
 msgid "Permalink to"
 msgstr "Permanenter Link zu"
 
@@ -40,35 +40,30 @@ msgstr "Kommentare"
 msgid "Please enable JavaScript to view the comments."
 msgstr "Bitte aktivieren Sie JavaScript, um die Kommentare anzuzeigen."
 
-#: theme/smashing-magazine/templates/article_infos.html:3
-msgid "Published:"
-msgstr "Veröffentlicht:"
+#: theme/smashing-magazine/templates/article.html:65
+#, fuzzy
+msgid "Page views"
+msgstr "Seiten"
 
-#: theme/smashing-magazine/templates/article_infos.html:8
-msgid "Updated:"
-msgstr "Aktualisiert:"
+#: theme/smashing-magazine/templates/article.html:68
+msgid "This Viewcount is updated once a week."
+msgstr ""
 
-#: theme/smashing-magazine/templates/article_infos.html:14
-msgid "By"
-msgstr "Von"
-
-#: theme/smashing-magazine/templates/article_infos.html:24
-msgid "In"
-msgstr "In"
-
-#: theme/smashing-magazine/templates/article_infos.html:26
+#: theme/smashing-magazine/templates/article_infos.html:42
+#: theme/smashing-magazine/templates/index.html:24
+#: theme/smashing-magazine/templates/index.html:63
 msgid "words"
 msgstr "worte"
 
-#: theme/smashing-magazine/templates/article_infos.html:26
-msgid "Estimated reading time:"
-msgstr "Geschätzte Lesezeit:"
-
-#: theme/smashing-magazine/templates/article_infos.html:26
+#: theme/smashing-magazine/templates/article_infos.html:42
+#: theme/smashing-magazine/templates/index.html:24
+#: theme/smashing-magazine/templates/index.html:63
 msgid "minutes"
 msgstr "Minuten"
 
-#: theme/smashing-magazine/templates/article_infos.html:26
+#: theme/smashing-magazine/templates/article_infos.html:42
+#: theme/smashing-magazine/templates/index.html:24
+#: theme/smashing-magazine/templates/index.html:63
 msgid "minute"
 msgstr "Minute"
 
@@ -117,6 +112,11 @@ msgstr "Betrieben mit"
 msgid "Theme by"
 msgstr "Theme von"
 
+#: theme/smashing-magazine/templates/base.html:153
+#: theme/smashing-magazine/templates/base.html:155
+msgid "Privacy policy"
+msgstr "Datenschutzerklärung"
+
 #: theme/smashing-magazine/templates/categories.html:8
 msgid "Categories"
 msgstr "Kategorien"
@@ -138,19 +138,25 @@ msgstr "Kommentare"
 msgid "Fork me on GitHub"
 msgstr "Forke mich auf GitHub\"   # natürlicher: \"Auf GitHub forken"
 
-#: theme/smashing-magazine/templates/index.html:21
+#: theme/smashing-magazine/templates/index.html:22
+#: theme/smashing-magazine/templates/index.html:60
+msgid "Published:"
+msgstr "Veröffentlicht:"
+
+#: theme/smashing-magazine/templates/index.html:24
+#: theme/smashing-magazine/templates/index.html:63
+msgid "Estimated reading time:"
+msgstr "Geschätzte Lesezeit:"
+
+#: theme/smashing-magazine/templates/index.html:35
 msgid "Other articles"
 msgstr "Weitere Artikel"
 
-#: theme/smashing-magazine/templates/index.html:40
-msgid "read more"
-msgstr "weiterlesen"
-
-#: theme/smashing-magazine/templates/index.html:58
+#: theme/smashing-magazine/templates/index.html:82
 msgid "Pages"
 msgstr "Seiten"
 
-#: theme/smashing-magazine/templates/index.html:65
+#: theme/smashing-magazine/templates/index.html:89
 msgid "This site currently has no content."
 msgstr "Diese Website hat derzeit keinen Inhalt."
 
@@ -167,4 +173,16 @@ msgstr "Kategorien für"
 #: theme/smashing-magazine/templates/translations.html:3
 msgid "Translations:"
 msgstr "Übersetzungen:"
+
+#~ msgid "Updated:"
+#~ msgstr "Aktualisiert:"
+
+#~ msgid "By"
+#~ msgstr "Von"
+
+#~ msgid "In"
+#~ msgstr "In"
+
+#~ msgid "read more"
+#~ msgstr "weiterlesen"
 

@@ -231,3 +231,4 @@ thoughts.txt
 test.py
 .DS_Store
 .emails.json
+.markdownlint.json

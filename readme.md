@@ -72,8 +72,8 @@ This repository contains the source files for the multilingual static site ["Cyp
 
 ## TO-DO
 
-- [ ] Add unsubscribe page (User writes e-mail, POST request with content unsubscribe)
+## Things to consider before going on main
 
-## Things to consider before going on main:
-
-- Update Newsletter Form URL
+- Update Newsletter Form URL -> Check API Key (New acc needed!)
+- Update GoatCounter URL -> Check API Key
+- Update Thumbsmith URL

@@ -7,6 +7,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevBtn = container.querySelector(".carousel-btn.prev-btn");
     const nextBtn = container.querySelector(".carousel-btn.next-btn");
 
+      // If there is zero or one item, hide navigation and skip wiring the
+      // carousel behaviour — it should simply show the single image.
+      const itemCount = items.length;
+      // Ensure first item is active if none marked
+      if (![...items].some(i => i.classList.contains('active')) && items[0]) {
+        items[0].classList.add('active');
+      }
+      if (itemCount <= 1) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        return; // skip touch/controls wiring for single-item carousels
+      }
+
         /* ============================
        SWIPE GESTURES FOR TOUCH DEVICES
        ============================ */
