@@ -8,6 +8,7 @@ Image: https://ik.imagekit.io/721zjc9b0/images/11-hours-later1_converted.webp?up
 Summary: Ankunft in Miguel Grau, Entdeckung unserer Zimmer und des Dorfplatzes. In diesem Artikel erzähle ich euch vom Ende unserer Busreise und von unseren ersten Tagen im Dorf.
 
 … sind wir im Movílbus-Terminal in Pichanaki angekommen. Es war ungefähr 7 Uhr morgens, doch die Stadt mit 20.000 Einwohnern war schon längst wach. Verschiedenste Fahrzeuge – Mototaxis, Pick-ups und kleine Lastwagen – düsten durch die mehrspurige Hauptstraße. Die Luft war erfüllt von aufgewirbeltem Staub und den stinkenden Abgasen der Autos. Müde und voller Vorfreude warteten Erik und ich auf Aurelia, mit der ich in Kontakt war, um unsere Ankunft zu organisieren.
+
 Der Terminal, in dem wir warteten, sah von außen aus wie eine Garage, doch innen war er mit ein paar Sitzreihen und einer Theke ausgestattet. Etwa eine Stunde später kam ein dunkelgrauer Pick-up, in dem Aurelia und ein paar andere Personen saßen. Hier ist also die Mannschaft, mit der wir ein Jahr lang leben und arbeiten werden:
 
 - Elvis, in den Vierzigern, beschreibt sich selbst als glücklichen Mann: „Wenn es Bier, Kaffee und Frauen gibt.“ Ein Rock-’n’-Roll-Fan, der selten ohne sein Motorrad zu sehen ist.

@@ -72,8 +72,4 @@ This repository contains the source files for the multilingual static site ["Cyp
 
 ## TO-DO
 
-## Things to consider before going on main
-
-- Update Newsletter Form URL -> Check API Key (New acc needed!)
-- Update GoatCounter URL -> Check API Key
-- Update Thumbsmith URL
+- Rewrite old articles

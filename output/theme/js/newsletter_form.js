@@ -12,7 +12,7 @@ form.addEventListener('submit', async function (event) {
   };
 
   try {
-    const response = await fetch('https://api.postcatch.io/submit/138b0e91-1945-4621-97cd-03f57daf2af0', {
+    const response = await fetch('https://api.postcatch.io/submit/2126e620-4608-42fc-b70a-70e8f743e803', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)

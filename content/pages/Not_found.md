@@ -1,4 +1,4 @@
-Title: Not found
+Title: Error 404 - Not found
 Status: hidden
 Save_as: 404.html
 Template: 404

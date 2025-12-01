@@ -1,6 +1,6 @@
-<mjml lang="fr">
+<mjml lang="de">
   <mj-head>
-    <mj-title>Cyprien in Peru - Newsletter am {{DATE}}</mj-title>
+    <mj-title>Cyprien in Peru - Newsletter am PLACEHOLDER</mj-title>
   </mj-head>
   <mj-body>
     <mj-raw>
@@ -11,10 +11,10 @@
     </mj-raw>
     <mj-section background-color="#F5F4EF">
       <mj-column>
-        <mj-image width="100px" src="https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png?updatedAt=1763607436597" href="{{BASE_URL}}" padding="0"></mj-image>
+        <mj-image width="100px" src="https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png?updatedAt=1763607436597" href="{{BASE_URL}}de/" padding="0"></mj-image>
         <mj-text align="center" color="#000" font-size="40px" font-family="'Yanone Kaffeesatz', arial, serif" padding-bottom="0">Cyprien in Peru</mj-text>
-        <mj-text align="center" color="#3B3B3B" padding-top="5px">{{DATE}}</mj-text>
-        <mj-image fluid-on-mobile="true" src="https://ik.imagekit.io/721zjc9b0/images/P8230536_DxO_HipNVxR4H.jpeg?updatedAt=1763594090488"></mj-image>
+        <mj-text align="center" color="#3B3B3B" padding-top="5px">PLACEHOLDER</mj-text>
+        <mj-image fluid-on-mobile="true" src="PLACEHOLDER"></mj-image>
       </mj-column>
     </mj-section>
     <mj-raw>
@@ -22,8 +22,8 @@
     </mj-raw>
     <mj-section background-color="#F5F4EF">
       <mj-column width="400px">
-        <mj-text font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" font-size="20px" font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" color="#000">{{NL-TITLE}}</mj-text>
-        <mj-text color="#3B3B3B">{{NL-INTRO}}</mj-text>
+        <mj-text font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" font-size="20px" font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" color="#000">PLACEHOLDER</mj-text>
+        <mj-text color="#3B3B3B">PLACEHOLDER</mj-text>
       </mj-column>
     </mj-section>
     <mj-raw>
@@ -34,15 +34,15 @@
         <!-- Left image -->
       </mj-raw>
       <mj-column>
-        <mj-image width="300px" src="{{ART-IMAGE}}"></mj-image>
+        <mj-image width="300px" src="PLACEHOLDER"></mj-image>
       </mj-column>
       <mj-raw>
         <!-- right paragraph -->
       </mj-raw>
       <mj-column>
-        <mj-text font-family="'Yanone Kaffeesatz', arial, serif" font-size="20px" color="#000">{{ART-TITEL}}</mj-text>
-        <mj-text color="#3B3B3B" font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">{{ART-INTRO}}</mj-text>
-        <mj-button background-color="#C74350" href="{{BASE_URL}}">Artikel lesen</mj-button>
+        <mj-text font-family="'Yanone Kaffeesatz', arial, serif" font-size="20px" color="#000">PLACEHOLDER</mj-text>
+        <mj-text color="#3B3B3B" font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">PLACEHOLDER</mj-text>
+        <mj-button background-color="#C74350" href="{{BASE_URL}}de/{{ARTICLE_SLUG}}/?utm_source=mail&utm_campaign={{ARTICLE_SLUG}}">Artikel lesen</mj-button>
       </mj-column>
     </mj-section>
     <mj-raw>
@@ -51,21 +51,21 @@
     <mj-section background-color="#fbfbfb">
       <mj-column>
         <mj-social font-size="15px" icon-size="30px" mode="horizontal">
-          <mj-social-element name="facebook" href="{{BASE_URL}}newsletters/{{SLUG}}.html">
+          <mj-social-element name="facebook" href="{{BASE_URL}}newsletters/{{FILENAME}}">
           </mj-social-element>
-          <mj-social-element name="linkedin" href="{{BASE_URL}}newsletters/{{SLUG}}.html">
+          <mj-social-element name="linkedin" href="{{BASE_URL}}newsletters/{{FILENAME}}">
           </mj-social-element>
-          <mj-social-element src="https://ik.imagekit.io/721zjc9b0/icons/hyperlink_vj1Nszgi1.svg" href="{{BASE_URL}}newsletters/{{SLUG}}.html">
+          <mj-social-element src="https://ik.imagekit.io/721zjc9b0/icons/hyperlink_vj1Nszgi1.svg" href="{{BASE_URL}}newsletters/{{FILENAME}}/?utm_source=mail&utm_campaign={{ARTICLE_SLUG}}">
           </mj-social-element>
         </mj-social>
       </mj-column>
     </mj-section>
     <mj-section background-color="#fbfbfb">
       <mj-column>
-        <mj-text align="center" color="#3B3B3B"> Du erhältst diese Newsletter, weil <a href="mailto:{{MAIL}}" style="color: #C74350; text-decoration: none;">{{MAIL}}</a>  auf Cyprien in Peru angemeldet wurde.</mj-text>
-    <mj-text align="center" color="#3B3B3B">Um sich abzumelden, die Sprache zu ändern oder mich zu kontaktieren, musst du einfach auf diese <a href="mailto:cyprineinperu@pm.me?subject=Newsletter-Anwort"
+        <mj-text css-class="MAIL" align="center" color="#3B3B3B"> Du erhältst diese Newsletter, weil <a href="mailto:{{MAIL}}" style="color: #C74350; text-decoration: none;">{{MAIL}}</a>  auf Cyprien in Peru angemeldet wurde.</mj-text>
+        <mj-text css-class="MAIL" align="center" color="#3B3B3B">Um sich abzumelden, die Sprache zu ändern oder mich zu kontaktieren, musst du einfach auf diese <a href="mailto:cyprineinperu@pm.me?subject=Newsletter-Anwort"
                                                         style="color: #C74350; text-decoration: none;">E-Mail</a> antworten.</mj-text>
-        <mj-text align="center" font-style="italic" color="#3B3B3B"> © Cyprien in Peru - Alle Rechte vorbehalten.<br><a href="{{BASE_URL}}fr" style="color: #C74350; text-decoration: none;">{{BASE_URL}}</a>
+        <mj-text align="center" font-style="italic" color="#3B3B3B"> © Cyprien in Peru - Alle Rechte vorbehalten.<br><a href="{{BASE_URL}}de" style="color: #C74350; text-decoration: none;">{{BASE_URL}}</a>
         </mj-text>
       </mj-column>
     </mj-section>

@@ -1,6 +1,6 @@
-<mjml lang="fr">
+<mjml lang="de">
   <mj-head>
-    <mj-title>Cyprien in Peru - Newsletter am Montag, 24. November 2025</mj-title>
+    <mj-title>Cyprien in Peru - Newsletter am Sonntag, 30. November 2025</mj-title>
   </mj-head>
   <mj-body>
     <mj-raw>
@@ -11,10 +11,10 @@
     </mj-raw>
     <mj-section background-color="#F5F4EF">
       <mj-column>
-        <mj-image width="100px" src="https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png?updatedAt=1763607436597" href="{{BASE_URL}}" padding="0"></mj-image>
+        <mj-image width="100px" src="https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png?updatedAt=1763607436597" href="{{BASE_URL}}de/" padding="0"></mj-image>
         <mj-text align="center" color="#000" font-size="40px" font-family="'Yanone Kaffeesatz', arial, serif" padding-bottom="0">Cyprien in Peru</mj-text>
-        <mj-text align="center" color="#3B3B3B" padding-top="5px">Montag, 24. November 2025</mj-text>
-        <mj-image fluid-on-mobile="true" src="https://ik.imagekit.io/721zjc9b0/images/P8230536_DxO_HipNVxR4H.jpeg?updatedAt=1763594090488"></mj-image>
+        <mj-text align="center" color="#3B3B3B" padding-top="5px">Sonntag, 30. November 2025</mj-text>
+        <mj-image fluid-on-mobile="true" src="https://ik.imagekit.io/721zjc9b0/images/P8280563_DxO_v0TnIeDUT.jpg"></mj-image>
       </mj-column>
     </mj-section>
     <mj-raw>
@@ -22,8 +22,8 @@
     </mj-raw>
     <mj-section background-color="#F5F4EF">
       <mj-column width="400px">
-        <mj-text font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" font-size="20px" font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" color="#000">Un nouveau départ</mj-text>
-        <mj-text color="#3B3B3B">Bonjour tout le monde,<br><br>vous l'avez peut-être déja remarqué, mais le design de ma Newsletter a changé. Et pas que! J'ai entièrement refais le site web et l'ai publié sur une autre addresse que vous trouverez si dessous.<br><br>Pourquoi? Tout simplement parce que avant, c'était plus compliqué pour moi de publier des articles, envoyer des images et d'adapter le site à ma façon. Sur le nouveau site le changement de langue est facilité, il y a une galerie qui affiche (presque) toutes mes images que je publie, pour avoir un jolie aperçu du pérou et de cette année incroyable.<br><br> J'ai transferé toutes les addresse mail sur mon nouveau système ainsi que mes articles, que j'ai retravaillé. Le site est en developpement constant, donc je vais ajouter des fonctions au fur-et-à-mesure.<br><br>Bonne lecture à toutes et à tous,<br>buenos días y hasta la proxíma! </mj-text>
+        <mj-text font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" font-size="20px" font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" color="#000">Ein neuer Anfang</mj-text>
+        <mj-text color="#3B3B3B">Guten Tag euch allen,<br><br>ihr habt es vielleicht schon bemerkt, aber das Design meines Newsletters hat sich verändert. Und nicht nur das! Ich habe die komplette Webseite neu gestaltet und sie unter einer neuen Adresse veröffentlicht, die ihr unten findet.<br><br>Warum? Ganz einfach, weil es vorher für mich komplizierter war, Artikel zu veröffentlichen, Bilder zu senden und die Seite nach meinen Vorstellungen anzupassen. Auf der neuen Webseite ist der Sprachwechsel erleichtert, es gibt eine Galerie, die (fast) all meine veröffentlichten Bilder anzeigt, um einen schönen Eindruck von Peru und diesem unglaublichen Jahr zu bekommen.<br><br>Ich habe alle E-Mail-Adressen sowie meine Artikel in mein neues System übertragen und die Texte überarbeitet. Die Webseite befindet sich in ständiger Weiterentwicklung, daher werde ich nach und nach neue Funktionen hinzufügen.<br><br>Viel Spaß beim Lesen euch allen,<br>buenos días y hasta la próxima!</mj-text>
       </mj-column>
     </mj-section>
     <mj-raw>
@@ -34,15 +34,15 @@
         <!-- Left image -->
       </mj-raw>
       <mj-column>
-        <mj-image width="300px" src="https://ik.imagekit.io/721zjc9b0/images/P8280563_DxO_v0TnIeDUT.jpg"></mj-image>
+        <mj-image width="300px" src="https://ik.imagekit.io/721zjc9b0/images/11-hours-later1_converted.webp?updatedAt=1764432212520"></mj-image>
       </mj-column>
       <mj-raw>
         <!-- right paragraph -->
       </mj-raw>
       <mj-column>
-        <mj-text font-family="'Yanone Kaffeesatz', arial, serif" font-size="20px" color="#000">11 heures plus tard...</mj-text>
-        <mj-text color="#3B3B3B" font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">... je suis arrivé à Pichanaki, une grande ville, surtout marqué par la route principale large et divisé de manière inconnue en plusieures voies. À 7 heure du matin, la circulation était dense, marqué surtout par des petit moto-taxis, pick-up et differente camionette probablement en route pour le travail. Fatigué, et surtout un peu paumé, Erik et moi avons attendu Aurelia, avec qui j'étais en contact pour gérer notre arrivé. Après s'être trompé quelques fois de personnes, car j'étais sûr et certain d'avoir reconnus Aurelia, me basant seulement sur une photo de profil légerement floue, un pick-up noir s'est présenté à nous, avec Aurelia et quelques autre personne assisent à l'interieure...</mj-text>
-        <mj-button background-color="#C74350" href="{{BASE_URL}}">Artikel lesen</mj-button>
+        <mj-text font-family="'Yanone Kaffeesatz', arial, serif" font-size="20px" color="#000">11 Stunden später…</mj-text>
+        <mj-text color="#3B3B3B" font-family="'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">… sind wir im Movílbus-Terminal in Pichanaki angekommen. Es war ungefähr 7 Uhr morgens, doch die Stadt mit 20.000 Einwohnern war schon längst wach. Verschiedenste Fahrzeuge – Mototaxis, Pick-ups und kleine Lastwagen – düsten durch die mehrspurige Hauptstraße. Die Luft war erfüllt von aufgewirbeltem Staub und den stinkenden Abgasen der Autos. Müde und voller Vorfreude warteten Erik und ich auf Aurelia, mit der ich in Kontakt war, um unsere Ankunft zu organisieren.</mj-text>
+        <mj-button background-color="#C74350" href="{{BASE_URL}}de/{{ARTICLE_SLUG}}/?utm_source=mail&utm_campaign={{ARTICLE_SLUG}}">Artikel lesen</mj-button>
       </mj-column>
     </mj-section>
     <mj-raw>
@@ -51,21 +51,21 @@
     <mj-section background-color="#fbfbfb">
       <mj-column>
         <mj-social font-size="15px" icon-size="30px" mode="horizontal">
-          <mj-social-element name="facebook" href="{{BASE_URL}}newsletters/DE-24-11-2025.html">
+          <mj-social-element name="facebook" href="{{BASE_URL}}newsletters/{{FILENAME}}">
           </mj-social-element>
-          <mj-social-element name="linkedin" href="{{BASE_URL}}newsletters/DE-24-11-2025.html">
+          <mj-social-element name="linkedin" href="{{BASE_URL}}newsletters/{{FILENAME}}">
           </mj-social-element>
-          <mj-social-element src="https://ik.imagekit.io/721zjc9b0/icons/hyperlink_vj1Nszgi1.svg" href="{{BASE_URL}}newsletters/DE-24-11-2025.html">
+          <mj-social-element src="https://ik.imagekit.io/721zjc9b0/icons/hyperlink_vj1Nszgi1.svg" href="{{BASE_URL}}newsletters/{{FILENAME}}/?utm_source=mail&utm_campaign={{ARTICLE_SLUG}}">
           </mj-social-element>
         </mj-social>
       </mj-column>
     </mj-section>
     <mj-section background-color="#fbfbfb">
       <mj-column>
-        <mj-text align="center" color="#3B3B3B"> Du erhältst diese Newsletter, weil <a href="mailto:{{MAIL}}" style="color: #C74350; text-decoration: none;">{{MAIL}}</a>  auf Cyprien in Peru angemeldet wurde.</mj-text>
-    <mj-text align="center" color="#3B3B3B">Um sich abzumelden, die Sprache zu ändern oder mich zu kontaktieren, musst du einfach auf diese <a href="mailto:cyprineinperu@pm.me?subject=Newsletter-Anwort"
+        <mj-text css-class="MAIL" align="center" color="#3B3B3B"> Du erhältst diese Newsletter, weil <a href="mailto:{{MAIL}}" style="color: #C74350; text-decoration: none;">{{MAIL}}</a>  auf Cyprien in Peru angemeldet wurde.</mj-text>
+        <mj-text css-class="MAIL" align="center" color="#3B3B3B">Um sich abzumelden, die Sprache zu ändern oder mich zu kontaktieren, musst du einfach auf diese <a href="mailto:cyprineinperu@pm.me?subject=Newsletter-Anwort"
                                                         style="color: #C74350; text-decoration: none;">E-Mail</a> antworten.</mj-text>
-        <mj-text align="center" font-style="italic" color="#3B3B3B"> © Cyprien in Peru - Alle Rechte vorbehalten.<br><a href="{{BASE_URL}}fr" style="color: #C74350; text-decoration: none;">{{BASE_URL}}</a>
+        <mj-text align="center" font-style="italic" color="#3B3B3B"> © Cyprien in Peru - Alle Rechte vorbehalten.<br><a href="{{BASE_URL}}de" style="color: #C74350; text-decoration: none;">{{BASE_URL}}</a>
         </mj-text>
       </mj-column>
     </mj-section>

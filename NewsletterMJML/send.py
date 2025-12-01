@@ -2,17 +2,22 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import formatdate, make_msgid, formataddr
+from email.header import Header
+
 from bs4 import BeautifulSoup as BS
 
 from rich.console import Console
 from rich.prompt import Prompt
-from rich.text import Text
 
 import os
+import sys
 from dotenv import load_dotenv
 import json
-
 import time
+
+import argparse
+
+from createStaticPage import prepare_web_html
 
 console = Console()
 load_dotenv()
@@ -40,60 +45,26 @@ Translations = {
 
 languages = ['fr', 'de', 'en']
 
-def __input(prompt_text, default="", style="cyan"):
-    """Enhanced global input with consistent styling."""
-    return Prompt.ask(f"[bold {style}]GLOBAL[/bold {style}] › {prompt_text}", default=default)
-
-def main():
-    lang = __input(
-            "Please select a language (fr, de, en)\nEnter your choice:",
-            style="yellow"
-        ).lower()
-    while lang not in languages:
-        console.print("[bold red]Invalid option! Please try again.[/bold red]")
-        lang = __input(
-            "Please select a language (fr, de, en)\nEnter your choice:",
-            style="yellow"
-        ).lower()
-    
-    path = __input(
-            "Please enter a path for your html (MJML) template.\nEnter your choice:",
-            style="yellow"
-        )
-    while path.split('.')[:-1] != 'html' and not os.path.isfile(path):
-        console.print("[bold red]Invalid option! Check the path and file type (HTML). Please try again.[/bold red]")
-        path = __input(
-            "Please enter a path for your html (MJML) template.\nEnter your choice:",
-            style="yellow"
-        )
-    
-    addresses = __input("Please enter a path your e-mail address json.\nEnter your choice:", style="yellow", default="newslettermjml/.emails.json")
-    while addresses.split('.')[:-1] != 'json' and not os.path.isfile(addresses):
-        console.print("[bold red]Invalid option! Check the path and file type (json). Please try again.[/bold red]")
-        addresses = __input("Please enter a path your e-mail address json.\nEnter your choice:", style="yellow", default="newslettermjml/.emails.json")
-
-    with open(addresses, 'r') as file:
+def load_recipients(json_path):
+    """Load recipients from JSON file."""
+    if not os.path.isfile(json_path):
+        console.print(f"[bold red]JSON file not found: {json_path}[/bold red]")
+        sys.exit(1)
+    with open(json_path, 'r') as file:
         email_data = json.load(file)
-
-    mails = email_data.get(lang, {})
-    for count, i in enumerate(mails.items()):
-        name, address = i
-        mail = email_handler(lang, path, check_mail=True if count == 0 else False)
-        mail.send(mail.html_content(name, address), address)
-        time.sleep(2) # Prevent blocking because of too many requests
+    return email_data
 
 
 class email_handler:
     """This class handles the sending of emails.
     """
-    def __init__(self, lang:str, path:str, domain: str = "https://cyprieninperu.netlify.app/", base_url: str = "https://cyprieninperu.netlify.app/newsletters/", recipients: str = None, check_mail: bool = False):
+    def __init__(self, lang:str, path:str, article_name:str, domain: str = "https://cyprieninperu.netlify.app/", newsletter_url: str = "https://cyprieninperu.netlify.app/newsletters/", check_mail: bool = False):
         """Intializes the email_handler class.
 
         Args:
             lang (str): The language abbreviation of this e-mail for correct rendering of the e-mail.
             path (str): The path of the html template for this e-mail.
-            recipients (str): A str containing e-mails separated by commas, that will be added as bcc to the sent email.
-            base_url (str): The base url to be used to access the website at. Should be the root!
+            domain (str): The base url to be used to access the website at. Should be the root! Defaults to: "https://cyprieninperu.netlify.app/"
         """
         self.smtp_server = '127.0.0.1'
         self.smtp_port = 1026  # Use Bridge SMTP port and local server
@@ -101,7 +72,6 @@ class email_handler:
         self.smtp_password = EMAIL_PWD
         self.display_name = ""
         self.sender_email = "Cyprieninperu@pm.me"
-        self.bcc = recipients
         if lang not in languages:
             raise Exception('Language undefined')
         self.lang = lang
@@ -109,28 +79,33 @@ class email_handler:
             raise Exception(f'Unknown file: {path}')
         self.path = path
         self.check_mail = check_mail
-        self.base_url = base_url
+        self.newsletter_url = newsletter_url
         self.domain = domain
+        self.article_name = article_name
 
     def html_content(self, name, mail) -> str:
         with open(self.path, "r", encoding="utf-8") as f:
             html = f.read()
-        html = html.replace('{{NAME}}', name)
-        html = html.replace('{{BASE_URL}}', self.domain)
-        return html.replace('{{MAIL}}', mail) #Add Jinja2 Syntax Support
+        html = html.replace('{{NAME}}', name) # Name of the reciever
+        html = html.replace('{{BASE_URL}}', self.domain) # The domain of the website, default: "https://cyprieninperu.netlify.app/"
+        html = html.replace('{{FILENAME}}', self.path.split("/")[-1]) #Name of the Newsletters HTML file in content
+        html = html.replace('{{ARTICLE_SLUG}}', self.article_name) # The articles Slug for utm_campaign and the url
+        return html.replace('{{MAIL}}', mail) # The recievers e-mail
 
     def send(self, content: str, recipient_email: str = "cyprieninperu@pm.me"):
         msg = MIMEMultipart("alternative")
         msg["From"] = formataddr((self.display_name, self.sender_email))
         msg["To"] = recipient_email
-        if self.bcc:
-            msg["Bcc"] = self.bcc
-        msg["Subject"] = BS(content, 'html.parser').title.string
+        soup = BS(content, 'html.parser')
+        title_elem = soup.find('title')
+        title_text = title_elem.string.strip() if title_elem and title_elem.string else "Newsletter"
+        msg["Subject"] = Header(title_text, 'utf-8')
         msg["Date"] = formatdate(localtime=True)
         msg["Message-ID"] = make_msgid(domain="pm.me")
 
         if self.check_mail:
             if Prompt.ask(f"[bold {"yellow"}]GLOBAL[/bold {"yellow"}] › You are sending {msg}. \nContinue?", default="y").lower() != "y":
+                console.print("[bold red]Cancelled by user[/bold red]")
                 exit()
 
         plain_text = self.plain_text()
@@ -145,7 +120,45 @@ class email_handler:
             print(f"Error: {e}")
     
     def plain_text(self):
-        return Translations[self.lang]['plain_text'].replace('{{ARTICLE_URL}}', f'{self.base_url}{self.path.split('/')[-1]}')
+        return Translations[self.lang]['plain_text'].replace('{{ARTICLE_URL}}', f'{self.newsletter_url}{self.path.split('/')[-1]}')
+
+def main():
+    parser = argparse.ArgumentParser(description="Send HTML newsletter emails")
+    parser.add_argument("language", choices=languages, help="Language (fr, de, en)")
+    parser.add_argument("html_path", help="Path to HTML template")
+    parser.add_argument("article_slug", help="The articles slug.")
+    parser.add_argument("-j", "--json", default="newslettermjml/.emails.json", help="Path to email JSON (default: newslettermjml/.emails.json)")
+    
+    args = parser.parse_args()
+
+    # Validate HTML path
+    if not os.path.isfile(args.html_path):
+        console.print(f"[bold red]HTML file not found: {args.html_path}[/bold red]")
+        sys.exit(1)
+    
+    #Validate article slug
+    if not os.path.isdir(f'output/{args.article_slug}'):
+        console.print(f"[bold red]Article file not found: {args.article_slug}[/bold red]")
+        sys.exit(1)
+    
+    # Load recipients
+    email_data = load_recipients(args.json)
+    mails = email_data.get(args.language, {})
+    
+    if not mails:
+        console.print(f"[bold red]No emails found for language: {args.language}[/bold red]")
+        sys.exit(1)
+    
+    # Initialize email handler
+    handler = email_handler(args.language, args.html_path, args.article_slug)
+
+    for count, i in enumerate(mails.items()):
+        handler.check_mail=True if count == 0 else False
+        name, address = i
+        handler.send(handler.html_content(name, address), address)
+        time.sleep(2) # Prevent blocking because of too many requests
+    
+    prepare_web_html(args.html_path, args.html_path.split("/")[-1], args.article_slug)
 
 if __name__ == '__main__':
     main()
