@@ -1,5 +1,8 @@
 from bs4 import BeautifulSoup
 import os
+import argparse
+from rich import console
+import sys
 
 def prepare_web_html(input_path: str, filename: str, article_slug: str, base_url: str = "https://cyprieninperu.netlify.app/", output_path: str = "content/newsletters"):
     """
@@ -58,13 +61,25 @@ def prepare_web_html(input_path: str, filename: str, article_slug: str, base_url
 
 # Usage example:
 if __name__ == "__main__":
-    input_file = "newslettermjml/DE-30-11-2025.html"
-    output_dir = "content/newsletters/"
+    parser = argparse.ArgumentParser(description="Send HTML newsletter to content")
+    parser.add_argument("html_path", help="Path to HTML template")
+    parser.add_argument("article_slug", help="The articles slug.")    
+    args = parser.parse_args()
+
+    # Validate HTML path
+    if not os.path.isfile(args.html_path):
+        console.print(f"[bold red]HTML file not found: {args.html_path}[/bold red]")
+        sys.exit(1)
+    
+    #Validate article slug
+    if not os.path.isdir(f'output/{args.article_slug}'):
+        console.print(f"[bold red]Article file not found: {args.article_slug}[/bold red]")
+        sys.exit(1)
     
     web_html = prepare_web_html(
-        input_file, 
+        args.html_path, 
         base_url="https://cyprieninperu.netlify.app/",
-        filename="DE-30-11-2025.html",
-        article_slug="11-hours-later",
-        output_path=output_dir
+        filename=args.html_path.split("/")[-1],
+        article_slug=args.article_slug,
+        output_path="content/newsletters"
     )

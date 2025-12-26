@@ -56,18 +56,30 @@ This repository contains the source files for the multilingual static site ["Cyp
     pybabel compile -d theme/locale
     ```
 
-2. Generate the static site with the wrapper that includes custom scripts.
+2. Generate the newsletters html for the content folder (Repeat for every language).
+
+    ```bash
+    python3 newslettermjml/createStaticPage.py path/to/newsletterhtml article_slug
+    ```
+
+3. Generate the static site with the wrapper that includes custom scripts.
 
    ```bash
    bash bin/build_and_patch.sh
    ```
 
-3. Push the changes to the Github repo.
+4. Push the changes to the Github repo.
 
     ```bash
     git add .
     git commit -m "Commit Message"
     git push origin main
+    ```
+
+5. Send the Newsletter (Repeat for each language):
+
+    ```bash
+    python3 newslettermjml/send.py language_code path/to/newsletterhtml article_slug
     ```
 
 ## TO-DO

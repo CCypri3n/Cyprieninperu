@@ -1,6 +1,6 @@
 <mjml lang="fr">
   <mj-head>
-    <mj-title>Cyprien au Pérou - Newsletter du Dimanche, 30 Novembre 2025</mj-title>
+    <mj-title>Cyprien au Pérou - Newsletter du Vendredi, 26 Décembre 2025</mj-title>
   </mj-head>
   <mj-body>
     <mj-raw>
@@ -13,7 +13,7 @@
       <mj-column>
         <mj-image width="100px" src="https://ik.imagekit.io/721zjc9b0/images/machu-picchu_zPDSNYFy_.png?updatedAt=1763607436597" href="{{BASE_URL}}fr/" padding="0"></mj-image>
         <mj-text align="center" color="#000" font-size="40px" font-family="'Yanone Kaffeesatz', arial, serif" padding-bottom="0">Cyprien au Pérou</mj-text>
-        <mj-text align="center" color="#3B3B3B" padding-top="5px">Dimanche, 30 Novembre 2025</mj-text>
+        <mj-text align="center" color="#3B3B3B" padding-top="5px">Vendredi, 26 Décembre 2025</mj-text>
         <mj-image fluid-on-mobile="true" src="https://ik.imagekit.io/721zjc9b0/images/P8280563_DxO_v0TnIeDUT.jpg"></mj-image>
       </mj-column>
     </mj-section>

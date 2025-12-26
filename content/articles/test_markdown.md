@@ -6,10 +6,9 @@ Author: Cyprien Chevallier
 Lang: en
 Status: hidden
 
-
 # This is a Markdown Example
 
-This paragraph shows **bold text**, *italic text*, and a [hyperlink to Pelican site](https://getpelican.com).
+This paragraph shows **bold text**, _italic text_, and a [hyperlink to Pelican site](https://getpelican.com).
 
 Here is an image:
 
@@ -18,7 +17,7 @@ Here is an image:
 ## Table example
 
 | Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | Row 1    | Data 1   | Data 2   |
 | Row 2    | Data 3   | Data 4   |
 
@@ -29,6 +28,10 @@ Here is a sentence with a footnote.[^1]
 [^1]: This is the footnote text in Markdown.
 
 The following builds a separator:
+
+---
+
+This as well:
 
 ***
 

@@ -128,9 +128,10 @@ def main():
     parser.add_argument("html_path", help="Path to HTML template")
     parser.add_argument("article_slug", help="The articles slug.")
     parser.add_argument("-j", "--json", default="newslettermjml/.emails.json", help="Path to email JSON (default: newslettermjml/.emails.json)")
+    parser.add_argument("-g", "--generate", action='store_true', help="After having sent the emails, it will generate a website friendly html.")
     
     args = parser.parse_args()
-
+    console.log(args.generate)
     # Validate HTML path
     if not os.path.isfile(args.html_path):
         console.print(f"[bold red]HTML file not found: {args.html_path}[/bold red]")
@@ -158,7 +159,9 @@ def main():
         handler.send(handler.html_content(name, address), address)
         time.sleep(2) # Prevent blocking because of too many requests
     
-    prepare_web_html(args.html_path, args.html_path.split("/")[-1], args.article_slug)
+    if args.generate:
+        prepare_web_html(args.html_path, args.html_path.split("/")[-1], args.article_slug)
+        console.log(f"Newsletter has been generated for website: {args.html_path.split("/")[-1]}")
 
 if __name__ == '__main__':
     main()
