@@ -42,7 +42,7 @@
     var remainder = parts.join('/');
     if(!remainder.startsWith('/')) remainder = '/' + remainder;
     // join with chosen prefix
-    if(prefix === defaultLang){
+    if(prefix === 'en'){
       // default site served at root — do not prefix
       return remainder;
     }

@@ -251,7 +251,7 @@
     {% set _ = query_params.update({'date': param_date.strftime('%d.%m.%Y')|urlencode}) %}
   {% endif %}
   {% if image and image != default_image %}
-    {% set _ = query_params.update({'image': (SITEURL ~ '/' ~ image)|urlencode}) %}
+    {% set _ = query_params.update({'image': (image)|urlencode}) %}
   {% endif %}
 {% endif %}
 {# Build the query string, filtering-out empty values #}

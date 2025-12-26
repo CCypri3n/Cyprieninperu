@@ -81,7 +81,3 @@ This repository contains the source files for the multilingual static site ["Cyp
     ```bash
     python3 newslettermjml/send.py language_code path/to/newsletterhtml article_slug
     ```
-
-## TO-DO
-
-- Rewrite old articles
